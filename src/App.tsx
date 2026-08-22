@@ -145,7 +145,7 @@ function Logomark({ size = 200 }: { size?: number }) {
           opacity="0.95"
           letterSpacing="2"
         >
-          E
+          D
         </text>
         <text
           x="95"
@@ -169,7 +169,7 @@ function Logomark({ size = 200 }: { size?: number }) {
           opacity="0.95"
           letterSpacing="2"
         >
-          J
+          D
         </text>
 
         {/* Decorative horizontal lines */}
@@ -258,10 +258,10 @@ function IntroOverlay({ onComplete }: { onComplete: () => void }) {
           <div className="text-center animate-section">
             <p className="section-label mb-4" style={{ color: "#c9a89b" }}>Est. 2025</p>
             <h1 className="text-white mb-2" style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(2.2rem, 6vw, 4rem)", fontWeight: 400, letterSpacing: "0.1em" }}>
-              Eleanor & James
+              Don and Donja
             </h1>
             <p className="text-[#e8c4b8] text-sm tracking-[0.25em] uppercase mt-2" style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}>
-              September 12, 2026 · Villa Rosetta, Tuscany
+              September 12, 2026 · Albuquque , New Mexico
             </p>
             <div className="mt-8 flex flex-col items-center gap-2">
               <p className="text-[#c9a89b] text-xs tracking-widest uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>Scroll</p>
@@ -305,7 +305,7 @@ function Nav() {
             <circle cx="30" cy="30" r="28" stroke="#c9a89b" strokeWidth="0.8" opacity="0.5"/>
             <text x="8" y="40" fontFamily="'Cinzel', serif" fontSize="18" fontWeight="400" fill="#1a1614">E&J</text>
           </svg>
-          <span className="hidden md:block section-label" style={{ color: "#1a1614" }}>Eleanor & James</span>
+          <span className="hidden md:block section-label" style={{ color: "#1a1614" }}>Don and Donja</span>
         </div>
         <div className="flex items-center gap-8">
           {links.map(link => (
@@ -352,13 +352,13 @@ function HeroSection() {
           <p className="section-label mb-5" style={{ color: "#c9a89b" }}>12 · 09 · 2026</p>
           <h1 className="text-white mb-4 leading-none"
             style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(3rem, 8vw, 6.5rem)", fontWeight: 400, letterSpacing: "0.04em" }}>
-            Eleanor
+            Don
             <br />
             <span style={{ fontStyle: "italic", color: "#c9a89b" }}>&amp;</span>{" "}
-            James
+            Donja
           </h1>
           <p className="text-[#e8c4b8] mt-6 max-w-sm leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "1.05rem", fontWeight: 300 }}>
-            Two souls, one journey — celebrating love in the hills of Tuscany.
+            Wow isn't Don Dao so cool.
           </p>
         </div>
 
@@ -387,21 +387,21 @@ const storyMilestones = [
   {
     year: "2019",
     title: "First Meeting",
-    body: "A rainy Tuesday in Florence changed everything. Two strangers reached for the last umbrella at a market stall — and neither would let go.",
+    body: "Something somewhere",
     img: "https://images.unsplash.com/photo-1519741196428-6a2175fa2557?w=600&h=800&fit=crop&auto=format",
     alt: "The couple, early days",
   },
   {
     year: "2021",
     title: "First Trip Together",
-    body: "Seventeen countries, one broken-down rental car, and a sunset over Santorini that made it all perfect. This was when we knew.",
+    body: "Idk.",
     img: "https://images.unsplash.com/photo-1591604442449-ecc9943efabf?w=600&h=800&fit=crop&auto=format",
     alt: "Travel portrait",
   },
   {
     year: "2024",
     title: "The Proposal",
-    body: "On a quiet morning at Villa Borghese, among the roses, James asked a question he'd been rehearsing for a year. Eleanor said yes before he finished.",
+    body: "Idk .",
     img: "https://images.unsplash.com/photo-1621621668101-d5c8329b3784?w=600&h=800&fit=crop&auto=format",
     alt: "Engagement portrait",
   },
@@ -419,7 +419,7 @@ function OurStorySection() {
             </h2>
           </div>
           <p className="max-w-xs text-sm leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", color: "#8a7a72", fontWeight: 300, fontSize: "1rem" }}>
-            "Love is composed of a single soul inhabiting two bodies."
+            "Love is so overrated, I hate it, self love is so muc cooler."
             <br/><span className="section-label not-italic" style={{ color: "#c9a89b", fontFamily: "'DM Sans', sans-serif" }}>— Aristotle</span>
           </p>
         </div>
@@ -466,9 +466,9 @@ function DetailsSection() {
     {
       label: "Ceremony",
       time: "4:00 PM",
-      title: "Villa Rosetta",
-      sub: "Via delle Rose 12, Montepulciano, Tuscany",
-      note: "Outdoor ceremony in the rose garden. Please arrive 30 minutes early.",
+      title: "Venue Name",
+      sub: "Location, 11111 OKC, OK",
+      note: "Notes: Ur moms house",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
@@ -479,9 +479,9 @@ function DetailsSection() {
     {
       label: "Reception",
       time: "7:00 PM",
-      title: "Cantinetta Antinori",
-      sub: "Piazza Antinori, Florence",
-      note: "Dinner, dancing, and toasts until midnight. Black tie optional.",
+      title: "Olive Garden",
+      sub: "Italy",
+      note: "Dinner, dancing, and Don sings all night. Black tie optional.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
           <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/>
@@ -491,9 +491,9 @@ function DetailsSection() {
     {
       label: "Accommodation",
       time: "Check-in: Sep 11",
-      title: "Hotel Il Pellicano",
-      sub: "Via Panoramica, Porto Ercole, Tuscany",
-      note: "Room block reserved under 'Whitmore–Chen.' Book by July 15.",
+      title: "Hotel Motel Holiday Inn",
+      sub: "Address or summm",
+      note: "Room block reserved under 'DonDonja.' Book by July 15.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
           <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
