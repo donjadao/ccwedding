@@ -149,7 +149,7 @@ function Logomark({ size = 200 }: { size?: number }) {
           D
         </text>
         <text
-          x="100"
+          x="110"
           y="116"
           fontFamily="'Cinzel', serif"
           fontSize="44"
