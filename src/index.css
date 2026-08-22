@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Cinzel', serif;
+  --font-decorative: 'Cinzel Decorative', serif;
+  --font-serif: 'Fraunces', serif;
+  --font-sans: 'DM Sans', sans-serif;
+
+  --color-ivory: #f8f4ef;
+  --color-charcoal: #1a1614;
+  --color-blush: #c9a89b;
+  --color-gold: #b8965a;
+  --color-sage: #8a9e8d;
+  --color-petal: #f0e8e2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #f8f4ef;
+  color: #1a1614;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar by default, show on hover/scroll */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #c9a89b; border-radius: 2px; opacity: 0; }
+body:hover::-webkit-scrollbar-thumb { opacity: 1; }
+
+/* Intro animations */
+@keyframes fadeInLogo {
+  0% { opacity: 0; transform: scale(0.92); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOutLogo {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.08); }
+}
+
+@keyframes floralSweepLeft {
+  0% { transform: translateX(-120%) rotate(-15deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translateX(0%) rotate(0deg); opacity: 1; }
+}
+
+@keyframes floralSweepRight {
+  0% { transform: translateX(120%) rotate(15deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translateX(0%) rotate(0deg); opacity: 1; }
+}
+
+@keyframes floralSweepTop {
+  0% { transform: translateY(-120%) rotate(-8deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translateY(0%) rotate(0deg); opacity: 1; }
+}
+
+@keyframes floralSweepBottom {
+  0% { transform: translateY(120%) rotate(8deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translateY(0%) rotate(0deg); opacity: 1; }
+}
+
+@keyframes revealPhoto {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideOutOverlay {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100vh); }
+}
+
+@keyframes fadeInSection {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollIndicator {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); opacity: 0.4; }
+}
+
+@keyframes petalFloat1 {
+  0% { transform: translate(0,0) rotate(0deg); opacity: 0.7; }
+  100% { transform: translate(-40px, 60px) rotate(45deg); opacity: 0; }
+}
+
+@keyframes petalFloat2 {
+  0% { transform: translate(0,0) rotate(0deg); opacity: 0.5; }
+  100% { transform: translate(30px, 80px) rotate(-30deg); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-logo-in {
+  animation: fadeInLogo 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-logo-out {
+  animation: fadeOutLogo 0.8s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+}
+
+.animate-floral-left {
+  animation: floralSweepLeft 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-floral-right {
+  animation: floralSweepRight 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-floral-top {
+  animation: floralSweepTop 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-floral-bottom {
+  animation: floralSweepBottom 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-photo-reveal {
+  animation: revealPhoto 1.2s ease forwards;
+}
+
+.animate-slide-out {
+  animation: slideOutOverlay 0.9s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.animate-scroll-indicator {
+  animation: scrollIndicator 2s ease-in-out infinite;
+}
+
+.animate-section {
+  animation: fadeInSection 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #b8965a 0%, #e8c87a 40%, #b8965a 60%, #d4a853 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Horizontal rule with floral center */
+.floral-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.floral-divider::before,
+.floral-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9a89b, transparent);
+}
+
+/* Portfolio-style section label */
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #c9a89b;
+}
