@@ -1,5 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 
+// To use your own photo: convert IMG_3836.HEIC to JPEG on Mac (Preview → Export → JPEG),
+// drop the .jpeg into src/imports/, then replace the URL below with:
+import couplePhoto from "./imports/IMG_3836.jpeg";
+
 // ─── Floral SVG Elements ──────────────────────────────────────────────────────
 
 function FloralBranchLeft() {
@@ -145,7 +149,7 @@ function Logomark({ size = 200 }: { size?: number }) {
           opacity="0.95"
           letterSpacing="2"
         >
-          D
+          E
         </text>
         <text
           x="95"
@@ -169,7 +173,7 @@ function Logomark({ size = 200 }: { size?: number }) {
           opacity="0.95"
           letterSpacing="2"
         >
-          D
+          J
         </text>
 
         {/* Decorative horizontal lines */}
@@ -219,7 +223,7 @@ function IntroOverlay({ onComplete }: { onComplete: () => void }) {
       {phase === "photo" && (
         <div className="absolute inset-0 animate-photo-reveal">
           <img
-            src="https://images.unsplash.com/photo-1596457221755-b96bc3a6df18?w=1800&h=1200&fit=crop&auto=format"
+            src={couplePhoto}
             alt="The couple"
             className="w-full h-full object-cover"
           />
@@ -258,10 +262,10 @@ function IntroOverlay({ onComplete }: { onComplete: () => void }) {
           <div className="text-center animate-section">
             <p className="section-label mb-4" style={{ color: "#c9a89b" }}>Est. 2025</p>
             <h1 className="text-white mb-2" style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(2.2rem, 6vw, 4rem)", fontWeight: 400, letterSpacing: "0.1em" }}>
-              Don and Donja
+              Eleanor & James
             </h1>
             <p className="text-[#e8c4b8] text-sm tracking-[0.25em] uppercase mt-2" style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}>
-              September 12, 2026 · Albuquque , New Mexico
+              September 12, 2026 · Villa Rosetta, Tuscany
             </p>
             <div className="mt-8 flex flex-col items-center gap-2">
               <p className="text-[#c9a89b] text-xs tracking-widest uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>Scroll</p>
@@ -305,7 +309,7 @@ function Nav() {
             <circle cx="30" cy="30" r="28" stroke="#c9a89b" strokeWidth="0.8" opacity="0.5"/>
             <text x="8" y="40" fontFamily="'Cinzel', serif" fontSize="18" fontWeight="400" fill="#1a1614">E&J</text>
           </svg>
-          <span className="hidden md:block section-label" style={{ color: "#1a1614" }}>Don and Donja</span>
+          <span className="hidden md:block section-label" style={{ color: "#1a1614" }}>Eleanor & James</span>
         </div>
         <div className="flex items-center gap-8">
           {links.map(link => (
@@ -332,7 +336,7 @@ function HeroSection() {
   return (
     <section className="relative h-screen flex items-end pb-24 overflow-hidden" style={{ background: "#1a1614" }}>
       <img
-        src="https://images.unsplash.com/photo-1596457221755-b96bc3a6df18?w=1800&h=1200&fit=crop&auto=format"
+        src={couplePhoto}
         alt="Eleanor and James"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ opacity: 0.55 }}
@@ -352,13 +356,13 @@ function HeroSection() {
           <p className="section-label mb-5" style={{ color: "#c9a89b" }}>12 · 09 · 2026</p>
           <h1 className="text-white mb-4 leading-none"
             style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(3rem, 8vw, 6.5rem)", fontWeight: 400, letterSpacing: "0.04em" }}>
-            Don
+            Eleanor
             <br />
             <span style={{ fontStyle: "italic", color: "#c9a89b" }}>&amp;</span>{" "}
-            Donja
+            James
           </h1>
           <p className="text-[#e8c4b8] mt-6 max-w-sm leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "1.05rem", fontWeight: 300 }}>
-            Wow isn't Don Dao so cool.
+            Two souls, one journey — celebrating love in the hills of Tuscany.
           </p>
         </div>
 
@@ -387,22 +391,22 @@ const storyMilestones = [
   {
     year: "2019",
     title: "First Meeting",
-    body: "Something somewhere",
-    img: "https://images.unsplash.com/photo-1519741196428-6a2175fa2557?w=600&h=800&fit=crop&auto=format",
+    body: "A rainy Tuesday in Florence changed everything. Two strangers reached for the last umbrella at a market stall — and neither would let go.",
+    img: {couplePhoto},
     alt: "The couple, early days",
   },
   {
     year: "2021",
     title: "First Trip Together",
-    body: "Idk.",
-    img: "https://images.unsplash.com/photo-1591604442449-ecc9943efabf?w=600&h=800&fit=crop&auto=format",
+    body: "Seventeen countries, one broken-down rental car, and a sunset over Santorini that made it all perfect. This was when we knew.",
+    img: {couplePhoto},
     alt: "Travel portrait",
   },
   {
     year: "2024",
     title: "The Proposal",
-    body: "Idk .",
-    img: "https://images.unsplash.com/photo-1621621668101-d5c8329b3784?w=600&h=800&fit=crop&auto=format",
+    body: "On a quiet morning at Villa Borghese, among the roses, James asked a question he'd been rehearsing for a year. Eleanor said yes before he finished.",
+    img: {couplePhoto},
     alt: "Engagement portrait",
   },
 ];
@@ -419,7 +423,7 @@ function OurStorySection() {
             </h2>
           </div>
           <p className="max-w-xs text-sm leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", color: "#8a7a72", fontWeight: 300, fontSize: "1rem" }}>
-            "Love is so overrated, I hate it, self love is so muc cooler."
+            "Love is composed of a single soul inhabiting two bodies."
             <br/><span className="section-label not-italic" style={{ color: "#c9a89b", fontFamily: "'DM Sans', sans-serif" }}>— Aristotle</span>
           </p>
         </div>
@@ -466,9 +470,9 @@ function DetailsSection() {
     {
       label: "Ceremony",
       time: "4:00 PM",
-      title: "Venue Name",
-      sub: "Location, 11111 OKC, OK",
-      note: "Notes: Ur moms house",
+      title: "Villa Rosetta",
+      sub: "Via delle Rose 12, Montepulciano, Tuscany",
+      note: "Outdoor ceremony in the rose garden. Please arrive 30 minutes early.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
@@ -479,9 +483,9 @@ function DetailsSection() {
     {
       label: "Reception",
       time: "7:00 PM",
-      title: "Olive Garden",
-      sub: "Italy",
-      note: "Dinner, dancing, and Don sings all night. Black tie optional.",
+      title: "Cantinetta Antinori",
+      sub: "Piazza Antinori, Florence",
+      note: "Dinner, dancing, and toasts until midnight. Black tie optional.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
           <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/>
@@ -491,9 +495,9 @@ function DetailsSection() {
     {
       label: "Accommodation",
       time: "Check-in: Sep 11",
-      title: "Hotel Motel Holiday Inn",
-      sub: "Address or summm",
-      note: "Room block reserved under 'DonDonja.' Book by July 15.",
+      title: "Hotel Il Pellicano",
+      sub: "Via Panoramica, Porto Ercole, Tuscany",
+      note: "Room block reserved under 'Whitmore–Chen.' Book by July 15.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
           <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
@@ -545,12 +549,12 @@ function DetailsSection() {
 // ─── Gallery Section ──────────────────────────────────────────────────────────
 
 const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1596457221755-b96bc3a6df18?w=600&h=800&fit=crop&auto=format", alt: "The couple", span: "row-span-2" },
-  { src: "https://images.unsplash.com/photo-1553379762-ff913d5513b5?w=600&h=400&fit=crop&auto=format", alt: "White florals", span: "" },
-  { src: "https://images.unsplash.com/photo-1560624306-adcb77219838?w=600&h=400&fit=crop&auto=format", alt: "Floral arrangement", span: "" },
-  { src: "https://images.unsplash.com/photo-1611605469961-50d1e409622a?w=600&h=800&fit=crop&auto=format", alt: "Pink roses", span: "row-span-2" },
-  { src: "https://images.unsplash.com/photo-1606216794079-73f85bbd57d5?w=600&h=400&fit=crop&auto=format", alt: "Wedding dress portrait", span: "" },
-  { src: "https://images.unsplash.com/photo-1692521726977-f5c42456e716?w=600&h=400&fit=crop&auto=format", alt: "White flower", span: "" },
+  { src: {couplePhoto}, alt: "The couple", span: "row-span-2" },
+  { src: {couplePhoto}, alt: "White florals", span: "" },
+  { src: {couplePhoto}, alt: "Floral arrangement", span: "" },
+  { src: {couplePhoto}, alt: "Pink roses", span: "row-span-2" },
+  { src: {couplePhoto}, alt: "Wedding dress portrait", span: "" },
+  { src: {couplePhoto}, alt: "White flower", span: "" },
 ];
 
 function GallerySection() {
