@@ -149,7 +149,7 @@ function Logomark({ size = 200 }: { size?: number }) {
           D
         </text>
         <text
-          x="80"
+          x="95"
           y="116"
           fontFamily="'Cinzel', serif"
           fontSize="44"
@@ -546,12 +546,12 @@ function DetailsSection() {
 // ─── Gallery Section ──────────────────────────────────────────────────────────
 
 const galleryImages = [
-  { src: {couplePhoto}, alt: "The couple", span: "row-span-2" },
-  { src: {couplePhoto}, alt: "White florals", span: "" },
-  { src: {couplePhoto}, alt: "Floral arrangement", span: "" },
-  { src: {couplePhoto}, alt: "Pink roses", span: "row-span-2" },
-  { src: {couplePhoto}, alt: "Wedding dress portrait", span: "" },
-  { src: {couplePhoto}, alt: "White flower", span: "" },
+  { src: couplePhoto, alt: "The couple", span: "row-span-2" },
+  { src: couplePhoto, alt: "White florals", span: "" },
+  { src: couplePhoto, alt: "Floral arrangement", span: "" },
+  { src: couplePhoto, alt: "Pink roses", span: "row-span-2" },
+  { src: couplePhoto, alt: "Wedding dress portrait", span: "" },
+  { src: couplePhoto, alt: "White flower", span: "" },
 ];
 
 function GallerySection() {
