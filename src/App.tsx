@@ -1,7 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-
-// To use your own photo: convert IMG_3836.HEIC to JPEG on Mac (Preview → Export → JPEG),
-// drop the .jpeg into src/imports/, then replace the URL below with:
 import couplePhoto from "./imports/IMG_3836.jpeg";
 
 // ─── Floral SVG Elements ──────────────────────────────────────────────────────
@@ -149,10 +146,10 @@ function Logomark({ size = 200 }: { size?: number }) {
           opacity="0.95"
           letterSpacing="2"
         >
-          E
+          D
         </text>
         <text
-          x="95"
+          x="90"
           y="116"
           fontFamily="'Cinzel', serif"
           fontSize="44"
@@ -173,7 +170,7 @@ function Logomark({ size = 200 }: { size?: number }) {
           opacity="0.95"
           letterSpacing="2"
         >
-          J
+          D
         </text>
 
         {/* Decorative horizontal lines */}
@@ -187,7 +184,7 @@ function Logomark({ size = 200 }: { size?: number }) {
 
       <div className="text-center">
         <p className="text-[#c9a89b] text-[0.55rem] tracking-[0.4em] uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-          Together Forever
+          Together Forever YAYAYAYAYAY
         </p>
       </div>
     </div>
@@ -262,10 +259,10 @@ function IntroOverlay({ onComplete }: { onComplete: () => void }) {
           <div className="text-center animate-section">
             <p className="section-label mb-4" style={{ color: "#c9a89b" }}>Est. 2025</p>
             <h1 className="text-white mb-2" style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(2.2rem, 6vw, 4rem)", fontWeight: 400, letterSpacing: "0.1em" }}>
-              Eleanor & James
+              Don and Donja
             </h1>
             <p className="text-[#e8c4b8] text-sm tracking-[0.25em] uppercase mt-2" style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}>
-              September 12, 2026 · Villa Rosetta, Tuscany
+              September 12, 2026 · Albuquerque, NM or Oklahoma
             </p>
             <div className="mt-8 flex flex-col items-center gap-2">
               <p className="text-[#c9a89b] text-xs tracking-widest uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>Scroll</p>
@@ -309,7 +306,7 @@ function Nav() {
             <circle cx="30" cy="30" r="28" stroke="#c9a89b" strokeWidth="0.8" opacity="0.5"/>
             <text x="8" y="40" fontFamily="'Cinzel', serif" fontSize="18" fontWeight="400" fill="#1a1614">E&J</text>
           </svg>
-          <span className="hidden md:block section-label" style={{ color: "#1a1614" }}>Eleanor & James</span>
+          <span className="hidden md:block section-label" style={{ color: "#1a1614" }}>Don and Donja</span>
         </div>
         <div className="flex items-center gap-8">
           {links.map(link => (
@@ -362,7 +359,7 @@ function HeroSection() {
             James
           </h1>
           <p className="text-[#e8c4b8] mt-6 max-w-sm leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "1.05rem", fontWeight: 300 }}>
-            Two souls, one journey — celebrating love in the hills of Tuscany.
+            Isn't Don just sooooo cool.
           </p>
         </div>
 
@@ -391,21 +388,21 @@ const storyMilestones = [
   {
     year: "2019",
     title: "First Meeting",
-    body: "A rainy Tuesday in Florence changed everything. Two strangers reached for the last umbrella at a market stall — and neither would let go.",
+    body: "We met at ur moms house",
     img: {couplePhoto},
     alt: "The couple, early days",
   },
   {
     year: "2021",
     title: "First Trip Together",
-    body: "Seventeen countries, one broken-down rental car, and a sunset over Santorini that made it all perfect. This was when we knew.",
+    body: "This can be any kind of event",
     img: {couplePhoto},
     alt: "Travel portrait",
   },
   {
     year: "2024",
     title: "The Proposal",
-    body: "On a quiet morning at Villa Borghese, among the roses, James asked a question he'd been rehearsing for a year. Eleanor said yes before he finished.",
+    body: "The only time chi tai ever got on his knees",
     img: {couplePhoto},
     alt: "Engagement portrait",
   },
@@ -423,7 +420,7 @@ function OurStorySection() {
             </h2>
           </div>
           <p className="max-w-xs text-sm leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", color: "#8a7a72", fontWeight: 300, fontSize: "1rem" }}>
-            "Love is composed of a single soul inhabiting two bodies."
+            "Wowwowowo love is just so cool"
             <br/><span className="section-label not-italic" style={{ color: "#c9a89b", fontFamily: "'DM Sans', sans-serif" }}>— Aristotle</span>
           </p>
         </div>
@@ -470,9 +467,9 @@ function DetailsSection() {
     {
       label: "Ceremony",
       time: "4:00 PM",
-      title: "Villa Rosetta",
-      sub: "Via delle Rose 12, Montepulciano, Tuscany",
-      note: "Outdoor ceremony in the rose garden. Please arrive 30 minutes early.",
+      title: "The Church",
+      sub: "the addy",
+      note: "Indoor Ceremony. Please arrive 67 minutes early.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
@@ -483,9 +480,9 @@ function DetailsSection() {
     {
       label: "Reception",
       time: "7:00 PM",
-      title: "Cantinetta Antinori",
-      sub: "Piazza Antinori, Florence",
-      note: "Dinner, dancing, and toasts until midnight. Black tie optional.",
+      title: "Olive Garden",
+      sub: "the addy",
+      note: "Dinner, dancing, and unlimited breadsticks, Black tie formal mandatory",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
           <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/>
@@ -495,9 +492,9 @@ function DetailsSection() {
     {
       label: "Accommodation",
       time: "Check-in: Sep 11",
-      title: "Hotel Il Pellicano",
-      sub: "Via Panoramica, Porto Ercole, Tuscany",
-      note: "Room block reserved under 'Whitmore–Chen.' Book by July 15.",
+      title: "Hotel Motel Holiday Inn",
+      sub: "addy",
+      note: "Room block reserved under 'mr World Wide.' Book by July 15.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
           <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
