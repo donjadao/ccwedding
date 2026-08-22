@@ -149,7 +149,7 @@ function Logomark({ size = 200 }: { size?: number }) {
           D
         </text>
         <text
-          x="90"
+          x="80"
           y="116"
           fontFamily="'Cinzel', serif"
           fontSize="44"
@@ -353,10 +353,10 @@ function HeroSection() {
           <p className="section-label mb-5" style={{ color: "#c9a89b" }}>12 · 09 · 2026</p>
           <h1 className="text-white mb-4 leading-none"
             style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(3rem, 8vw, 6.5rem)", fontWeight: 400, letterSpacing: "0.04em" }}>
-            Eleanor
+            Don
             <br />
             <span style={{ fontStyle: "italic", color: "#c9a89b" }}>&amp;</span>{" "}
-            James
+            Donja
           </h1>
           <p className="text-[#e8c4b8] mt-6 max-w-sm leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "1.05rem", fontWeight: 300 }}>
             Isn't Don just sooooo cool.
@@ -389,21 +389,21 @@ const storyMilestones = [
     year: "2019",
     title: "First Meeting",
     body: "We met at ur moms house",
-    img: {couplePhoto},
+    img: couplePhoto,
     alt: "The couple, early days",
   },
   {
     year: "2021",
     title: "First Trip Together",
     body: "This can be any kind of event",
-    img: {couplePhoto},
+    img: couplePhoto,
     alt: "Travel portrait",
   },
   {
     year: "2024",
     title: "The Proposal",
     body: "The only time chi tai ever got on his knees",
-    img: {couplePhoto},
+    img: couplePhoto,
     alt: "Engagement portrait",
   },
 ];
