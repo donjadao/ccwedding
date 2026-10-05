@@ -565,13 +565,13 @@ function DetailsSection() {
 
 const galleryImages = [
   { src: farTreePic, alt: "The couple", span: "row-span-2" },
-  { src: floralAndFruits4, alt: "White florals", span: "" },
-  { src: benchPic, alt: "Floral arrangement", span: "" },
-  { src: floralAndFruits1, alt: "Pink roses", span: "row-span-2" },
-  { src: grassPic, alt: "Wedding dress portrait", span: "" },
-  { src: floralAndFruits2, alt: "Wedding dress portrait", span: "" },
-  { src: housePic, alt: "White flower", span: "" },
-  { src: floralAndFruits3, alt: "Wedding dress portrait", span: "" },
+  { src: floralAndFruits4, alt: "Florals and Fruit", span: "" },
+  { src: benchPic, alt: "The couple", span: "row-span-2" },
+  { src: floralAndFruits1, alt: "Florals and Fruit", span: "row-span-2" },
+  { src: grassPic, alt: "The couple", span: "" },
+  { src: floralAndFruits2, alt: "Florals and Fruit", span: "" },
+  { src: housePic, alt: "The couple", span: "row-span-2" },
+  { src: floralAndFruits3, alt: "Florals and Fruit", span: "" },
 ];
 
 function GallerySection() {
