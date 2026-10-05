@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-  <circle cx="58" cy="66" r="39" fill="var(--accent-secondary)"/>
-  <circle cx="58" cy="66" r="31" fill="none" stroke="var(--accent-primary)" stroke-width="3" opacity=".85"/>
-  <path d="M58 35v62M27 66h62M36 44l44 44M80 44L36 88" stroke="var(--accent-primary)" stroke-width="1.5" opacity=".55"/>
-  <path d="M57 26c11-18 28-15 34-8-8 10-20 14-34 8Z" fill="var(--accent-olive)"/>
-</svg>
