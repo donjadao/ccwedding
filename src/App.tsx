@@ -20,7 +20,7 @@ import ringPic from "./imports/ringpic.jpg";
 import farTreePic from "./imports/far_tree_pic.jpg";
 import blurPic from "./imports/blurpic.jpg";
 
-import floralAndFruits1 from "./imports/photos/floral_and_fruits1.png";
+import floralAndFruits1 from "./imports/photos/floral_and_fruits.png";
 import floralAndFruits2 from "./imports/photos/floral_and_fruits2.png";
 import floralAndFruits3 from "./imports/photos/floral_and_fruits3.png";
 import floralAndFruits4 from "./imports/photos/floral_and_fruits4.png";
