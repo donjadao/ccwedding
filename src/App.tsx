@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import couplePhoto from "./imports/CS_16565_websize.jpg";
+import couplePhoto from "./imports/CS_16565_websize.jpg"; 
 
 const WEDDING_DATE = new Date("2027-05-01T13:00:00-05:00").getTime();
 
