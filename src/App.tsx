@@ -349,7 +349,7 @@ function Nav() {
         <div className="flex items-center gap-3">
           <svg viewBox="0 0 60 60" width={32} height={32} fill="none">
             <circle cx="30" cy="30" r="28" stroke="#c9a89b" strokeWidth="0.8" opacity="0.5"/>
-            <text x="8" y="40" fontFamily="'Cinzel', serif" fontSize="18" fontWeight="400" fill="#1a1614">E&J</text>
+            <text x="8" y="40" fontFamily="'Cinzel', serif" fontSize="18" fontWeight="400" fill="#1a1614">C&C</text>
           </svg>
           <span className="section-label" style={{ color: "#1a1614" }}>Chi Tai and Christine</span>
         </div>
