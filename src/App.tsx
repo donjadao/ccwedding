@@ -355,7 +355,7 @@ function HeroSection() {
     >
       <img
         src={couplePhoto}
-        alt=""absolute inset-0"
+        alt="Chi Tai and Christine"
         style={{
           background:
             "linear-gradient(to top, rgba(26,22,20,0.92) 0%, rgba(26,22,20,0.2) 60%, rgba(26,22,20,0.1) 100%)",
