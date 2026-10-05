@@ -114,11 +114,14 @@ function FloralGarlandTop() {
 
 // ─── Logomark ─────────────────────────────────────────────────────────────────
 
-function Logomark({ size = 200 }: { size?: number }) {
+function Logomark({ size = 200, onDark = false }: { size?: number; onDark?: boolean }) {
   return (
-    <div className="flex flex-col items-center gap-4" style={{ width: size }}>
+    <div
+      className="flex flex-col items-center gap-4"
+      style={{ width: size, color: onDark ? "var(--heading-light)" : "var(--background-dark)" }}
+    >
       <SvgArtwork source={weddingMonogramSvg} className="aspect-square w-full" />
-      <p className="text-[var(--accent-muted)] text-[0.55rem] tracking-[0.4em] uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+      <p className="text-[0.55rem] tracking-[0.4em] uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>
         Together Forever
       </p>
     </div>
@@ -185,7 +188,7 @@ function IntroOverlay({ onComplete }: { onComplete: () => void }) {
       <div className="relative z-10 flex flex-col items-center">
         {logoVisible && (
           <div className={phase === "floral" ? "animate-logo-out" : "animate-logo-in"}>
-            <Logomark size={180} />
+            <Logomark size={180} onDark />
           </div>
         )}
 
@@ -243,9 +246,13 @@ function Nav() {
 
   const links = ["Our Story", "Details", "Gallery", "Play a Game"];
 
-  const navBg = scrolled || menuOpen ? "color-mix(in srgb, var(--background-light) 97%, transparent)" : "transparent";
-  const navBlur = scrolled || menuOpen ? "blur(12px)" : "none";
-  const navBorder = scrolled || menuOpen ? "1px solid color-mix(in srgb, var(--accent-muted) 20%, transparent)" : "none";
+  const navBg = scrolled || menuOpen
+    ? "color-mix(in srgb, var(--background-light) 97%, transparent)"
+    : "color-mix(in srgb, var(--background-light) 38%, transparent)";
+  const navBlur = scrolled || menuOpen ? "blur(12px)" : "blur(8px)";
+  const navBorder = scrolled || menuOpen
+    ? "1px solid color-mix(in srgb, var(--accent-muted) 20%, transparent)"
+    : "1px solid color-mix(in srgb, var(--background-light) 24%, transparent)";
 
   return (
     <nav
@@ -255,7 +262,9 @@ function Nav() {
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <SvgArtwork source={navigationMonogramSvg} className="size-8" />
+          <span style={{ color: scrolled || menuOpen ? "var(--heading-dark)" : "var(--heading-light)" }}>
+            <SvgArtwork source={navigationMonogramSvg} className="size-8" />
+          </span>
           <span className="section-label" style={{ color: "var(--heading-dark)" }}>Chi Tai and Christine</span>
         </div>
 
@@ -505,7 +514,7 @@ function DetailsSection() {
       <ScrollFruit side="left" variant="pear" top="24%" />
       <div className="max-w-6xl mx-auto px-8">
         <div className="mb-16 text-center">
-          <p className="section-label mb-4" style={{ color: "var(--accent-muted)" }}>Wedding Details</p>
+          <p className="section-label mb-4" style={{ color: "var(--text-light)" }}>Wedding Details</p>
           <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 400, color: "var(--heading-light)", letterSpacing: "0.05em" }}>
             The Celebration
           </h2>
@@ -516,11 +525,11 @@ function DetailsSection() {
             <div key={d.label} className="p-10 flex flex-col gap-6" style={{ background: "var(--background-dark)" }}>
               {d.icon}
               <div>
-                <p className="section-label mb-2" style={{ color: "var(--text-muted)" }}>{d.label}</p>
-                <p className="text-xs mb-4" style={{ fontFamily: "'DM Sans', sans-serif", color: "var(--accent-gold)", letterSpacing: "0.1em" }}>{d.time}</p>
+                <p className="section-label mb-2" style={{ color: "var(--text-light)" }}>{d.label}</p>
+                <p className="text-xs mb-4" style={{ fontFamily: "'DM Sans', sans-serif", color: "var(--text-light)", letterSpacing: "0.1em" }}>{d.time}</p>
                 <h3 className="mb-2" style={{ fontFamily: "'Cinzel', serif", fontSize: "1.25rem", fontWeight: 400, color: "var(--heading-light)", letterSpacing: "0.04em" }}>{d.title}</h3>
-                <p className="text-xs mb-4" style={{ fontFamily: "'DM Sans', sans-serif", color: "var(--text-muted)", lineHeight: 1.6 }}>{d.sub}</p>
-                <p className="text-xs leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", color: "var(--placeholder-text)", fontWeight: 300 }}>{d.note}</p>
+                <p className="text-xs mb-4" style={{ fontFamily: "'DM Sans', sans-serif", color: "var(--text-light)", lineHeight: 1.6 }}>{d.sub}</p>
+                <p className="text-xs leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", color: "var(--text-light)", fontWeight: 300, opacity: 0.82 }}>{d.note}</p>
               </div>
             </div>
           ))}
@@ -528,10 +537,10 @@ function DetailsSection() {
 
         {/* Date highlight bar */}
         <div className="mt-px p-8 flex flex-col md:flex-row items-center justify-between gap-4" style={{ background: "color-mix(in srgb, var(--accent-muted) 6%, transparent)", border: "1px solid color-mix(in srgb, var(--accent-muted) 15%, transparent)" }}>
-          <p style={{ fontFamily: "'Cinzel', serif", fontSize: "0.85rem", color: "var(--accent-muted)", letterSpacing: "0.2em" }}>
+          <p style={{ fontFamily: "'Cinzel', serif", fontSize: "0.85rem", color: "var(--text-light)", letterSpacing: "0.2em" }}>
             Saturday, May 1, 2027
           </p>
-          <p style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "0.9rem", color: "var(--text-muted)", fontWeight: 300 }}>
+          <p style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "0.9rem", color: "var(--text-light)", fontWeight: 300 }}>
             {days} {days === 1 ? "day" : "days"} remaining
           </p>
         </div>
@@ -768,6 +777,51 @@ function ConnectionsGameSection() {
               ))}
           </div>
 
+          {gameWon && (
+            <div className="relative mt-6 min-h-[360px] overflow-hidden animate-photo-reveal">
+              <img
+                src={couplePhoto}
+                alt="Chi Tai and Christine"
+                className="absolute inset-0 size-full object-cover"
+                style={{ opacity: 0.72 }}
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to top, color-mix(in srgb, var(--background-dark) 92%, transparent) 0%, color-mix(in srgb, var(--background-dark) 35%, transparent) 58%, color-mix(in srgb, var(--background-dark) 12%, transparent) 100%)",
+                }}
+              />
+              <div className="absolute inset-x-0 bottom-0 p-8 md:p-12 text-left animate-section">
+                <p className="section-label mb-3" style={{ color: "var(--text-light)" }}>
+                  Every Connection Found
+                </p>
+                <h3
+                  style={{
+                    fontFamily: "'Cinzel', serif",
+                    fontSize: "clamp(1.8rem, 5vw, 3.2rem)",
+                    fontWeight: 400,
+                    color: "var(--heading-light)",
+                    letterSpacing: "0.06em",
+                  }}
+                >
+                  A Perfect Match
+                </h3>
+                <p
+                  className="mt-3 max-w-md"
+                  style={{
+                    fontFamily: "'Fraunces', serif",
+                    fontStyle: "italic",
+                    color: "var(--text-light)",
+                    fontWeight: 300,
+                  }}
+                >
+                  You found every connection—just like these two found each other.
+                </p>
+              </div>
+            </div>
+          )}
+
           {!gameWon && !gameLost && (
             <div className="grid grid-cols-4 gap-2">
               {remainingWords.map((word) => {
@@ -901,7 +955,7 @@ function RSVPSection() {
             </p>
 
             {/* Decorative Logomark */}
-            <div className="opacity-30">
+            <div className="opacity-80">
               <Logomark size={140} />
             </div>
           </div>
@@ -974,11 +1028,11 @@ function RSVPSection() {
 function Footer() {
   return (
     <footer className="py-16 text-center border-t" style={{ background: "var(--background-dark)", borderColor: "color-mix(in srgb, var(--accent-muted) 15%, transparent)" }}>
-      <Logomark size={100} />
-      <p className="mt-8 section-label" style={{ color: "var(--text-dark)" }}>
+      <Logomark size={100} onDark />
+      <p className="mt-8 section-label" style={{ color: "var(--text-light)" }}>
         Chi Tai and Christine · Saturday May 1, 2027 · Oklahoma City, Oklahoma
       </p>
-      <p className="mt-3" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "0.85rem", color: "var(--text-subtle)", fontWeight: 300 }}>
+      <p className="mt-3" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "0.85rem", color: "var(--text-light)", fontWeight: 300 }}>
         Made with love ♡
       </p>
     </footer>
