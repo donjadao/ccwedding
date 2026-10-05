@@ -453,7 +453,7 @@ function HeroSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-8 w-full">
         <div className="max-w-2xl">
-          <p className="section-label mb-5" style={{ color: "#c9a89b" }}>12 · 09 · 2026</p>
+          <p className="section-label mb-5" style={{ color: "#c9a89b" }}>5 · 01 · 2027</p>
           <h1 className="text-white mb-4 leading-none"
             style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(3rem, 8vw, 6.5rem)", fontWeight: 400, letterSpacing: "0.04em" }}>
             Chi Tai
