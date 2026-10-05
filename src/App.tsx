@@ -1,4 +1,31 @@
 import { useState, useEffect, useRef } from "react";
+import couplePhoto from "./imports/CS_16565_websize.jpg";
+
+const WEDDING_DATE = new Date("2027-05-01T13:00:00-05:00").getTime();
+
+function getWeddingCountdown() {
+  const remaining = Math.max(WEDDING_DATE - Date.now(), 0);
+
+  return {
+    days: Math.floor(remaining / 86_400_000),
+    hours: Math.floor((remaining / 3_600_000) % 24),
+    minutes: Math.floor((remaining / 60_000) % 60),
+  };
+}
+
+function useWeddingCountdown() {
+  const [countdown, setCountdown] = useState(getWeddingCountdown);
+
+  useEffect(() => {
+    const updateCountdown = () => setCountdown(getWeddingCountdown());
+    updateCountdown();
+
+    const interval = window.setInterval(updateCountdown, 60_000);
+    return () => window.clearInterval(interval);
+  }, []);
+
+  return countdown;
+}
 
 // ─── Floral SVG Elements ──────────────────────────────────────────────────────
 
@@ -145,7 +172,7 @@ function Logomark({ size = 200 }: { size?: number }) {
           opacity="0.95"
           letterSpacing="2"
         >
-          E
+          C
         </text>
         <text
           x="95"
@@ -169,7 +196,7 @@ function Logomark({ size = 200 }: { size?: number }) {
           opacity="0.95"
           letterSpacing="2"
         >
-          J
+          C
         </text>
 
         {/* Decorative horizontal lines */}
@@ -219,7 +246,7 @@ function IntroOverlay({ onComplete }: { onComplete: () => void }) {
       {phase === "photo" && (
         <div className="absolute inset-0 animate-photo-reveal">
           <img
-            src="https://images.unsplash.com/photo-1596457221755-b96bc3a6df18?w=1800&h=1200&fit=crop&auto=format"
+            src={couplePhoto}
             alt="The couple"
             className="w-full h-full object-cover"
           />
@@ -258,10 +285,10 @@ function IntroOverlay({ onComplete }: { onComplete: () => void }) {
           <div className="text-center animate-section">
             <p className="section-label mb-4" style={{ color: "#c9a89b" }}>Est. 2025</p>
             <h1 className="text-white mb-2" style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(2.2rem, 6vw, 4rem)", fontWeight: 400, letterSpacing: "0.1em" }}>
-              Eleanor & James
+              Chi Tai & Christine
             </h1>
             <p className="text-[#e8c4b8] text-sm tracking-[0.25em] uppercase mt-2" style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}>
-              September 12, 2026 · Villa Rosetta, Tuscany
+              Saturday · May 1 · 2027 · Oklahoma City, Oklahoma
             </p>
             <div className="mt-8 flex flex-col items-center gap-2">
               <p className="text-[#c9a89b] text-xs tracking-widest uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>Scroll</p>
@@ -289,27 +316,48 @@ function IntroOverlay({ onComplete }: { onComplete: () => void }) {
 
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handler);
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  const links = ["Our Story", "Details", "Gallery", "RSVP"];
+  // Close menu on scroll
+  useEffect(() => {
+    if (menuOpen) {
+      const close = () => setMenuOpen(false);
+      window.addEventListener("scroll", close, { once: true });
+      return () => window.removeEventListener("scroll", close);
+    }
+  }, [menuOpen]);
+
+  const links = ["Our Story", "Details", "Gallery", "Play a Game"];
+
+  const navBg = scrolled || menuOpen ? "rgba(248,244,239,0.97)" : "transparent";
+  const navBlur = scrolled || menuOpen ? "blur(12px)" : "none";
+  const navBorder = scrolled || menuOpen ? "1px solid rgba(201,168,155,0.2)" : "none";
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${scrolled ? "py-4" : "py-6"}`}
-      style={{ background: scrolled ? "rgba(248,244,239,0.95)" : "transparent", backdropFilter: scrolled ? "blur(12px)" : "none", borderBottom: scrolled ? "1px solid rgba(201,168,155,0.2)" : "none" }}>
-      <div className="max-w-6xl mx-auto px-8 flex items-center justify-between">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${scrolled ? "py-4" : "py-5"}`}
+      style={{ background: navBg, backdropFilter: navBlur, borderBottom: navBorder }}
+    >
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+        {/* Logo */}
         <div className="flex items-center gap-3">
           <svg viewBox="0 0 60 60" width={32} height={32} fill="none">
             <circle cx="30" cy="30" r="28" stroke="#c9a89b" strokeWidth="0.8" opacity="0.5"/>
             <text x="8" y="40" fontFamily="'Cinzel', serif" fontSize="18" fontWeight="400" fill="#1a1614">E&J</text>
           </svg>
-          <span className="hidden md:block section-label" style={{ color: "#1a1614" }}>Eleanor & James</span>
+          <span className="section-label" style={{ color: "#1a1614" }}>Chi Tai and Christine</span>
         </div>
-        <div className="flex items-center gap-8">
+
+        {/* Desktop links */}
+        <div className="hidden md:flex items-center gap-8">
           {links.map(link => (
-            <a key={link} href={`#${link.toLowerCase().replace(" ", "-")}`}
+            <a key={link} href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
               className="section-label transition-colors duration-200 hover:text-[#1a1614]"
               style={{ color: "#8a7a72" }}>
               {link}
@@ -321,6 +369,55 @@ function Nav() {
             RSVP Now
           </a>
         </div>
+
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden flex flex-col justify-center items-center gap-[5px] w-8 h-8 focus:outline-none"
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label="Toggle menu"
+        >
+          <span className="block w-5 h-px transition-all duration-300 origin-center"
+            style={{ background: "#1a1614", transform: menuOpen ? "translateY(6px) rotate(45deg)" : "none" }}/>
+          <span className="block h-px transition-all duration-300"
+            style={{ background: "#1a1614", width: menuOpen ? "0px" : "20px", opacity: menuOpen ? 0 : 1 }}/>
+          <span className="block w-5 h-px transition-all duration-300 origin-center"
+            style={{ background: "#1a1614", transform: menuOpen ? "translateY(-6px) rotate(-45deg)" : "none" }}/>
+        </button>
+      </div>
+
+      {/* Mobile drawer */}
+      <div
+        className="md:hidden overflow-hidden transition-all duration-500"
+        style={{ maxHeight: menuOpen ? "320px" : "0px" }}
+      >
+        <div className="px-6 pb-6 pt-3 flex flex-col gap-1" style={{ borderTop: "1px solid rgba(201,168,155,0.2)" }}>
+          {links.map((link, i) => (
+            <a
+              key={link}
+              href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center justify-between py-3 transition-colors duration-200"
+              style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "0.85rem",
+                letterSpacing: "0.12em",
+                color: "#1a1614",
+                borderBottom: i < links.length - 1 ? "1px solid rgba(201,168,155,0.15)" : "none",
+              }}
+            >
+              {link}
+              <span style={{ color: "#c9a89b", fontSize: "0.7rem" }}>→</span>
+            </a>
+          ))}
+          <a
+            href="#rsvp"
+            onClick={() => setMenuOpen(false)}
+            className="mt-3 py-3 text-center text-xs tracking-widest uppercase transition-all duration-300 hover:bg-[#1a1614] hover:text-white"
+            style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.2em", border: "1px solid #1a1614", color: "#1a1614" }}
+          >
+            RSVP Now
+          </a>
+        </div>
       </div>
     </nav>
   );
@@ -329,11 +426,18 @@ function Nav() {
 // ─── Hero Section ─────────────────────────────────────────────────────────────
 
 function HeroSection() {
+  const { days, hours, minutes } = useWeddingCountdown();
+  const countdown = [
+    [String(days), "Days"],
+    [String(hours).padStart(2, "0"), "Hours"],
+    [String(minutes).padStart(2, "0"), "Minutes"],
+  ];
+
   return (
     <section className="relative h-screen flex items-end pb-24 overflow-hidden" style={{ background: "#1a1614" }}>
       <img
-        src="https://images.unsplash.com/photo-1596457221755-b96bc3a6df18?w=1800&h=1200&fit=crop&auto=format"
-        alt="Eleanor and James"
+        src={couplePhoto}
+        alt="ChiTai and Christine"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ opacity: 0.55 }}
       />
@@ -352,19 +456,19 @@ function HeroSection() {
           <p className="section-label mb-5" style={{ color: "#c9a89b" }}>12 · 09 · 2026</p>
           <h1 className="text-white mb-4 leading-none"
             style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(3rem, 8vw, 6.5rem)", fontWeight: 400, letterSpacing: "0.04em" }}>
-            Eleanor
+            Chi Tai
             <br />
             <span style={{ fontStyle: "italic", color: "#c9a89b" }}>&amp;</span>{" "}
-            James
+            Christine
           </h1>
           <p className="text-[#e8c4b8] mt-6 max-w-sm leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "1.05rem", fontWeight: 300 }}>
-            Two souls, one journey — celebrating love in the hills of Tuscany.
+            Filler Text
           </p>
         </div>
 
         {/* Countdown */}
         <div className="mt-12 flex gap-8">
-          {[["142", "Days"], ["08", "Hours"], ["34", "Minutes"]].map(([val, label]) => (
+          {countdown.map(([val, label]) => (
             <div key={label} className="text-center">
               <div className="text-white" style={{ fontFamily: "'Cinzel', serif", fontSize: "2rem", fontWeight: 400, lineHeight: 1 }}>{val}</div>
               <div className="section-label mt-1" style={{ color: "#8a7a72" }}>{label}</div>
@@ -387,29 +491,29 @@ const storyMilestones = [
   {
     year: "2019",
     title: "First Meeting",
-    body: "A rainy Tuesday in Florence changed everything. Two strangers reached for the last umbrella at a market stall — and neither would let go.",
-    img: "https://images.unsplash.com/photo-1519741196428-6a2175fa2557?w=600&h=800&fit=crop&auto=format",
+    body: "Something about something",
+    img: couplePhoto,
     alt: "The couple, early days",
   },
   {
     year: "2021",
     title: "First Trip Together",
-    body: "Seventeen countries, one broken-down rental car, and a sunset over Santorini that made it all perfect. This was when we knew.",
-    img: "https://images.unsplash.com/photo-1591604442449-ecc9943efabf?w=600&h=800&fit=crop&auto=format",
+    body: "Something about something",
+    img: couplePhoto,
     alt: "Travel portrait",
   },
   {
     year: "2024",
     title: "The Proposal",
-    body: "On a quiet morning at Villa Borghese, among the roses, James asked a question he'd been rehearsing for a year. Eleanor said yes before he finished.",
-    img: "https://images.unsplash.com/photo-1621621668101-d5c8329b3784?w=600&h=800&fit=crop&auto=format",
+    body: "Something about something",
+    img: couplePhoto,
     alt: "Engagement portrait",
   },
 ];
 
 function OurStorySection() {
   return (
-    <section id="our-story" className="py-32" style={{ background: "#f8f4ef" }}>
+    <section id="our-story" className="relative py-32" style={{ background: "#f8f4ef" }}>
       <div className="max-w-6xl mx-auto px-8">
         <div className="mb-16 flex items-start justify-between flex-wrap gap-8">
           <div>
@@ -419,8 +523,8 @@ function OurStorySection() {
             </h2>
           </div>
           <p className="max-w-xs text-sm leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", color: "#8a7a72", fontWeight: 300, fontSize: "1rem" }}>
-            "Love is composed of a single soul inhabiting two bodies."
-            <br/><span className="section-label not-italic" style={{ color: "#c9a89b", fontFamily: "'DM Sans', sans-serif" }}>— Aristotle</span>
+            "Love is patient, Love is kind, or some other quote or verse."
+            <br/><span className="section-label not-italic" style={{ color: "#c9a89b", fontFamily: "'DM Sans', sans-serif" }}>— 1 Corinthians 13: 4-7</span>
           </p>
         </div>
 
@@ -462,13 +566,14 @@ function OurStorySection() {
 // ─── Details Section ──────────────────────────────────────────────────────────
 
 function DetailsSection() {
+  const { days } = useWeddingCountdown();
   const details = [
     {
-      label: "Ceremony",
-      time: "4:00 PM",
-      title: "Villa Rosetta",
-      sub: "Via delle Rose 12, Montepulciano, Tuscany",
-      note: "Outdoor ceremony in the rose garden. Please arrive 30 minutes early.",
+      label: "Tea Ceremony",
+      time: "10:00 AM",
+      title: "The Bride's House",
+      sub: "11869 SW 2nd St, Yukon, OK 73099",
+      note: "Filler TExt",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
@@ -477,11 +582,11 @@ function DetailsSection() {
       ),
     },
     {
-      label: "Reception",
-      time: "7:00 PM",
-      title: "Cantinetta Antinori",
-      sub: "Piazza Antinori, Florence",
-      note: "Dinner, dancing, and toasts until midnight. Black tie optional.",
+      label: "Wedding Ceremony",
+      time: "1:00 PM",
+      title: "St. Andrew Dung Lac Catholic Church",
+      sub: "3115 SW 59th St, Oklahoma City, OK 73159",
+      note: "Filler Text",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
           <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/>
@@ -489,11 +594,11 @@ function DetailsSection() {
       ),
     },
     {
-      label: "Accommodation",
-      time: "Check-in: Sep 11",
-      title: "Hotel Il Pellicano",
-      sub: "Via Panoramica, Porto Ercole, Tuscany",
-      note: "Room block reserved under 'Whitmore–Chen.' Book by July 15.",
+      label: "Reception",
+      time: "6:00-11:00 PM",
+      title: "Civic Center Music Hall",
+      sub: "201 N Walker Ave, Oklahoma City, OK 73102",
+      note: "5:00-6:00 PM - Cocktail Hour @Civic Center Music Hall.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
           <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
@@ -504,7 +609,7 @@ function DetailsSection() {
   ];
 
   return (
-    <section id="details" className="py-32" style={{ background: "#1a1614" }}>
+    <section id="details" className="relative py-32" style={{ background: "#1a1614" }}>
       <div className="max-w-6xl mx-auto px-8">
         <div className="mb-16 text-center">
           <p className="section-label mb-4" style={{ color: "#c9a89b" }}>Wedding Details</p>
@@ -531,10 +636,10 @@ function DetailsSection() {
         {/* Date highlight bar */}
         <div className="mt-px p-8 flex flex-col md:flex-row items-center justify-between gap-4" style={{ background: "rgba(201,168,155,0.06)", border: "1px solid rgba(201,168,155,0.15)" }}>
           <p style={{ fontFamily: "'Cinzel', serif", fontSize: "0.85rem", color: "#c9a89b", letterSpacing: "0.2em" }}>
-            SEPTEMBER 12 · 2026 · TUSCANY, ITALY
+            Saturday, May 1, 2027
           </p>
           <p style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "0.9rem", color: "#8a7a72", fontWeight: 300 }}>
-            142 days remaining
+            {days} {days === 1 ? "day" : "days"} remaining
           </p>
         </div>
       </div>
@@ -545,17 +650,17 @@ function DetailsSection() {
 // ─── Gallery Section ──────────────────────────────────────────────────────────
 
 const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1596457221755-b96bc3a6df18?w=600&h=800&fit=crop&auto=format", alt: "The couple", span: "row-span-2" },
-  { src: "https://images.unsplash.com/photo-1553379762-ff913d5513b5?w=600&h=400&fit=crop&auto=format", alt: "White florals", span: "" },
-  { src: "https://images.unsplash.com/photo-1560624306-adcb77219838?w=600&h=400&fit=crop&auto=format", alt: "Floral arrangement", span: "" },
-  { src: "https://images.unsplash.com/photo-1611605469961-50d1e409622a?w=600&h=800&fit=crop&auto=format", alt: "Pink roses", span: "row-span-2" },
-  { src: "https://images.unsplash.com/photo-1606216794079-73f85bbd57d5?w=600&h=400&fit=crop&auto=format", alt: "Wedding dress portrait", span: "" },
-  { src: "https://images.unsplash.com/photo-1692521726977-f5c42456e716?w=600&h=400&fit=crop&auto=format", alt: "White flower", span: "" },
+  { src: couplePhoto, alt: "The couple", span: "row-span-2" },
+  { src: couplePhoto, alt: "White florals", span: "" },
+  { src: couplePhoto, alt: "Floral arrangement", span: "" },
+  { src: couplePhoto, alt: "Pink roses", span: "row-span-2" },
+  { src: couplePhoto, alt: "Wedding dress portrait", span: "" },
+  { src: couplePhoto, alt: "White flower", span: "" },
 ];
 
 function GallerySection() {
   return (
-    <section id="gallery" className="py-32" style={{ background: "#f8f4ef" }}>
+    <section id="gallery" className="relative py-32" style={{ background: "#f8f4ef" }}>
       <div className="max-w-6xl mx-auto px-8">
         <div className="mb-16 flex items-end justify-between">
           <div>
@@ -584,6 +689,290 @@ function GallerySection() {
   );
 }
 
+// ─── Connections Game ────────────────────────────────────────────────────────
+
+const connectionGroups = [
+  {
+    key: "C & C",
+    title: "Things with C and C initialism",
+    words: ["Chi Tai and Christine", "Campus Corner", "Closed Captions", "Carbon Copy"],
+    color: "#dfcfbe",
+  },
+  {
+    key: "Famous Couples",
+    title: "Artist and Athlete Couples (Chi Tai wishes he was here)",
+    words: ["Madison Beer and Justin Herbert", "Megan Thee Stallion and Klay Tompson", "Taylor Swift and Travis Kelce", "Hailee Steinfeld"],
+    color: "#c7d1c5",
+  },
+  {
+    key: "sports",
+    title: "Different Sports",
+    words: ["Cross Country", "Basketball", "Water Polo", "Football"],
+    color: "#d8c0b8",
+  },
+  {
+    key: "intellectual property",
+    title: "Types of Intellectual Property",
+    words: ["Creative Commons", "Trademark", "Patent", "Copyright"],
+    color: "#cdbb92",
+  },
+];
+
+const shuffleConnectionWords = () =>
+  connectionGroups
+    .flatMap((group) => group.words)
+    .sort(() => Math.random() - 0.5);
+
+function ConnectionsGameSection() {
+  const [words, setWords] = useState(shuffleConnectionWords);
+  const [selected, setSelected] = useState<string[]>([]);
+  const [solved, setSolved] = useState<string[]>([]);
+  const [mistakesLeft, setMistakesLeft] = useState(4);
+  const [gameLost, setGameLost] = useState(false);
+  const [message, setMessage] = useState("Select four words that share a connection.");
+
+  const remainingWords = words.filter(
+    (word) =>
+      !connectionGroups.some(
+        (group) => solved.includes(group.key) && group.words.includes(word),
+      ),
+  );
+  const gameWon = solved.length === connectionGroups.length && !gameLost;
+
+  const toggleWord = (word: string) => {
+    if (gameWon || gameLost) return;
+    setSelected((current) => {
+      if (current.includes(word)) return current.filter((item) => item !== word);
+      if (current.length === 4) return current;
+      return [...current, word];
+    });
+    setMessage("Select four words that share a connection.");
+  };
+
+  const submitGuess = () => {
+    if (selected.length !== 4) return;
+
+    const match = connectionGroups.find(
+      (group) =>
+        !solved.includes(group.key) &&
+        group.words.every((word) => selected.includes(word)),
+    );
+
+    if (match) {
+      const nextSolved = [...solved, match.key];
+      setSolved(nextSolved);
+      setSelected([]);
+      setMessage(
+        nextSolved.length === connectionGroups.length
+          ? "Perfect! You found every connection."
+          : "Connection found.",
+      );
+      return;
+    }
+
+    const isOneAway = connectionGroups.some(
+      (group) =>
+        !solved.includes(group.key) &&
+        group.words.filter((word) => selected.includes(word)).length === 3,
+    );
+    const nextMistakes = mistakesLeft - 1;
+    setMistakesLeft(nextMistakes);
+    setSelected([]);
+    setMessage(
+      nextMistakes === 0
+        ? "So close. The remaining connections are revealed below."
+        : isOneAway
+          ? "One away..."
+          : "Not quite. Try another combination.",
+    );
+
+    if (nextMistakes === 0) {
+      setGameLost(true);
+      setSolved(connectionGroups.map((group) => group.key));
+    }
+  };
+
+  const resetGame = () => {
+    setWords(shuffleConnectionWords());
+    setSelected([]);
+    setSolved([]);
+    setMistakesLeft(4);
+    setGameLost(false);
+    setMessage("Select four words that share a connection.");
+  };
+
+  return (
+    <section id="play-a-game" className="relative py-32" style={{ background: "#ede6df" }}>
+      <div className="relative max-w-4xl mx-auto px-5 md:px-8" style={{ zIndex: 6 }}>
+        <div className="text-center mb-12">
+          <p className="section-label mb-4">A Little Interlude</p>
+          <h2
+            style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(1.8rem, 4vw, 3rem)",
+              fontWeight: 400,
+              color: "#1a1614",
+              letterSpacing: "0.05em",
+            }}
+          >
+            Make the Connection
+          </h2>
+          <p
+            className="mt-5 mx-auto max-w-xl leading-relaxed"
+            style={{
+              fontFamily: "'Fraunces', serif",
+              fontStyle: "italic",
+              color: "#5a4f4a",
+              fontWeight: 300,
+            }}
+          >
+            Find four groups of four words. Each group is linked by a common theme.
+          </p>
+        </div>
+
+        <div
+          className="p-4 md:p-8"
+          style={{
+            background: "rgba(248,244,239,0.82)",
+            border: "1px solid rgba(201,168,155,0.35)",
+          }}
+        >
+          <div className="space-y-2 mb-2">
+            {connectionGroups
+              .filter((group) => solved.includes(group.key))
+              .map((group) => (
+                <div
+                  key={group.key}
+                  className="min-h-24 flex flex-col items-center justify-center px-4 py-5 text-center"
+                  style={{ background: group.color }}
+                >
+                  <p
+                    className="uppercase"
+                    style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "0.72rem",
+                      fontWeight: 500,
+                      letterSpacing: "0.16em",
+                      color: "#1a1614",
+                    }}
+                  >
+                    {group.title}
+                  </p>
+                  <p
+                    className="mt-2"
+                    style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "0.78rem",
+                      letterSpacing: "0.08em",
+                      color: "#1a1614",
+                    }}
+                  >
+                    {group.words.join(", ")}
+                  </p>
+                </div>
+              ))}
+          </div>
+
+          {!gameWon && !gameLost && (
+            <div className="grid grid-cols-4 gap-2">
+              {remainingWords.map((word) => {
+                const isSelected = selected.includes(word);
+                return (
+                  <button
+                    key={word}
+                    type="button"
+                    aria-pressed={isSelected}
+                    onClick={() => toggleWord(word)}
+                    className="aspect-[1.15/1] md:aspect-[1.8/1] px-1 flex items-center justify-center text-center transition-all duration-200"
+                    style={{
+                      background: isSelected ? "#1a1614" : "#ffffff",
+                      color: isSelected ? "#f8f4ef" : "#1a1614",
+                      border: isSelected
+                        ? "1px solid #1a1614"
+                        : "1px solid rgba(201,168,155,0.25)",
+                      transform: isSelected ? "translateY(-2px)" : "none",
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "clamp(0.55rem, 2vw, 0.78rem)",
+                      fontWeight: 500,
+                      letterSpacing: "0.04em",
+                    }}
+                  >
+                    {word}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+
+          <div className="text-center pt-8">
+            <p
+              aria-live="polite"
+              className="min-h-6"
+              style={{
+                fontFamily: "'Fraunces', serif",
+                fontStyle: "italic",
+                color: "#5a4f4a",
+              }}
+            >
+              {message}
+            </p>
+
+            {!gameWon && !gameLost && (
+              <>
+                <div className="flex items-center justify-center gap-2 mt-4">
+                  <span className="section-label mr-1" style={{ color: "#8a7a72" }}>
+                    Mistakes remaining
+                  </span>
+                  {[0, 1, 2, 3].map((mistake) => (
+                    <span
+                      key={mistake}
+                      className="size-2.5 rounded-full"
+                      style={{
+                        background:
+                          mistake < mistakesLeft ? "#c9a89b" : "rgba(201,168,155,0.2)",
+                      }}
+                    />
+                  ))}
+                </div>
+                <div className="flex justify-center gap-3 mt-6">
+                  <button
+                    type="button"
+                    onClick={() => setSelected([])}
+                    className="px-5 md:px-6 py-3 section-label transition-colors duration-200 hover:bg-[#f0e8e2]"
+                    style={{ color: "#1a1614", border: "1px solid rgba(26,22,20,0.3)" }}
+                  >
+                    Deselect All
+                  </button>
+                  <button
+                    type="button"
+                    onClick={submitGuess}
+                    disabled={selected.length !== 4}
+                    className="px-7 py-3 section-label transition-opacity duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
+                    style={{ color: "#f8f4ef", background: "#1a1614" }}
+                  >
+                    Submit
+                  </button>
+                </div>
+              </>
+            )}
+
+            {(gameWon || gameLost) && (
+              <button
+                type="button"
+                onClick={resetGame}
+                className="mt-6 px-8 py-3 section-label transition-all duration-200 hover:bg-[#1a1614] hover:text-white"
+                style={{ color: "#1a1614", border: "1px solid #1a1614" }}
+              >
+                Play Again
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ─── RSVP Section ─────────────────────────────────────────────────────────────
 
 function RSVPSection() {
@@ -602,14 +991,14 @@ function RSVPSection() {
   const labelClass = "section-label block mb-2";
 
   return (
-    <section id="rsvp" className="py-32" style={{ background: "#f0ebe4" }}>
+    <section id="rsvp" className="relative py-32" style={{ background: "#f0ebe4" }}>
       <div className="max-w-6xl mx-auto px-8">
         <div className="grid md:grid-cols-2 gap-20 items-start">
           {/* Left */}
           <div>
             <p className="section-label mb-4">Kindly Reply By</p>
             <h2 className="mb-6" style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 400, color: "#1a1614", letterSpacing: "0.05em" }}>
-              August 1, 2026
+              May 1, 2027
             </h2>
             <p className="leading-relaxed mb-10" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "1.05rem", color: "#5a4f4a", fontWeight: 300, lineHeight: 1.9 }}>
               We would be honored by your presence as we exchange vows and celebrate with those who mean the most to us. Please let us know if you can join us in Tuscany.
@@ -671,7 +1060,7 @@ function RSVPSection() {
                 </div>
                 <div>
                   <label className={labelClass}>Message to the Couple</label>
-                  <textarea name="message" value={form.message} onChange={handle} rows={3} placeholder="A note for Eleanor & James…" className={inputClass + " resize-none"} style={{ fontFamily: "'DM Sans', sans-serif" }}/>
+                  <textarea name="message" value={form.message} onChange={handle} rows={3} placeholder="A note for Chi Tai and Christine…" className={inputClass + " resize-none"} style={{ fontFamily: "'DM Sans', sans-serif" }}/>
                 </div>
                 <button type="submit"
                   className="w-full py-4 text-xs tracking-[0.25em] uppercase transition-all duration-300 hover:bg-[#1a1614] hover:text-white"
@@ -694,7 +1083,7 @@ function Footer() {
     <footer className="py-16 text-center border-t" style={{ background: "#1a1614", borderColor: "rgba(201,168,155,0.15)" }}>
       <Logomark size={100} />
       <p className="mt-8 section-label" style={{ color: "#5a4f4a" }}>
-        Eleanor & James · September 12, 2026 · Tuscany, Italy
+        Chi Tai and Christine · Saturday May 1, 2027 · Oklahoma City, Oklahoma
       </p>
       <p className="mt-3" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "0.85rem", color: "#4a3f3a", fontWeight: 300 }}>
         Made with love ♡
@@ -718,6 +1107,7 @@ export default function App() {
         <OurStorySection />
         <DetailsSection />
         <GallerySection />
+        <ConnectionsGameSection />
         <RSVPSection />
         <Footer />
       </div>
