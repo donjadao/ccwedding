@@ -717,7 +717,7 @@ function Footer() {
     <footer className="py-16 text-center border-t" style={{ background: "#1a1614", borderColor: "rgba(201,168,155,0.15)" }}>
       <Logomark size={100} />
       <p className="mt-8 section-label" style={{ color: "#5a4f4a" }}>
-        Chi Tai & Christine · +++++++++++++++++++++++++++++++
+        Chi Tai & Christine · Saturday, May 1, 2027 · Oklahoma City, Oklahoma
       </p>
       <p className="mt-3" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "0.85rem", color: "#4a3f3a", fontWeight: 300 }}>
         Made with love ♡
