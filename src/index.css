@@ -2,38 +2,50 @@
 @import 'tailwindcss';
 
 :root {
-  /* Main theme controls — edit these values to recolor the site */
-  --background-dark: #d02022;
-  --background-light: #ffeed2;
-  --background-soft: #f0ebe4;
-  --background-card: #ffffff;
+  /* Three-pigment floral theme — edit only these base colors */
+  --theme-bloom: #ef6066;
+  --theme-gardenia: #fff8eb;
+  --theme-moss: #71805a;
 
-  --heading-dark: #1a1614;
-  --heading-light: #ffeed2;
-  --text-dark: #5a4f4a;
-  --text-light: #ffeed2;
-  --text-muted: #8a7a72;
-  --text-subtle: #4a3f3a;
+  --background-dark: var(--theme-bloom);
+  --background-light: var(--theme-gardenia);
+  --background-soft: color-mix(in srgb, var(--theme-gardenia) 92%, var(--theme-moss));
+  --background-card: var(--theme-gardenia);
 
-  --accent-primary: #fded5a;
-  --accent-secondary: #fe9238;
-  --accent-pink: #ef6066;
-  --accent-olive: #9e9842;
-  --accent-muted: #c9a89b;
-  --accent-gold: #b8965a;
-  --accent-leaf: #8a9e8d;
+  --heading-dark: var(--theme-bloom);
+  --heading-light: var(--theme-gardenia);
+  --text-dark: var(--theme-bloom);
+  --text-light: var(--theme-gardenia);
+  --text-muted: var(--theme-moss);
+  --text-subtle: var(--theme-moss);
 
-  --border-light: #e8ddd6;
-  --placeholder-text: #b0a09a;
+  --accent-primary: var(--theme-moss);
+  --accent-secondary: var(--theme-bloom);
+  --accent-pink: var(--theme-bloom);
+  --accent-olive: var(--theme-moss);
+  --accent-muted: var(--theme-moss);
+  --accent-gold: var(--theme-moss);
+  --accent-leaf: var(--theme-moss);
 
-  /* Illustration and game colors */
-  --floral-petal-light: #e8c4b8;
-  --floral-petal-deep: #d9b0a4;
-  --game-background: #ede6df;
-  --game-rose: #dfcfbe;
-  --game-sage: #c7d1c5;
-  --game-blush: #d8c0b8;
-  --game-gold: #cdbb92;
+  --border-light: color-mix(in srgb, var(--theme-moss) 28%, var(--theme-gardenia));
+  --placeholder-text: color-mix(in srgb, var(--theme-moss) 78%, var(--theme-gardenia));
+
+  /* Illustration and game tints derived from the same three pigments */
+  --floral-petal-light: var(--theme-gardenia);
+  --floral-petal-deep: var(--theme-bloom);
+  --game-background: color-mix(in srgb, var(--theme-gardenia) 88%, var(--theme-moss));
+  --game-rose: color-mix(in srgb, var(--theme-bloom) 24%, var(--theme-gardenia));
+  --game-sage: color-mix(in srgb, var(--theme-moss) 38%, var(--theme-gardenia));
+  --game-blush: color-mix(in srgb, var(--theme-bloom) 14%, var(--theme-gardenia));
+  --game-gold: color-mix(in srgb, var(--theme-moss) 22%, var(--theme-gardenia));
+
+  /* Fruit keeps its original citrus palette independently of the site theme */
+  --fruit-red: #d02022;
+  --fruit-pink: #ef6066;
+  --fruit-orange: #fe9238;
+  --fruit-yellow: #fded5a;
+  --fruit-green: #9e9842;
+  --fruit-highlight: #ffeed2;
 }
 
 @theme {
@@ -73,6 +85,84 @@ body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--accent-muted); border-radius: 2px; opacity: 0; }
 body:hover::-webkit-scrollbar-thumb { opacity: 1; }
+
+.svg-artwork {
+  display: block;
+  line-height: 0;
+}
+
+.svg-artwork > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Decorative fruit that spins into view with each section */
+.scroll-fruit-anchor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.scroll-fruit-anchor-left {
+  left: 0;
+}
+
+.scroll-fruit-anchor-right {
+  right: 0;
+}
+
+.scroll-fruit {
+  position: absolute;
+  width: clamp(5.5rem, 10vw, 8.5rem);
+  opacity: 0;
+  will-change: transform, opacity;
+  transition:
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 350ms ease;
+}
+
+.scroll-fruit svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0.75rem 1.25rem color-mix(in srgb, var(--background-dark) 18%, transparent));
+}
+
+.scroll-fruit-left {
+  left: 0;
+  transform: translate(-125%, -50%) rotate(-280deg) scale(0.72);
+  transform-origin: center;
+}
+
+.scroll-fruit-right {
+  right: 0;
+  transform: translate(125%, -50%) rotate(280deg) scale(0.72);
+  transform-origin: center;
+}
+
+.scroll-fruit-left.is-visible {
+  opacity: 0.92;
+  transform: translate(-12%, -50%) rotate(0deg) scale(1);
+}
+
+.scroll-fruit-right.is-visible {
+  opacity: 0.92;
+  transform: translate(12%, -50%) rotate(0deg) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-fruit {
+    transition: opacity 150ms ease;
+  }
+
+  .scroll-fruit-left,
+  .scroll-fruit-right {
+    transform: translate(0, -50%) scale(1);
+  }
+}
 
 /* Intro animations */
 @keyframes fadeInLogo {
