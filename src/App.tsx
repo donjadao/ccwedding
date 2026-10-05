@@ -191,33 +191,6 @@ function Logomark({ size = 200 }: { size?: number }) {
   );
 }
 
-// ─── Date Countdown ─────────────────────────────────────────────────────────────
-function HeroSection() {
-  const weddingDate = new Date("2027-05-01T13:00:00-05:00");
-  const now = new Date();
-
-  const totalMilliseconds = Math.max(
-    weddingDate.getTime() - now.getTime(),
-    0,
-  );
-
-  const days = Math.floor(totalMilliseconds / 86_400_000);
-  const hours = Math.floor((totalMilliseconds / 3_600_000) % 24);
-  const minutes = Math.floor((totalMilliseconds / 60_000) % 60);
-
-  const countdown = [
-    [String(days), "Days"],
-    [String(hours).padStart(2, "0"), "Hours"],
-    [String(minutes).padStart(2, "0"), "Minutes"],
-  ];
-
-return (
-  <div>
-    {days} days, {hours} hours, {minutes} minutes until our wedding!
-  </div>
-  );
-}
-
 // ─── Intro Overlay ─────────────────────────────────────────────────────────────
 
 type IntroPhase = "logo" | "floral" | "photo" | "done";
@@ -357,45 +330,114 @@ function Nav() {
 // ─── Hero Section ─────────────────────────────────────────────────────────────
 
 function HeroSection() {
+  const weddingDate = new Date("2027-05-01T13:00:00-05:00");
+  const now = new Date();
+
+  const totalMilliseconds = Math.max(
+    weddingDate.getTime() - now.getTime(),
+    0
+  );
+
+  const days = Math.floor(totalMilliseconds / 86_400_000);
+  const hours = Math.floor((totalMilliseconds / 3_600_000) % 24);
+  const minutes = Math.floor((totalMilliseconds / 60_000) % 60);
+
+  const countdown = [
+    [String(days), "Days"],
+    [String(hours).padStart(2, "0"), "Hours"],
+    [String(minutes).padStart(2, "0"), "Minutes"],
+  ];
+
   return (
-    <section className="relative h-screen flex items-end pb-24 overflow-hidden" style={{ background: "#1a1614" }}>
+    <section
+      className="relative h-screen flex items-end pb-24 overflow-hidden"
+      style={{ background: "#1a1614" }}
+    >
       <img
         src={couplePhoto}
-        alt="Chi Tai and Christine"
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ opacity: 0.55 }}
+        alt=""absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(26,22,20,0.92) 0%, rgba(26,22,20,0.2) 60%, rgba(26,22,20,0.1) 100%)",
+        }}
       />
-      <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(26,22,20,0.92) 0%, rgba(26,22,20,0.2) 60%, rgba(26,22,20,0.1) 100%)" }}/>
 
       {/* Floral corner accents */}
       <div className="absolute top-0 left-0 w-40 md:w-56 h-64 md:h-80 pointer-events-none opacity-60">
         <FloralBranchLeft />
       </div>
+
       <div className="absolute top-0 right-0 w-40 md:w-56 h-64 md:h-80 pointer-events-none opacity-60">
         <FloralBranchRight />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-8 w-full">
         <div className="max-w-2xl">
-          <p className="section-label mb-5" style={{ color: "#c9a89b" }}>12 · 09 · 2026</p>
-          <h1 className="text-white mb-4 leading-none"
-            style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(3rem, 8vw, 6.5rem)", fontWeight: 400, letterSpacing: "0.04em" }}>
+          <p
+            className="section-label mb-5"
+            style={{ color: "#c9a89b" }}
+          >
+            05 · 01 · 2027
+          </p>
+
+          <h1
+            className="text-white mb-4 leading-none"
+            style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: "clamp(3rem, 8vw, 6.5rem)",
+              fontWeight: 400,
+              letterSpacing: "0.04em",
+            }}
+          >
             Chi Tai
             <br />
-            <span style={{ fontStyle: "italic", color: "#c9a89b" }}>&amp;</span>{" "}
+            <span
+              style={{
+                fontStyle: "italic",
+                color: "#c9a89b",
+              }}
+            >
+              &
+            </span>{" "}
             Christine
           </h1>
-          <p className="text-[#e8c4b8] mt-6 max-w-sm leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "1.05rem", fontWeight: 300 }}>
-            Text filllllerrrrrrrrrr
+
+          <p
+            className="text-[#e8c4b8] mt-6 max-w-sm leading-relaxed"
+            style={{
+              fontFamily: "'Fraunces', serif",
+              fontStyle: "italic",
+              fontSize: "1.05rem",
+              fontWeight: 300,
+            }}
+          >
+            Together with their families, they joyfully invite you to celebrate
+            their wedding day.
           </p>
         </div>
 
         {/* Countdown */}
         <div className="mt-12 flex gap-8">
-          {countdown.map(
+          {countdown.map(([val, label]) => (
             <div key={label} className="text-center">
-              <div className="text-white" style={{ fontFamily: "'Cinzel', serif", fontSize: "2rem", fontWeight: 400, lineHeight: 1 }}>{val}</div>
-              <div className="section-label mt-1" style={{ color: "#8a7a72" }}>{label}</div>
+              <div
+                className="text-white"
+                style={{
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: "2rem",
+                  fontWeight: 400,
+                  lineHeight: 1,
+                }}
+              >
+                {val}
+              </div>
+
+              <div
+                className="section-label mt-1"
+                style={{ color: "#8a7a72" }}
+              >
+                {label}
+              </div>
             </div>
           ))}
         </div>
@@ -403,7 +445,7 @@ function HeroSection() {
 
       {/* Scroll cue */}
       <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2">
-        <div className="animate-scroll-indicator w-px h-10 bg-gradient-to-b from-[#c9a89b] to-transparent"/>
+        <div className="animate-scroll-indicator w-px h-10 bg-gradient-to-b from-[#c9a89b] to-transparent" />
       </div>
     </section>
   );
