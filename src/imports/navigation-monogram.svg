@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none">
+  <circle cx="30" cy="30" r="28" stroke="var(--accent-muted)" stroke-width=".8" opacity=".5"/>
+  <text x="8" y="40" font-family="Cinzel, Georgia, serif" font-size="18" fill="var(--heading-dark)">C&amp;C</text>
+</svg>
