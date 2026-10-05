@@ -565,7 +565,7 @@ function DetailsSection() {
 
 const galleryImages = [
   { src: farTreePic, alt: "The couple", span: "row-span-2" },
-  { src: floralAndFruits, alt: "White florals", span: "" },
+  { src: floralAndFruits4, alt: "White florals", span: "" },
   { src: benchPic, alt: "Floral arrangement", span: "" },
   { src: floralAndFruits1, alt: "Pink roses", span: "row-span-2" },
   { src: grassPic, alt: "Wedding dress portrait", span: "" },
