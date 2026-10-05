@@ -1,15 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 import calendarIconSvg from "./imports/calendar-icon.svg?raw";
-import cherriesFruitSvg from "./imports/cherries-fruit.svg?raw";
-import citrusFruitSvg from "./imports/citrus-fruit.svg?raw";
 import floralBranchSvg from "./imports/floral-branch.svg?raw";
 import floralGarlandSvg from "./imports/floral-garland.svg?raw";
 import locationIconSvg from "./imports/location-icon.svg?raw";
 import navigationMonogramSvg from "./imports/navigation-monogram.svg?raw";
-import pearFruitSvg from "./imports/pear-fruit.svg?raw";
+
 import successCheckSvg from "./imports/success-check.svg?raw";
 import venueIconSvg from "./imports/venue-icon.svg?raw";
 import weddingMonogramSvg from "./imports/wedding-monogram.svg?raw";
+
+import cherriesFruitSvg from "./imports/vectors/cherries-fruit.svg?raw";
+import citrusFruitSvg from "./imports/vectors/citrus-fruit.svg?raw";
+import pearFruitSvg from "./imports/vectors/pear-fruit.svg?raw";
 
 import couplePhoto from "./imports/CS_16565_websize.jpg";
 import benchPic from "./imports/benchpic.jpg";
