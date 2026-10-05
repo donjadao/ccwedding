@@ -33,51 +33,51 @@ function FloralBranchLeft() {
   return (
     <svg viewBox="0 0 320 480" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
       {/* Main stem */}
-      <path d="M 40 480 C 60 380 80 320 100 240 C 120 160 130 100 160 40" stroke="#c9a89b" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.8"/>
+      <path d="M 40 480 C 60 380 80 320 100 240 C 120 160 130 100 160 40" stroke="var(--accent-muted)" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.8"/>
       {/* Branch 1 */}
-      <path d="M 85 300 C 60 280 30 270 10 240" stroke="#c9a89b" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
+      <path d="M 85 300 C 60 280 30 270 10 240" stroke="var(--accent-muted)" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
       {/* Branch 2 */}
-      <path d="M 110 220 C 90 200 70 180 40 160" stroke="#c9a89b" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
+      <path d="M 110 220 C 90 200 70 180 40 160" stroke="var(--accent-muted)" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
       {/* Branch 3 */}
-      <path d="M 130 160 C 110 140 90 120 70 100" stroke="#c9a89b" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
+      <path d="M 130 160 C 110 140 90 120 70 100" stroke="var(--accent-muted)" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
 
       {/* Rose 1 - main */}
       <g transform="translate(145, 30)">
-        <circle cx="0" cy="0" r="18" fill="#c9a89b" opacity="0.15"/>
-        <path d="M 0 -14 C 6 -10 10 -4 10 2 C 10 9 6 14 0 14 C -6 14 -10 9 -10 2 C -10 -4 -6 -10 0 -14 Z" fill="#e8c4b8" opacity="0.7"/>
-        <path d="M -8 -10 C -2 -8 4 -4 6 2 C 8 8 4 12 -2 12 C -8 12 -12 8 -12 2 C -12 -4 -10 -8 -8 -10 Z" fill="#d9b0a4" opacity="0.6"/>
-        <path d="M 8 -10 C 4 -6 6 0 4 6 C 2 10 -2 12 -6 10 C -2 6 2 0 2 -6 C 2 -10 6 -12 8 -10 Z" fill="#d9b0a4" opacity="0.6"/>
-        <circle cx="0" cy="2" r="5" fill="#c9a89b" opacity="0.8"/>
-        <circle cx="0" cy="2" r="2" fill="#b8965a" opacity="0.9"/>
+        <circle cx="0" cy="0" r="18" fill="var(--accent-muted)" opacity="0.15"/>
+        <path d="M 0 -14 C 6 -10 10 -4 10 2 C 10 9 6 14 0 14 C -6 14 -10 9 -10 2 C -10 -4 -6 -10 0 -14 Z" fill="var(--floral-petal-light)" opacity="0.7"/>
+        <path d="M -8 -10 C -2 -8 4 -4 6 2 C 8 8 4 12 -2 12 C -8 12 -12 8 -12 2 C -12 -4 -10 -8 -8 -10 Z" fill="var(--floral-petal-deep)" opacity="0.6"/>
+        <path d="M 8 -10 C 4 -6 6 0 4 6 C 2 10 -2 12 -6 10 C -2 6 2 0 2 -6 C 2 -10 6 -12 8 -10 Z" fill="var(--floral-petal-deep)" opacity="0.6"/>
+        <circle cx="0" cy="2" r="5" fill="var(--accent-muted)" opacity="0.8"/>
+        <circle cx="0" cy="2" r="2" fill="var(--accent-gold)" opacity="0.9"/>
       </g>
 
       {/* Bud 1 */}
       <g transform="translate(5, 234)">
-        <ellipse cx="0" cy="0" rx="7" ry="10" fill="#e8c4b8" opacity="0.6" transform="rotate(-20)"/>
-        <path d="M 0 10 C 2 6 2 0 0 -10" stroke="#c9a89b" strokeWidth="0.8" fill="none" opacity="0.5"/>
+        <ellipse cx="0" cy="0" rx="7" ry="10" fill="var(--floral-petal-light)" opacity="0.6" transform="rotate(-20)"/>
+        <path d="M 0 10 C 2 6 2 0 0 -10" stroke="var(--accent-muted)" strokeWidth="0.8" fill="none" opacity="0.5"/>
       </g>
 
       {/* Bud 2 */}
       <g transform="translate(38, 152)">
-        <ellipse cx="0" cy="0" rx="6" ry="9" fill="#e8c4b8" opacity="0.5" transform="rotate(15)"/>
+        <ellipse cx="0" cy="0" rx="6" ry="9" fill="var(--floral-petal-light)" opacity="0.5" transform="rotate(15)"/>
       </g>
 
       {/* Rose 2 - smaller */}
       <g transform="translate(62, 92)">
-        <path d="M 0 -10 C 4 -7 7 -2 7 3 C 7 7 4 10 0 10 C -4 10 -7 7 -7 3 C -7 -2 -4 -7 0 -10 Z" fill="#e8c4b8" opacity="0.65"/>
-        <path d="M -6 -7 C -2 -5 2 0 3 5 C 4 8 2 10 -2 9" fill="#d9b0a4" opacity="0.5"/>
-        <circle cx="0" cy="2" r="3.5" fill="#c9a89b" opacity="0.7"/>
+        <path d="M 0 -10 C 4 -7 7 -2 7 3 C 7 7 4 10 0 10 C -4 10 -7 7 -7 3 C -7 -2 -4 -7 0 -10 Z" fill="var(--floral-petal-light)" opacity="0.65"/>
+        <path d="M -6 -7 C -2 -5 2 0 3 5 C 4 8 2 10 -2 9" fill="var(--floral-petal-deep)" opacity="0.5"/>
+        <circle cx="0" cy="2" r="3.5" fill="var(--accent-muted)" opacity="0.7"/>
       </g>
 
       {/* Leaves */}
-      <path d="M 95 265 C 70 255 55 270 50 285 C 65 280 80 268 95 265 Z" fill="#8a9e8d" opacity="0.4"/>
-      <path d="M 115 190 C 92 182 78 195 74 208 C 88 203 102 192 115 190 Z" fill="#8a9e8d" opacity="0.35"/>
-      <path d="M 135 130 C 112 124 100 138 97 150 C 110 144 124 132 135 130 Z" fill="#8a9e8d" opacity="0.3"/>
+      <path d="M 95 265 C 70 255 55 270 50 285 C 65 280 80 268 95 265 Z" fill="var(--accent-leaf)" opacity="0.4"/>
+      <path d="M 115 190 C 92 182 78 195 74 208 C 88 203 102 192 115 190 Z" fill="var(--accent-leaf)" opacity="0.35"/>
+      <path d="M 135 130 C 112 124 100 138 97 150 C 110 144 124 132 135 130 Z" fill="var(--accent-leaf)" opacity="0.3"/>
 
       {/* Small floating petals */}
-      <ellipse cx="20" cy="350" rx="4" ry="7" fill="#e8c4b8" opacity="0.3" transform="rotate(30 20 350)"/>
-      <ellipse cx="55" cy="420" rx="3" ry="5" fill="#e8c4b8" opacity="0.25" transform="rotate(-15 55 420)"/>
-      <ellipse cx="140" cy="200" rx="3" ry="6" fill="#e8c4b8" opacity="0.3" transform="rotate(45 140 200)"/>
+      <ellipse cx="20" cy="350" rx="4" ry="7" fill="var(--floral-petal-light)" opacity="0.3" transform="rotate(30 20 350)"/>
+      <ellipse cx="55" cy="420" rx="3" ry="5" fill="var(--floral-petal-light)" opacity="0.25" transform="rotate(-15 55 420)"/>
+      <ellipse cx="140" cy="200" rx="3" ry="6" fill="var(--floral-petal-light)" opacity="0.3" transform="rotate(45 140 200)"/>
     </svg>
   );
 }
@@ -85,34 +85,34 @@ function FloralBranchLeft() {
 function FloralBranchRight() {
   return (
     <svg viewBox="0 0 320 480" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" style={{ transform: "scaleX(-1)" }}>
-      <path d="M 40 480 C 60 380 80 320 100 240 C 120 160 130 100 160 40" stroke="#c9a89b" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.8"/>
-      <path d="M 85 300 C 60 280 30 270 10 240" stroke="#c9a89b" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
-      <path d="M 110 220 C 90 200 70 180 40 160" stroke="#c9a89b" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
-      <path d="M 130 160 C 110 140 90 120 70 100" stroke="#c9a89b" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
+      <path d="M 40 480 C 60 380 80 320 100 240 C 120 160 130 100 160 40" stroke="var(--accent-muted)" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.8"/>
+      <path d="M 85 300 C 60 280 30 270 10 240" stroke="var(--accent-muted)" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
+      <path d="M 110 220 C 90 200 70 180 40 160" stroke="var(--accent-muted)" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
+      <path d="M 130 160 C 110 140 90 120 70 100" stroke="var(--accent-muted)" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
       <g transform="translate(145, 30)">
-        <circle cx="0" cy="0" r="18" fill="#c9a89b" opacity="0.15"/>
-        <path d="M 0 -14 C 6 -10 10 -4 10 2 C 10 9 6 14 0 14 C -6 14 -10 9 -10 2 C -10 -4 -6 -10 0 -14 Z" fill="#e8c4b8" opacity="0.7"/>
-        <path d="M -8 -10 C -2 -8 4 -4 6 2 C 8 8 4 12 -2 12 C -8 12 -12 8 -12 2 C -12 -4 -10 -8 -8 -10 Z" fill="#d9b0a4" opacity="0.6"/>
-        <path d="M 8 -10 C 4 -6 6 0 4 6 C 2 10 -2 12 -6 10 C -2 6 2 0 2 -6 C 2 -10 6 -12 8 -10 Z" fill="#d9b0a4" opacity="0.6"/>
-        <circle cx="0" cy="2" r="5" fill="#c9a89b" opacity="0.8"/>
-        <circle cx="0" cy="2" r="2" fill="#b8965a" opacity="0.9"/>
+        <circle cx="0" cy="0" r="18" fill="var(--accent-muted)" opacity="0.15"/>
+        <path d="M 0 -14 C 6 -10 10 -4 10 2 C 10 9 6 14 0 14 C -6 14 -10 9 -10 2 C -10 -4 -6 -10 0 -14 Z" fill="var(--floral-petal-light)" opacity="0.7"/>
+        <path d="M -8 -10 C -2 -8 4 -4 6 2 C 8 8 4 12 -2 12 C -8 12 -12 8 -12 2 C -12 -4 -10 -8 -8 -10 Z" fill="var(--floral-petal-deep)" opacity="0.6"/>
+        <path d="M 8 -10 C 4 -6 6 0 4 6 C 2 10 -2 12 -6 10 C -2 6 2 0 2 -6 C 2 -10 6 -12 8 -10 Z" fill="var(--floral-petal-deep)" opacity="0.6"/>
+        <circle cx="0" cy="2" r="5" fill="var(--accent-muted)" opacity="0.8"/>
+        <circle cx="0" cy="2" r="2" fill="var(--accent-gold)" opacity="0.9"/>
       </g>
       <g transform="translate(5, 234)">
-        <ellipse cx="0" cy="0" rx="7" ry="10" fill="#e8c4b8" opacity="0.6" transform="rotate(-20)"/>
+        <ellipse cx="0" cy="0" rx="7" ry="10" fill="var(--floral-petal-light)" opacity="0.6" transform="rotate(-20)"/>
       </g>
       <g transform="translate(38, 152)">
-        <ellipse cx="0" cy="0" rx="6" ry="9" fill="#e8c4b8" opacity="0.5" transform="rotate(15)"/>
+        <ellipse cx="0" cy="0" rx="6" ry="9" fill="var(--floral-petal-light)" opacity="0.5" transform="rotate(15)"/>
       </g>
       <g transform="translate(62, 92)">
-        <path d="M 0 -10 C 4 -7 7 -2 7 3 C 7 7 4 10 0 10 C -4 10 -7 7 -7 3 C -7 -2 -4 -7 0 -10 Z" fill="#e8c4b8" opacity="0.65"/>
-        <path d="M -6 -7 C -2 -5 2 0 3 5 C 4 8 2 10 -2 9" fill="#d9b0a4" opacity="0.5"/>
-        <circle cx="0" cy="2" r="3.5" fill="#c9a89b" opacity="0.7"/>
+        <path d="M 0 -10 C 4 -7 7 -2 7 3 C 7 7 4 10 0 10 C -4 10 -7 7 -7 3 C -7 -2 -4 -7 0 -10 Z" fill="var(--floral-petal-light)" opacity="0.65"/>
+        <path d="M -6 -7 C -2 -5 2 0 3 5 C 4 8 2 10 -2 9" fill="var(--floral-petal-deep)" opacity="0.5"/>
+        <circle cx="0" cy="2" r="3.5" fill="var(--accent-muted)" opacity="0.7"/>
       </g>
-      <path d="M 95 265 C 70 255 55 270 50 285 C 65 280 80 268 95 265 Z" fill="#8a9e8d" opacity="0.4"/>
-      <path d="M 115 190 C 92 182 78 195 74 208 C 88 203 102 192 115 190 Z" fill="#8a9e8d" opacity="0.35"/>
-      <path d="M 135 130 C 112 124 100 138 97 150 C 110 144 124 132 135 130 Z" fill="#8a9e8d" opacity="0.3"/>
-      <ellipse cx="20" cy="350" rx="4" ry="7" fill="#e8c4b8" opacity="0.3" transform="rotate(30 20 350)"/>
-      <ellipse cx="140" cy="200" rx="3" ry="6" fill="#e8c4b8" opacity="0.3" transform="rotate(45 140 200)"/>
+      <path d="M 95 265 C 70 255 55 270 50 285 C 65 280 80 268 95 265 Z" fill="var(--accent-leaf)" opacity="0.4"/>
+      <path d="M 115 190 C 92 182 78 195 74 208 C 88 203 102 192 115 190 Z" fill="var(--accent-leaf)" opacity="0.35"/>
+      <path d="M 135 130 C 112 124 100 138 97 150 C 110 144 124 132 135 130 Z" fill="var(--accent-leaf)" opacity="0.3"/>
+      <ellipse cx="20" cy="350" rx="4" ry="7" fill="var(--floral-petal-light)" opacity="0.3" transform="rotate(30 20 350)"/>
+      <ellipse cx="140" cy="200" rx="3" ry="6" fill="var(--floral-petal-light)" opacity="0.3" transform="rotate(45 140 200)"/>
     </svg>
   );
 }
@@ -120,17 +120,17 @@ function FloralBranchRight() {
 function FloralGarlandTop() {
   return (
     <svg viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-      <path d="M 0 80 C 100 60 200 40 400 30 C 600 20 700 50 800 70" stroke="#c9a89b" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.6"/>
+      <path d="M 0 80 C 100 60 200 40 400 30 C 600 20 700 50 800 70" stroke="var(--accent-muted)" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.6"/>
       {/* Roses along top */}
       {[80, 200, 320, 400, 480, 600, 720].map((x, i) => (
         <g key={i} transform={`translate(${x}, ${25 + Math.sin(i) * 15})`}>
-          <path d="M 0 -9 C 4 -6 7 -2 7 3 C 7 7 4 9 0 9 C -4 9 -7 7 -7 3 C -7 -2 -4 -6 0 -9 Z" fill="#e8c4b8" opacity="0.6"/>
-          <circle cx="0" cy="1" r="3" fill="#c9a89b" opacity="0.7"/>
+          <path d="M 0 -9 C 4 -6 7 -2 7 3 C 7 7 4 9 0 9 C -4 9 -7 7 -7 3 C -7 -2 -4 -6 0 -9 Z" fill="var(--floral-petal-light)" opacity="0.6"/>
+          <circle cx="0" cy="1" r="3" fill="var(--accent-muted)" opacity="0.7"/>
         </g>
       ))}
       {/* Leaves */}
       {[140, 260, 360, 440, 540, 660].map((x, i) => (
-        <path key={i} d={`M ${x} ${35 + Math.sin(i * 0.7) * 10} C ${x - 12} ${30 + Math.sin(i * 0.7) * 10} ${x - 18} ${42 + Math.sin(i * 0.7) * 10} ${x - 10} ${48 + Math.sin(i * 0.7) * 10} C ${x} ${42 + Math.sin(i * 0.7) * 10} ${x + 4} ${35 + Math.sin(i * 0.7) * 10} ${x} ${35 + Math.sin(i * 0.7) * 10} Z`} fill="#8a9e8d" opacity="0.35"/>
+        <path key={i} d={`M ${x} ${35 + Math.sin(i * 0.7) * 10} C ${x - 12} ${30 + Math.sin(i * 0.7) * 10} ${x - 18} ${42 + Math.sin(i * 0.7) * 10} ${x - 10} ${48 + Math.sin(i * 0.7) * 10} C ${x} ${42 + Math.sin(i * 0.7) * 10} ${x + 4} ${35 + Math.sin(i * 0.7) * 10} ${x} ${35 + Math.sin(i * 0.7) * 10} Z`} fill="var(--accent-leaf)" opacity="0.35"/>
       ))}
     </svg>
   );
@@ -143,21 +143,21 @@ function Logomark({ size = 200 }: { size?: number }) {
     <div className="flex flex-col items-center gap-4" style={{ width: size }}>
       <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" width={size} height={size}>
         {/* Outer decorative ring */}
-        <circle cx="100" cy="100" r="94" stroke="#c9a89b" strokeWidth="0.5" opacity="0.4"/>
-        <circle cx="100" cy="100" r="88" stroke="#c9a89b" strokeWidth="0.3" opacity="0.3"/>
+        <circle cx="100" cy="100" r="94" stroke="var(--accent-muted)" strokeWidth="0.5" opacity="0.4"/>
+        <circle cx="100" cy="100" r="88" stroke="var(--accent-muted)" strokeWidth="0.3" opacity="0.3"/>
 
         {/* Corner flourishes */}
-        <path d="M 100 12 C 104 20 104 28 100 32 C 96 28 96 20 100 12 Z" fill="#c9a89b" opacity="0.5"/>
-        <path d="M 100 168 C 104 176 104 184 100 188 C 96 184 96 176 100 168 Z" fill="#c9a89b" opacity="0.5"/>
-        <path d="M 12 100 C 20 96 28 96 32 100 C 28 104 20 104 12 100 Z" fill="#c9a89b" opacity="0.5"/>
-        <path d="M 168 100 C 176 96 184 96 188 100 C 184 104 176 104 168 100 Z" fill="#c9a89b" opacity="0.5"/>
+        <path d="M 100 12 C 104 20 104 28 100 32 C 96 28 96 20 100 12 Z" fill="var(--accent-muted)" opacity="0.5"/>
+        <path d="M 100 168 C 104 176 104 184 100 188 C 96 184 96 176 100 168 Z" fill="var(--accent-muted)" opacity="0.5"/>
+        <path d="M 12 100 C 20 96 28 96 32 100 C 28 104 20 104 12 100 Z" fill="var(--accent-muted)" opacity="0.5"/>
+        <path d="M 168 100 C 176 96 184 96 188 100 C 184 104 176 104 168 100 Z" fill="var(--accent-muted)" opacity="0.5"/>
 
         {/* Small roses at cardinal points */}
         {[[100, 22], [100, 178], [22, 100], [178, 100]].map(([cx, cy], i) => (
           <g key={i} transform={`translate(${cx}, ${cy})`}>
-            <circle r="5" fill="#c9a89b" opacity="0.2"/>
-            <circle r="2.5" fill="#c9a89b" opacity="0.5"/>
-            <circle r="1" fill="#b8965a" opacity="0.8"/>
+            <circle r="5" fill="var(--accent-muted)" opacity="0.2"/>
+            <circle r="2.5" fill="var(--accent-muted)" opacity="0.5"/>
+            <circle r="1" fill="var(--accent-gold)" opacity="0.8"/>
           </g>
         ))}
 
@@ -168,7 +168,7 @@ function Logomark({ size = 200 }: { size?: number }) {
           fontFamily="'Cinzel', serif"
           fontSize="44"
           fontWeight="400"
-          fill="#e8c4b8"
+          fill="var(--floral-petal-light)"
           opacity="0.95"
           letterSpacing="2"
         >
@@ -180,7 +180,7 @@ function Logomark({ size = 200 }: { size?: number }) {
           fontFamily="'Cinzel', serif"
           fontSize="44"
           fontWeight="400"
-          fill="#c9a89b"
+          fill="var(--accent-muted)"
           opacity="0.9"
           letterSpacing="2"
         >
@@ -192,7 +192,7 @@ function Logomark({ size = 200 }: { size?: number }) {
           fontFamily="'Cinzel', serif"
           fontSize="44"
           fontWeight="400"
-          fill="#e8c4b8"
+          fill="var(--floral-petal-light)"
           opacity="0.95"
           letterSpacing="2"
         >
@@ -200,16 +200,16 @@ function Logomark({ size = 200 }: { size?: number }) {
         </text>
 
         {/* Decorative horizontal lines */}
-        <line x1="36" y1="72" x2="164" y2="72" stroke="#c9a89b" strokeWidth="0.5" opacity="0.4"/>
-        <line x1="36" y1="128" x2="164" y2="128" stroke="#c9a89b" strokeWidth="0.5" opacity="0.4"/>
+        <line x1="36" y1="72" x2="164" y2="72" stroke="var(--accent-muted)" strokeWidth="0.5" opacity="0.4"/>
+        <line x1="36" y1="128" x2="164" y2="128" stroke="var(--accent-muted)" strokeWidth="0.5" opacity="0.4"/>
 
         {/* Small diamond accents */}
-        <polygon points="100,65 103,68 100,71 97,68" fill="#b8965a" opacity="0.6"/>
-        <polygon points="100,129 103,132 100,135 97,132" fill="#b8965a" opacity="0.6"/>
+        <polygon points="100,65 103,68 100,71 97,68" fill="var(--accent-gold)" opacity="0.6"/>
+        <polygon points="100,129 103,132 100,135 97,132" fill="var(--accent-gold)" opacity="0.6"/>
       </svg>
 
       <div className="text-center">
-        <p className="text-[#c9a89b] text-[0.55rem] tracking-[0.4em] uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+        <p className="text-[var(--accent-muted)] text-[0.55rem] tracking-[0.4em] uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>
           Together Forever
         </p>
       </div>
@@ -240,7 +240,7 @@ function IntroOverlay({ onComplete }: { onComplete: () => void }) {
   return (
     <div
       className={`fixed inset-0 z-50 flex items-center justify-center overflow-hidden ${sliding ? "animate-slide-out" : ""}`}
-      style={{ backgroundColor: "#1a1614" }}
+      style={{ backgroundColor: "var(--background-dark)" }}
     >
       {/* Background photo (revealed behind florals) */}
       {phase === "photo" && (
@@ -250,7 +250,7 @@ function IntroOverlay({ onComplete }: { onComplete: () => void }) {
             alt="The couple"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(26,22,20,0.65) 0%, rgba(26,22,20,0.3) 50%, rgba(26,22,20,0.65) 100%)" }}/>
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, color-mix(in srgb, var(--background-dark) 65%, transparent) 0%, color-mix(in srgb, var(--background-dark) 30%, transparent) 50%, color-mix(in srgb, var(--background-dark) 65%, transparent) 100%)" }}/>
         </div>
       )}
 
@@ -283,16 +283,16 @@ function IntroOverlay({ onComplete }: { onComplete: () => void }) {
 
         {phase === "photo" && (
           <div className="text-center animate-section">
-            <p className="section-label mb-4" style={{ color: "#c9a89b" }}>Est. 2025</p>
-            <h1 className="text-white mb-2" style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(2.2rem, 6vw, 4rem)", fontWeight: 400, letterSpacing: "0.1em" }}>
+            <p className="section-label mb-4" style={{ color: "var(--accent-muted)" }}>Est. 2025</p>
+            <h1 className="text-[var(--heading-light)] mb-2" style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(2.2rem, 6vw, 4rem)", fontWeight: 400, letterSpacing: "0.1em" }}>
               Chi Tai & Christine
             </h1>
-            <p className="text-[#e8c4b8] text-sm tracking-[0.25em] uppercase mt-2" style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}>
+            <p className="text-[var(--floral-petal-light)] text-sm tracking-[0.25em] uppercase mt-2" style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}>
               Saturday · May 1 · 2027 · Oklahoma City, Oklahoma
             </p>
             <div className="mt-8 flex flex-col items-center gap-2">
-              <p className="text-[#c9a89b] text-xs tracking-widest uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>Scroll</p>
-              <div className="animate-scroll-indicator w-px h-8 bg-gradient-to-b from-[#c9a89b] to-transparent"/>
+              <p className="text-[var(--accent-muted)] text-xs tracking-widest uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>Scroll</p>
+              <div className="animate-scroll-indicator w-px h-8 bg-gradient-to-b from-[var(--accent-muted)] to-transparent"/>
             </div>
           </div>
         )}
@@ -302,7 +302,7 @@ function IntroOverlay({ onComplete }: { onComplete: () => void }) {
       {phase !== "done" && (
         <button
           onClick={() => { setSliding(true); setTimeout(onComplete, 900); }}
-          className="absolute bottom-8 right-8 text-[#c9a89b] text-xs tracking-widest uppercase hover:text-white transition-colors duration-300"
+          className="absolute bottom-8 right-8 text-[var(--accent-muted)] text-xs tracking-widest uppercase hover:text-[var(--heading-light)] transition-colors duration-300"
           style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.2em" }}
         >
           Skip →
@@ -335,9 +335,9 @@ function Nav() {
 
   const links = ["Our Story", "Details", "Gallery", "Play a Game"];
 
-  const navBg = scrolled || menuOpen ? "rgba(248,244,239,0.97)" : "transparent";
+  const navBg = scrolled || menuOpen ? "color-mix(in srgb, var(--background-light) 97%, transparent)" : "transparent";
   const navBlur = scrolled || menuOpen ? "blur(12px)" : "none";
-  const navBorder = scrolled || menuOpen ? "1px solid rgba(201,168,155,0.2)" : "none";
+  const navBorder = scrolled || menuOpen ? "1px solid color-mix(in srgb, var(--accent-muted) 20%, transparent)" : "none";
 
   return (
     <nav
@@ -348,24 +348,24 @@ function Nav() {
         {/* Logo */}
         <div className="flex items-center gap-3">
           <svg viewBox="0 0 60 60" width={32} height={32} fill="none">
-            <circle cx="30" cy="30" r="28" stroke="#c9a89b" strokeWidth="0.8" opacity="0.5"/>
-            <text x="8" y="40" fontFamily="'Cinzel', serif" fontSize="18" fontWeight="400" fill="#1a1614">C&C</text>
+            <circle cx="30" cy="30" r="28" stroke="var(--accent-muted)" strokeWidth="0.8" opacity="0.5"/>
+            <text x="8" y="40" fontFamily="'Cinzel', serif" fontSize="18" fontWeight="400" fill="var(--heading-dark)">C&C</text>
           </svg>
-          <span className="section-label" style={{ color: "#1a1614" }}>Chi Tai and Christine</span>
+          <span className="section-label" style={{ color: "var(--heading-dark)" }}>Chi Tai and Christine</span>
         </div>
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
           {links.map(link => (
             <a key={link} href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
-              className="section-label transition-colors duration-200 hover:text-[#1a1614]"
-              style={{ color: "#8a7a72" }}>
+              className="section-label transition-colors duration-200 hover:text-[var(--heading-dark)]"
+              style={{ color: "var(--text-muted)" }}>
               {link}
             </a>
           ))}
           <a href="#rsvp"
-            className="px-5 py-2 text-xs tracking-widest uppercase transition-all duration-300 hover:bg-[#1a1614] hover:text-white"
-            style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.18em", border: "1px solid #1a1614", color: "#1a1614", fontSize: "0.62rem" }}>
+            className="px-5 py-2 text-xs tracking-widest uppercase transition-all duration-300 hover:bg-[var(--background-dark)] hover:text-[var(--heading-light)]"
+            style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.18em", border: "1px solid var(--heading-dark)", color: "var(--heading-dark)", fontSize: "0.62rem" }}>
             RSVP Now
           </a>
         </div>
@@ -377,11 +377,11 @@ function Nav() {
           aria-label="Toggle menu"
         >
           <span className="block w-5 h-px transition-all duration-300 origin-center"
-            style={{ background: "#1a1614", transform: menuOpen ? "translateY(6px) rotate(45deg)" : "none" }}/>
+            style={{ background: "var(--background-dark)", transform: menuOpen ? "translateY(6px) rotate(45deg)" : "none" }}/>
           <span className="block h-px transition-all duration-300"
-            style={{ background: "#1a1614", width: menuOpen ? "0px" : "20px", opacity: menuOpen ? 0 : 1 }}/>
+            style={{ background: "var(--background-dark)", width: menuOpen ? "0px" : "20px", opacity: menuOpen ? 0 : 1 }}/>
           <span className="block w-5 h-px transition-all duration-300 origin-center"
-            style={{ background: "#1a1614", transform: menuOpen ? "translateY(-6px) rotate(-45deg)" : "none" }}/>
+            style={{ background: "var(--background-dark)", transform: menuOpen ? "translateY(-6px) rotate(-45deg)" : "none" }}/>
         </button>
       </div>
 
@@ -390,7 +390,7 @@ function Nav() {
         className="md:hidden overflow-hidden transition-all duration-500"
         style={{ maxHeight: menuOpen ? "320px" : "0px" }}
       >
-        <div className="px-6 pb-6 pt-3 flex flex-col gap-1" style={{ borderTop: "1px solid rgba(201,168,155,0.2)" }}>
+        <div className="px-6 pb-6 pt-3 flex flex-col gap-1" style={{ borderTop: "1px solid color-mix(in srgb, var(--accent-muted) 20%, transparent)" }}>
           {links.map((link, i) => (
             <a
               key={link}
@@ -401,19 +401,19 @@ function Nav() {
                 fontFamily: "'Cinzel', serif",
                 fontSize: "0.85rem",
                 letterSpacing: "0.12em",
-                color: "#1a1614",
-                borderBottom: i < links.length - 1 ? "1px solid rgba(201,168,155,0.15)" : "none",
+                color: "var(--heading-dark)",
+                borderBottom: i < links.length - 1 ? "1px solid color-mix(in srgb, var(--accent-muted) 15%, transparent)" : "none",
               }}
             >
               {link}
-              <span style={{ color: "#c9a89b", fontSize: "0.7rem" }}>→</span>
+              <span style={{ color: "var(--accent-muted)", fontSize: "0.7rem" }}>→</span>
             </a>
           ))}
           <a
             href="#rsvp"
             onClick={() => setMenuOpen(false)}
-            className="mt-3 py-3 text-center text-xs tracking-widest uppercase transition-all duration-300 hover:bg-[#1a1614] hover:text-white"
-            style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.2em", border: "1px solid #1a1614", color: "#1a1614" }}
+            className="mt-3 py-3 text-center text-xs tracking-widest uppercase transition-all duration-300 hover:bg-[var(--background-dark)] hover:text-[var(--heading-light)]"
+            style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.2em", border: "1px solid var(--heading-dark)", color: "var(--heading-dark)" }}
           >
             RSVP Now
           </a>
@@ -434,14 +434,14 @@ function HeroSection() {
   ];
 
   return (
-    <section className="relative h-screen flex items-end pb-24 overflow-hidden" style={{ background: "#1a1614" }}>
+    <section className="relative h-screen flex items-end pb-24 overflow-hidden" style={{ background: "var(--background-dark)" }}>
       <img
         src={couplePhoto}
         alt="ChiTai and Christine"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ opacity: 0.55 }}
       />
-      <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(26,22,20,0.92) 0%, rgba(26,22,20,0.2) 60%, rgba(26,22,20,0.1) 100%)" }}/>
+      <div className="absolute inset-0" style={{ background: "linear-gradient(to top, color-mix(in srgb, var(--background-dark) 92%, transparent) 0%, color-mix(in srgb, var(--background-dark) 20%, transparent) 60%, color-mix(in srgb, var(--background-dark) 10%, transparent) 100%)" }}/>
 
       {/* Floral corner accents */}
       <div className="absolute top-0 left-0 w-40 md:w-56 h-64 md:h-80 pointer-events-none opacity-60">
@@ -453,15 +453,15 @@ function HeroSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-8 w-full">
         <div className="max-w-2xl">
-          <p className="section-label mb-5" style={{ color: "#c9a89b" }}>5 · 01 · 2027</p>
-          <h1 className="text-white mb-4 leading-none"
+          <p className="section-label mb-5" style={{ color: "var(--accent-muted)" }}>5 · 01 · 2027</p>
+          <h1 className="text-[var(--heading-light)] mb-4 leading-none"
             style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(3rem, 8vw, 6.5rem)", fontWeight: 400, letterSpacing: "0.04em" }}>
             Chi Tai
             <br />
-            <span style={{ fontStyle: "italic", color: "#c9a89b" }}>&amp;</span>{" "}
+            <span style={{ fontStyle: "italic", color: "var(--accent-muted)" }}>&amp;</span>{" "}
             Christine
           </h1>
-          <p className="text-[#e8c4b8] mt-6 max-w-sm leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "1.05rem", fontWeight: 300 }}>
+          <p className="text-[var(--floral-petal-light)] mt-6 max-w-sm leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "1.05rem", fontWeight: 300 }}>
             Filler Text
           </p>
         </div>
@@ -470,8 +470,8 @@ function HeroSection() {
         <div className="mt-12 flex gap-8">
           {countdown.map(([val, label]) => (
             <div key={label} className="text-center">
-              <div className="text-white" style={{ fontFamily: "'Cinzel', serif", fontSize: "2rem", fontWeight: 400, lineHeight: 1 }}>{val}</div>
-              <div className="section-label mt-1" style={{ color: "#8a7a72" }}>{label}</div>
+              <div className="text-[var(--heading-light)]" style={{ fontFamily: "'Cinzel', serif", fontSize: "2rem", fontWeight: 400, lineHeight: 1 }}>{val}</div>
+              <div className="section-label mt-1" style={{ color: "var(--text-muted)" }}>{label}</div>
             </div>
           ))}
         </div>
@@ -479,7 +479,7 @@ function HeroSection() {
 
       {/* Scroll cue */}
       <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2">
-        <div className="animate-scroll-indicator w-px h-10 bg-gradient-to-b from-[#c9a89b] to-transparent"/>
+        <div className="animate-scroll-indicator w-px h-10 bg-gradient-to-b from-[var(--accent-muted)] to-transparent"/>
       </div>
     </section>
   );
@@ -513,44 +513,44 @@ const storyMilestones = [
 
 function OurStorySection() {
   return (
-    <section id="our-story" className="relative py-32" style={{ background: "#f8f4ef" }}>
+    <section id="our-story" className="relative py-32" style={{ background: "var(--background-light)" }}>
       <div className="max-w-6xl mx-auto px-8">
         <div className="mb-16 flex items-start justify-between flex-wrap gap-8">
           <div>
             <p className="section-label mb-4">Our Story</p>
-            <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 400, color: "#1a1614", letterSpacing: "0.05em" }}>
+            <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 400, color: "var(--heading-dark)", letterSpacing: "0.05em" }}>
               How It Began
             </h2>
           </div>
-          <p className="max-w-xs text-sm leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", color: "#8a7a72", fontWeight: 300, fontSize: "1rem" }}>
+          <p className="max-w-xs text-sm leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", color: "var(--text-muted)", fontWeight: 300, fontSize: "1rem" }}>
             "Love is patient, Love is kind, or some other quote or verse."
-            <br/><span className="section-label not-italic" style={{ color: "#c9a89b", fontFamily: "'DM Sans', sans-serif" }}>— 1 Corinthians 13: 4-7</span>
+            <br/><span className="section-label not-italic" style={{ color: "var(--accent-muted)", fontFamily: "'DM Sans', sans-serif" }}>— 1 Corinthians 13: 4-7</span>
           </p>
         </div>
 
         <div className="space-y-0">
           {storyMilestones.map((m, i) => (
-            <div key={m.year} className={`grid md:grid-cols-2 gap-0 border-t border-[#e8ddd6] ${i === storyMilestones.length - 1 ? "border-b" : ""}`}>
+            <div key={m.year} className={`grid md:grid-cols-2 gap-0 border-t border-[var(--border-light)] ${i === storyMilestones.length - 1 ? "border-b" : ""}`}>
               {/* Text side */}
               <div className={`py-16 pr-16 flex flex-col justify-center ${i % 2 === 1 ? "md:order-2 md:pl-16 md:pr-0" : ""}`}>
                 <div className="flex items-center gap-4 mb-6">
                   <span className="section-label">{m.year}</span>
-                  <span className="w-8 h-px bg-[#c9a89b]"/>
+                  <span className="w-8 h-px bg-[var(--accent-muted)]"/>
                 </div>
-                <h3 className="mb-4" style={{ fontFamily: "'Cinzel', serif", fontSize: "1.6rem", fontWeight: 400, color: "#1a1614", letterSpacing: "0.05em" }}>
+                <h3 className="mb-4" style={{ fontFamily: "'Cinzel', serif", fontSize: "1.6rem", fontWeight: 400, color: "var(--heading-dark)", letterSpacing: "0.05em" }}>
                   {m.title}
                 </h3>
-                <p className="leading-relaxed text-[0.95rem]" style={{ fontFamily: "'Fraunces', serif", color: "#5a4f4a", fontWeight: 300, lineHeight: 1.8 }}>
+                <p className="leading-relaxed text-[0.95rem]" style={{ fontFamily: "'Fraunces', serif", color: "var(--text-dark)", fontWeight: 300, lineHeight: 1.8 }}>
                   {m.body}
                 </p>
               </div>
               {/* Image side */}
               <div className={`relative overflow-hidden ${i % 2 === 1 ? "md:order-1" : ""}`} style={{ minHeight: 360 }}>
                 <img src={m.img} alt={m.alt} className="absolute inset-0 w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-700 hover:scale-105"/>
-                <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(26,22,20,0.08), transparent)" }}/>
+                <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, color-mix(in srgb, var(--background-dark) 8%, transparent), transparent)" }}/>
                 {/* Year overlay */}
                 <div className="absolute bottom-6 left-6">
-                  <span style={{ fontFamily: "'Cinzel', serif", fontSize: "4rem", fontWeight: 700, color: "rgba(255,255,255,0.12)", lineHeight: 1 }}>
+                  <span style={{ fontFamily: "'Cinzel', serif", fontSize: "4rem", fontWeight: 700, color: "color-mix(in srgb, var(--background-card) 12%, transparent)", lineHeight: 1 }}>
                     {m.year}
                   </span>
                 </div>
@@ -575,7 +575,7 @@ function DetailsSection() {
       sub: "11869 SW 2nd St, Yukon, OK 73099",
       note: "Filler TExt",
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[var(--accent-muted)]">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
           <circle cx="12" cy="9" r="2.5"/>
         </svg>
@@ -588,7 +588,7 @@ function DetailsSection() {
       sub: "3115 SW 59th St, Oklahoma City, OK 73159",
       note: "Filler Text",
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[var(--accent-muted)]">
           <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/>
         </svg>
       ),
@@ -600,7 +600,7 @@ function DetailsSection() {
       sub: "201 N Walker Ave, Oklahoma City, OK 73102",
       note: "5:00-6:00 PM - Cocktail Hour @Civic Center Music Hall.",
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[var(--accent-muted)]">
           <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
           <polyline points="9 22 9 12 15 12 15 22"/>
         </svg>
@@ -609,36 +609,36 @@ function DetailsSection() {
   ];
 
   return (
-    <section id="details" className="relative py-32" style={{ background: "#1a1614" }}>
+    <section id="details" className="relative py-32" style={{ background: "var(--background-dark)" }}>
       <div className="max-w-6xl mx-auto px-8">
         <div className="mb-16 text-center">
-          <p className="section-label mb-4" style={{ color: "#c9a89b" }}>Wedding Details</p>
-          <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 400, color: "#f8f4ef", letterSpacing: "0.05em" }}>
+          <p className="section-label mb-4" style={{ color: "var(--accent-muted)" }}>Wedding Details</p>
+          <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 400, color: "var(--heading-light)", letterSpacing: "0.05em" }}>
             The Celebration
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px" style={{ background: "rgba(201,168,155,0.15)" }}>
+        <div className="grid md:grid-cols-3 gap-px" style={{ background: "color-mix(in srgb, var(--accent-muted) 15%, transparent)" }}>
           {details.map(d => (
-            <div key={d.label} className="p-10 flex flex-col gap-6" style={{ background: "#1a1614" }}>
+            <div key={d.label} className="p-10 flex flex-col gap-6" style={{ background: "var(--background-dark)" }}>
               {d.icon}
               <div>
-                <p className="section-label mb-2" style={{ color: "#8a7a72" }}>{d.label}</p>
-                <p className="text-xs mb-4" style={{ fontFamily: "'DM Sans', sans-serif", color: "#b8965a", letterSpacing: "0.1em" }}>{d.time}</p>
-                <h3 className="mb-2" style={{ fontFamily: "'Cinzel', serif", fontSize: "1.25rem", fontWeight: 400, color: "#f8f4ef", letterSpacing: "0.04em" }}>{d.title}</h3>
-                <p className="text-xs mb-4" style={{ fontFamily: "'DM Sans', sans-serif", color: "#8a7a72", lineHeight: 1.6 }}>{d.sub}</p>
-                <p className="text-xs leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", color: "#b0a09a", fontWeight: 300 }}>{d.note}</p>
+                <p className="section-label mb-2" style={{ color: "var(--text-muted)" }}>{d.label}</p>
+                <p className="text-xs mb-4" style={{ fontFamily: "'DM Sans', sans-serif", color: "var(--accent-gold)", letterSpacing: "0.1em" }}>{d.time}</p>
+                <h3 className="mb-2" style={{ fontFamily: "'Cinzel', serif", fontSize: "1.25rem", fontWeight: 400, color: "var(--heading-light)", letterSpacing: "0.04em" }}>{d.title}</h3>
+                <p className="text-xs mb-4" style={{ fontFamily: "'DM Sans', sans-serif", color: "var(--text-muted)", lineHeight: 1.6 }}>{d.sub}</p>
+                <p className="text-xs leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", color: "var(--placeholder-text)", fontWeight: 300 }}>{d.note}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Date highlight bar */}
-        <div className="mt-px p-8 flex flex-col md:flex-row items-center justify-between gap-4" style={{ background: "rgba(201,168,155,0.06)", border: "1px solid rgba(201,168,155,0.15)" }}>
-          <p style={{ fontFamily: "'Cinzel', serif", fontSize: "0.85rem", color: "#c9a89b", letterSpacing: "0.2em" }}>
+        <div className="mt-px p-8 flex flex-col md:flex-row items-center justify-between gap-4" style={{ background: "color-mix(in srgb, var(--accent-muted) 6%, transparent)", border: "1px solid color-mix(in srgb, var(--accent-muted) 15%, transparent)" }}>
+          <p style={{ fontFamily: "'Cinzel', serif", fontSize: "0.85rem", color: "var(--accent-muted)", letterSpacing: "0.2em" }}>
             Saturday, May 1, 2027
           </p>
-          <p style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "0.9rem", color: "#8a7a72", fontWeight: 300 }}>
+          <p style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "0.9rem", color: "var(--text-muted)", fontWeight: 300 }}>
             {days} {days === 1 ? "day" : "days"} remaining
           </p>
         </div>
@@ -660,26 +660,26 @@ const galleryImages = [
 
 function GallerySection() {
   return (
-    <section id="gallery" className="relative py-32" style={{ background: "#f8f4ef" }}>
+    <section id="gallery" className="relative py-32" style={{ background: "var(--background-light)" }}>
       <div className="max-w-6xl mx-auto px-8">
         <div className="mb-16 flex items-end justify-between">
           <div>
             <p className="section-label mb-4">Portfolio</p>
-            <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 400, color: "#1a1614", letterSpacing: "0.05em" }}>
+            <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 400, color: "var(--heading-dark)", letterSpacing: "0.05em" }}>
               Our Moments
             </h2>
           </div>
-          <p className="section-label" style={{ color: "#c9a89b" }}>06 images</p>
+          <p className="section-label" style={{ color: "var(--accent-muted)" }}>06 images</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 auto-rows-[220px]">
           {galleryImages.map((img, i) => (
-            <div key={i} className={`relative overflow-hidden group cursor-pointer ${img.span}`} style={{ background: "#e8ddd6" }}>
+            <div key={i} className={`relative overflow-hidden group cursor-pointer ${img.span}`} style={{ background: "var(--border-light)" }}>
               <img src={img.src} alt={img.alt}
                 className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"/>
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"
-                style={{ background: "linear-gradient(to top, rgba(26,22,20,0.6) 0%, transparent 60%)" }}>
-                <span className="section-label text-white">{img.alt}</span>
+                style={{ background: "linear-gradient(to top, color-mix(in srgb, var(--background-dark) 60%, transparent) 0%, transparent 60%)" }}>
+                <span className="section-label text-[var(--heading-light)]">{img.alt}</span>
               </div>
             </div>
           ))}
@@ -696,25 +696,25 @@ const connectionGroups = [
     key: "C & C",
     title: "Things with C and C initialism",
     words: ["Chi Tai Pham and Christine Hoang", "Campus Corner", "Closed Captions", "Carbon Copy"],
-    color: "#dfcfbe",
+    color: "var(--game-rose)",
   },
   {
     key: "Famous Couples",
     title: "Artist and Athlete Couples (Chi Tai wishes he was here)",
     words: ["Madison Beer and Justin Herbert", "Megan Thee Stallion and Klay Tompson", "Taylor Swift and Travis Kelce", "Hailey Steinfeld and Josh Allen"],
-    color: "#c7d1c5",
+    color: "var(--game-sage)",
   },
   {
     key: "sports",
     title: "Different Sports",
     words: ["Cross Country", "Basketball", "Water Polo", "Football"],
-    color: "#d8c0b8",
+    color: "var(--game-blush)",
   },
   {
     key: "intellectual property",
     title: "Types of Intellectual Property",
     words: ["Creative Commons", "Trademark", "Patent", "Copyright"],
-    color: "#cdbb92",
+    color: "var(--game-gold)",
   },
 ];
 
@@ -802,7 +802,7 @@ function ConnectionsGameSection() {
   };
 
   return (
-    <section id="play-a-game" className="relative py-32" style={{ background: "#ede6df" }}>
+    <section id="play-a-game" className="relative py-32" style={{ background: "var(--game-background)" }}>
       <div className="relative max-w-4xl mx-auto px-5 md:px-8" style={{ zIndex: 6 }}>
         <div className="text-center mb-12">
           <p className="section-label mb-4">A Little Interlude</p>
@@ -811,7 +811,7 @@ function ConnectionsGameSection() {
               fontFamily: "'Cinzel', serif",
               fontSize: "clamp(1.8rem, 4vw, 3rem)",
               fontWeight: 400,
-              color: "#1a1614",
+              color: "var(--heading-dark)",
               letterSpacing: "0.05em",
             }}
           >
@@ -822,7 +822,7 @@ function ConnectionsGameSection() {
             style={{
               fontFamily: "'Fraunces', serif",
               fontStyle: "italic",
-              color: "#5a4f4a",
+              color: "var(--text-dark)",
               fontWeight: 300,
             }}
           >
@@ -833,8 +833,8 @@ function ConnectionsGameSection() {
         <div
           className="p-4 md:p-8"
           style={{
-            background: "rgba(248,244,239,0.82)",
-            border: "1px solid rgba(201,168,155,0.35)",
+            background: "color-mix(in srgb, var(--background-light) 82%, transparent)",
+            border: "1px solid color-mix(in srgb, var(--accent-muted) 35%, transparent)",
           }}
         >
           <div className="space-y-2 mb-2">
@@ -853,7 +853,7 @@ function ConnectionsGameSection() {
                       fontSize: "0.72rem",
                       fontWeight: 500,
                       letterSpacing: "0.16em",
-                      color: "#1a1614",
+                      color: "var(--heading-dark)",
                     }}
                   >
                     {group.title}
@@ -864,7 +864,7 @@ function ConnectionsGameSection() {
                       fontFamily: "'DM Sans', sans-serif",
                       fontSize: "0.78rem",
                       letterSpacing: "0.08em",
-                      color: "#1a1614",
+                      color: "var(--heading-dark)",
                     }}
                   >
                     {group.words.join(", ")}
@@ -885,11 +885,11 @@ function ConnectionsGameSection() {
                     onClick={() => toggleWord(word)}
                     className="aspect-[1.15/1] md:aspect-[1.8/1] px-1 flex items-center justify-center text-center transition-all duration-200"
                     style={{
-                      background: isSelected ? "#1a1614" : "#ffffff",
-                      color: isSelected ? "#f8f4ef" : "#1a1614",
+                      background: isSelected ? "var(--heading-dark)" : "var(--background-card)",
+                      color: isSelected ? "var(--heading-light)" : "var(--heading-dark)",
                       border: isSelected
-                        ? "1px solid #1a1614"
-                        : "1px solid rgba(201,168,155,0.25)",
+                        ? "1px solid var(--heading-dark)"
+                        : "1px solid color-mix(in srgb, var(--accent-muted) 25%, transparent)",
                       transform: isSelected ? "translateY(-2px)" : "none",
                       fontFamily: "'DM Sans', sans-serif",
                       fontSize: "clamp(0.55rem, 2vw, 0.78rem)",
@@ -911,7 +911,7 @@ function ConnectionsGameSection() {
               style={{
                 fontFamily: "'Fraunces', serif",
                 fontStyle: "italic",
-                color: "#5a4f4a",
+                color: "var(--text-dark)",
               }}
             >
               {message}
@@ -920,7 +920,7 @@ function ConnectionsGameSection() {
             {!gameWon && !gameLost && (
               <>
                 <div className="flex items-center justify-center gap-2 mt-4">
-                  <span className="section-label mr-1" style={{ color: "#8a7a72" }}>
+                  <span className="section-label mr-1" style={{ color: "var(--text-muted)" }}>
                     Mistakes remaining
                   </span>
                   {[0, 1, 2, 3].map((mistake) => (
@@ -929,7 +929,7 @@ function ConnectionsGameSection() {
                       className="size-2.5 rounded-full"
                       style={{
                         background:
-                          mistake < mistakesLeft ? "#c9a89b" : "rgba(201,168,155,0.2)",
+                          mistake < mistakesLeft ? "var(--accent-muted)" : "color-mix(in srgb, var(--accent-muted) 20%, transparent)",
                       }}
                     />
                   ))}
@@ -938,8 +938,8 @@ function ConnectionsGameSection() {
                   <button
                     type="button"
                     onClick={() => setSelected([])}
-                    className="px-5 md:px-6 py-3 section-label transition-colors duration-200 hover:bg-[#f0e8e2]"
-                    style={{ color: "#1a1614", border: "1px solid rgba(26,22,20,0.3)" }}
+                    className="px-5 md:px-6 py-3 section-label transition-colors duration-200 hover:bg-[var(--background-soft)]"
+                    style={{ color: "var(--heading-dark)", border: "1px solid color-mix(in srgb, var(--background-dark) 30%, transparent)" }}
                   >
                     Deselect All
                   </button>
@@ -948,7 +948,7 @@ function ConnectionsGameSection() {
                     onClick={submitGuess}
                     disabled={selected.length !== 4}
                     className="px-7 py-3 section-label transition-opacity duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
-                    style={{ color: "#f8f4ef", background: "#1a1614" }}
+                    style={{ color: "var(--heading-light)", background: "var(--background-dark)" }}
                   >
                     Submit
                   </button>
@@ -960,8 +960,8 @@ function ConnectionsGameSection() {
               <button
                 type="button"
                 onClick={resetGame}
-                className="mt-6 px-8 py-3 section-label transition-all duration-200 hover:bg-[#1a1614] hover:text-white"
-                style={{ color: "#1a1614", border: "1px solid #1a1614" }}
+                className="mt-6 px-8 py-3 section-label transition-all duration-200 hover:bg-[var(--background-dark)] hover:text-[var(--heading-light)]"
+                style={{ color: "var(--heading-dark)", border: "1px solid var(--heading-dark)" }}
               >
                 Play Again
               </button>
@@ -987,20 +987,20 @@ function RSVPSection() {
     setSubmitted(true);
   };
 
-  const inputClass = "w-full bg-transparent border-b border-[#c9a89b] border-opacity-40 py-3 text-sm text-[#1a1614] placeholder-[#b0a09a] focus:outline-none focus:border-[#1a1614] transition-colors duration-200";
+  const inputClass = "w-full bg-transparent border-b border-[var(--accent-muted)] border-opacity-40 py-3 text-sm text-[var(--heading-dark)] placeholder-[var(--placeholder-text)] focus:outline-none focus:border-[var(--heading-dark)] transition-colors duration-200";
   const labelClass = "section-label block mb-2";
 
   return (
-    <section id="rsvp" className="relative py-32" style={{ background: "#f0ebe4" }}>
+    <section id="rsvp" className="relative py-32" style={{ background: "var(--background-soft)" }}>
       <div className="max-w-6xl mx-auto px-8">
         <div className="grid md:grid-cols-2 gap-20 items-start">
           {/* Left */}
           <div>
             <p className="section-label mb-4">Kindly Reply By</p>
-            <h2 className="mb-6" style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 400, color: "#1a1614", letterSpacing: "0.05em" }}>
+            <h2 className="mb-6" style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 400, color: "var(--heading-dark)", letterSpacing: "0.05em" }}>
               May 1, 2027
             </h2>
-            <p className="leading-relaxed mb-10" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "1.05rem", color: "#5a4f4a", fontWeight: 300, lineHeight: 1.9 }}>
+            <p className="leading-relaxed mb-10" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "1.05rem", color: "var(--text-dark)", fontWeight: 300, lineHeight: 1.9 }}>
               We would be honored by your presence as we exchange vows and celebrate with those who mean the most to us. Please let us know if you can join us in Tuscany.
             </p>
 
@@ -1016,14 +1016,14 @@ function RSVPSection() {
               <div className="text-center py-16">
                 <div className="mb-6">
                   <svg viewBox="0 0 60 60" width={60} height={60} fill="none" className="mx-auto">
-                    <circle cx="30" cy="30" r="28" stroke="#c9a89b" strokeWidth="1"/>
-                    <path d="M 18 30 L 26 38 L 42 22" stroke="#c9a89b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="30" cy="30" r="28" stroke="var(--accent-muted)" strokeWidth="1"/>
+                    <path d="M 18 30 L 26 38 L 42 22" stroke="var(--accent-muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <h3 className="mb-3" style={{ fontFamily: "'Cinzel', serif", fontSize: "1.5rem", color: "#1a1614", letterSpacing: "0.05em" }}>
+                <h3 className="mb-3" style={{ fontFamily: "'Cinzel', serif", fontSize: "1.5rem", color: "var(--heading-dark)", letterSpacing: "0.05em" }}>
                   Thank You, {form.name.split(" ")[0]}
                 </h3>
-                <p style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", color: "#8a7a72", fontWeight: 300 }}>
+                <p style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", color: "var(--text-muted)", fontWeight: 300 }}>
                   We can&apos;t wait to celebrate with you.
                 </p>
               </div>
@@ -1063,8 +1063,8 @@ function RSVPSection() {
                   <textarea name="message" value={form.message} onChange={handle} rows={3} placeholder="A note for Chi Tai and Christine…" className={inputClass + " resize-none"} style={{ fontFamily: "'DM Sans', sans-serif" }}/>
                 </div>
                 <button type="submit"
-                  className="w-full py-4 text-xs tracking-[0.25em] uppercase transition-all duration-300 hover:bg-[#1a1614] hover:text-white"
-                  style={{ fontFamily: "'DM Sans', sans-serif", border: "1px solid #1a1614", color: "#1a1614", background: "transparent" }}>
+                  className="w-full py-4 text-xs tracking-[0.25em] uppercase transition-all duration-300 hover:bg-[var(--background-dark)] hover:text-[var(--heading-light)]"
+                  style={{ fontFamily: "'DM Sans', sans-serif", border: "1px solid var(--heading-dark)", color: "var(--heading-dark)", background: "transparent" }}>
                   Send RSVP
                 </button>
               </form>
@@ -1080,12 +1080,12 @@ function RSVPSection() {
 
 function Footer() {
   return (
-    <footer className="py-16 text-center border-t" style={{ background: "#1a1614", borderColor: "rgba(201,168,155,0.15)" }}>
+    <footer className="py-16 text-center border-t" style={{ background: "var(--background-dark)", borderColor: "color-mix(in srgb, var(--accent-muted) 15%, transparent)" }}>
       <Logomark size={100} />
-      <p className="mt-8 section-label" style={{ color: "#5a4f4a" }}>
+      <p className="mt-8 section-label" style={{ color: "var(--text-dark)" }}>
         Chi Tai and Christine · Saturday May 1, 2027 · Oklahoma City, Oklahoma
       </p>
-      <p className="mt-3" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "0.85rem", color: "#4a3f3a", fontWeight: 300 }}>
+      <p className="mt-3" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "0.85rem", color: "var(--text-subtle)", fontWeight: 300 }}>
         Made with love ♡
       </p>
     </footer>
