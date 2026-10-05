@@ -602,7 +602,7 @@ function RSVPSection() {
           <div>
             <p className="section-label mb-4">Kindly Reply By</p>
             <h2 className="mb-6" style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 400, color: "#1a1614", letterSpacing: "0.05em" }}>
-              August 1, 2026
+              May 1, 2027
             </h2>
             <p className="leading-relaxed mb-10" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "1.05rem", color: "#5a4f4a", fontWeight: 300, lineHeight: 1.9 }}>
               We would be honored by your presence as we exchange vows and celebrate with those who mean the most to us. Please let us know if you can join us in Tuscany.
