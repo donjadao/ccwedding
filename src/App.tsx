@@ -211,8 +211,10 @@ function HeroSection() {
     [String(minutes).padStart(2, "0"), "Minutes"],
   ];
 
-  return (
-    // ...
+return (
+  <div>
+    {days} days, {hours} hours, {minutes} minutes until our wedding!
+  </div>
   );
 }
 
