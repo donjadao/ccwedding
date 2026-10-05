@@ -1,18 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&display=swap');
 @import 'tailwindcss';
 
+:root {
+  /* Main theme controls — edit these values to recolor the site */
+  --background-dark: #d02022;
+  --background-light: #ffeed2;
+  --background-soft: #f0ebe4;
+  --background-card: #ffffff;
+
+  --heading-dark: #1a1614;
+  --heading-light: #ffeed2;
+  --text-dark: #5a4f4a;
+  --text-light: #ffeed2;
+  --text-muted: #8a7a72;
+  --text-subtle: #4a3f3a;
+
+  --accent-primary: #fded5a;
+  --accent-secondary: #fe9238;
+  --accent-pink: #ef6066;
+  --accent-olive: #9e9842;
+  --accent-muted: #c9a89b;
+  --accent-gold: #b8965a;
+  --accent-leaf: #8a9e8d;
+
+  --border-light: #e8ddd6;
+  --placeholder-text: #b0a09a;
+
+  /* Illustration and game colors */
+  --floral-petal-light: #e8c4b8;
+  --floral-petal-deep: #d9b0a4;
+  --game-background: #ede6df;
+  --game-rose: #dfcfbe;
+  --game-sage: #c7d1c5;
+  --game-blush: #d8c0b8;
+  --game-gold: #cdbb92;
+}
+
 @theme {
   --font-display: 'Cinzel', serif;
   --font-decorative: 'Cinzel Decorative', serif;
   --font-serif: 'Fraunces', serif;
   --font-sans: 'DM Sans', sans-serif;
 
-  --color-ivory: #f8f4ef;
-  --color-charcoal: #1a1614;
-  --color-blush: #c9a89b;
-  --color-gold: #b8965a;
-  --color-sage: #8a9e8d;
-  --color-petal: #f0e8e2;
+  --color-ivory: var(--background-light);
+  --color-charcoal: var(--heading-dark);
+  --color-blush: var(--accent-muted);
+  --color-gold: var(--accent-gold);
+  --color-sage: var(--accent-leaf);
+  --color-petal: var(--background-soft);
 }
 
 * {
@@ -28,15 +63,15 @@ html, body, #root {
 
 body {
   font-family: 'DM Sans', sans-serif;
-  background-color: #f8f4ef;
-  color: #1a1614;
+  background-color: var(--background-light);
+  color: var(--heading-dark);
   overflow-x: hidden;
 }
 
 /* Hide scrollbar by default, show on hover/scroll */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #c9a89b; border-radius: 2px; opacity: 0; }
+::-webkit-scrollbar-thumb { background: var(--accent-muted); border-radius: 2px; opacity: 0; }
 body:hover::-webkit-scrollbar-thumb { opacity: 1; }
 
 /* Intro animations */
@@ -150,7 +185,7 @@ body:hover::-webkit-scrollbar-thumb { opacity: 1; }
 }
 
 .gold-shimmer {
-  background: linear-gradient(90deg, #b8965a 0%, #e8c87a 40%, #b8965a 60%, #d4a853 100%);
+  background: linear-gradient(90deg, var(--accent-secondary) 0%, var(--accent-primary) 40%, var(--accent-secondary) 60%, var(--accent-pink) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -169,7 +204,7 @@ body:hover::-webkit-scrollbar-thumb { opacity: 1; }
   content: '';
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #c9a89b, transparent);
+  background: linear-gradient(90deg, transparent, var(--accent-muted), transparent);
 }
 
 /* Portfolio-style section label */
@@ -179,5 +214,5 @@ body:hover::-webkit-scrollbar-thumb { opacity: 1; }
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #c9a89b;
+  color: var(--accent-muted);
 }
