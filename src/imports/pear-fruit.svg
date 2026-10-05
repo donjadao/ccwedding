@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-  <path d="M62 31c-4 15 7 19 15 29 17 22 3 49-22 49S17 82 34 60c8-10 20-14 16-29h12Z" fill="var(--accent-primary)"/>
-  <path d="M56 33c2-14 8-21 18-27" fill="none" stroke="var(--accent-olive)" stroke-width="5" stroke-linecap="round"/>
-  <path d="M69 17c13-9 25-3 29 4-9 8-19 8-29-4Z" fill="var(--accent-olive)"/>
-  <path d="M38 75c5 17 21 24 34 17" fill="none" stroke="var(--accent-secondary)" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+  <path d="M62 31c-4 15 7 19 15 29 17 22 3 49-22 49S17 82 34 60c8-10 20-14 16-29h12Z" fill="var(--fruit-yellow)"/>
+  <path d="M56 33c2-14 8-21 18-27" fill="none" stroke="var(--fruit-green)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M69 17c13-9 25-3 29 4-9 8-19 8-29-4Z" fill="var(--fruit-green)"/>
+  <path d="M38 75c5 17 21 24 34 17" fill="none" stroke="var(--fruit-orange)" stroke-width="3" stroke-linecap="round" opacity=".55"/>
 </svg>
