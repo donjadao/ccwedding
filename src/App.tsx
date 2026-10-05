@@ -20,6 +20,11 @@ import ringPic from "./imports/ringpic.jpg";
 import farTreePic from "./imports/far_tree_pic.jpg";
 import blurPic from "./imports/blurpic.jpg";
 
+import floralAndFruits1 from "./imports/photos/floral_and_fruits1.png";
+import floralAndFruits2 from "./imports/photos/floral_and_fruits2.png";
+import floralAndFruits3 from "./imports/photos/floral_and_fruits3.png";
+import floralAndFruits4 from "./imports/photos/floral_and_fruits4.png";
+
 const WEDDING_DATE = new Date("2027-05-01T13:00:00-05:00").getTime();
 
 function getWeddingCountdown() {
@@ -413,21 +418,21 @@ const storyMilestones = [
     year: "2019",
     title: "First Meeting",
     body: "Something about something",
-    img: couplePhoto,
+    img: bridgePic,
     alt: "The couple, early days",
   },
   {
     year: "2021",
     title: "First Trip Together",
     body: "Something about something",
-    img: couplePhoto,
+    img: blurPic,
     alt: "Travel portrait",
   },
   {
     year: "2024",
     title: "The Proposal",
     body: "Something about something",
-    img: couplePhoto,
+    img: ringPic,
     alt: "Engagement portrait",
   },
 ];
@@ -559,12 +564,14 @@ function DetailsSection() {
 // ─── Gallery Section ──────────────────────────────────────────────────────────
 
 const galleryImages = [
-  { src: couplePhoto, alt: "The couple", span: "row-span-2" },
-  { src: couplePhoto, alt: "White florals", span: "" },
-  { src: couplePhoto, alt: "Floral arrangement", span: "" },
-  { src: couplePhoto, alt: "Pink roses", span: "row-span-2" },
-  { src: couplePhoto, alt: "Wedding dress portrait", span: "" },
-  { src: couplePhoto, alt: "White flower", span: "" },
+  { src: farTreePic, alt: "The couple", span: "row-span-2" },
+  { src: floralAndFruits, alt: "White florals", span: "" },
+  { src: benchPic, alt: "Floral arrangement", span: "" },
+  { src: floralAndFruits1, alt: "Pink roses", span: "row-span-2" },
+  { src: grassPic, alt: "Wedding dress portrait", span: "" },
+  { src: floralAndFruits2, alt: "Wedding dress portrait", span: "" },
+  { src: housePic, alt: "White flower", span: "" },
+  { src: floralAndFruits3, alt: "Wedding dress portrait", span: "" },
 ];
 
 function GallerySection() {
@@ -574,12 +581,12 @@ function GallerySection() {
       <div className="max-w-6xl mx-auto px-8">
         <div className="mb-16 flex items-end justify-between">
           <div>
-            <p className="section-label mb-4">Portfolio</p>
+            <p className="section-label mb-4">Gallery</p>
             <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 400, color: "var(--heading-dark)", letterSpacing: "0.05em" }}>
               Our Moments
             </h2>
           </div>
-          <p className="section-label" style={{ color: "var(--accent-muted)" }}>06 images</p>
+          <p className="section-label" style={{ color: "var(--accent-muted)" }}>08 images</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 auto-rows-[220px]">
