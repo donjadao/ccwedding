@@ -191,6 +191,31 @@ function Logomark({ size = 200 }: { size?: number }) {
   );
 }
 
+// ─── Date Countdown ─────────────────────────────────────────────────────────────
+function HeroSection() {
+  const weddingDate = new Date("2027-05-01T13:00:00-05:00");
+  const now = new Date();
+
+  const totalMilliseconds = Math.max(
+    weddingDate.getTime() - now.getTime(),
+    0,
+  );
+
+  const days = Math.floor(totalMilliseconds / 86_400_000);
+  const hours = Math.floor((totalMilliseconds / 3_600_000) % 24);
+  const minutes = Math.floor((totalMilliseconds / 60_000) % 60);
+
+  const countdown = [
+    [String(days), "Days"],
+    [String(hours).padStart(2, "0"), "Hours"],
+    [String(minutes).padStart(2, "0"), "Minutes"],
+  ];
+
+  return (
+    // ...
+  );
+}
+
 // ─── Intro Overlay ─────────────────────────────────────────────────────────────
 
 type IntroPhase = "logo" | "floral" | "photo" | "done";
@@ -262,7 +287,7 @@ function IntroOverlay({ onComplete }: { onComplete: () => void }) {
               Chi Tai and Christine
             </h1>
             <p className="text-[#e8c4b8] text-sm tracking-[0.25em] uppercase mt-2" style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}>
-              September 12, 2026 · Albuquerque, NM or Oklahoma
+              Wedding Date: Saturday, May 1, 2027 Oklahoma City, Oklahoma
             </p>
             <div className="mt-8 flex flex-col items-center gap-2">
               <p className="text-[#c9a89b] text-xs tracking-widest uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>Scroll</p>
@@ -334,7 +359,7 @@ function HeroSection() {
     <section className="relative h-screen flex items-end pb-24 overflow-hidden" style={{ background: "#1a1614" }}>
       <img
         src={couplePhoto}
-        alt="Eleanor and James"
+        alt="Chi Tai and Christine"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ opacity: 0.55 }}
       />
@@ -353,19 +378,19 @@ function HeroSection() {
           <p className="section-label mb-5" style={{ color: "#c9a89b" }}>12 · 09 · 2026</p>
           <h1 className="text-white mb-4 leading-none"
             style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(3rem, 8vw, 6.5rem)", fontWeight: 400, letterSpacing: "0.04em" }}>
-            Don
+            Chi Tai
             <br />
             <span style={{ fontStyle: "italic", color: "#c9a89b" }}>&amp;</span>{" "}
-            Donja
+            Christine
           </h1>
           <p className="text-[#e8c4b8] mt-6 max-w-sm leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "1.05rem", fontWeight: 300 }}>
-            Isn't Don just sooooo cool.
+            Text filllllerrrrrrrrrr
           </p>
         </div>
 
         {/* Countdown */}
         <div className="mt-12 flex gap-8">
-          {[["142", "Days"], ["08", "Hours"], ["34", "Minutes"]].map(([val, label]) => (
+          {countdown.map(
             <div key={label} className="text-center">
               <div className="text-white" style={{ fontFamily: "'Cinzel', serif", fontSize: "2rem", fontWeight: 400, lineHeight: 1 }}>{val}</div>
               <div className="section-label mt-1" style={{ color: "#8a7a72" }}>{label}</div>
@@ -420,8 +445,8 @@ function OurStorySection() {
             </h2>
           </div>
           <p className="max-w-xs text-sm leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", color: "#8a7a72", fontWeight: 300, fontSize: "1rem" }}>
-            "Wowwowowo love is just so cool"
-            <br/><span className="section-label not-italic" style={{ color: "#c9a89b", fontFamily: "'DM Sans', sans-serif" }}>— Aristotle</span>
+            "Love is patient, love is kind. It is not jealous, love is not pompous, it is not inflated, it is not rude, it does not seek its own interests, it is not quick-tempered, it does not brood over injury, it does not rejoice over wrongdoing but rejoices with the truth. It bears all things, believes all things, hopes all things, endures all things."
+            <br/><span className="section-label not-italic" style={{ color: "#c9a89b", fontFamily: "'DM Sans', sans-serif" }}>— 1 Corinthians 13:4-7/span>
           </p>
         </div>
 
@@ -465,11 +490,11 @@ function OurStorySection() {
 function DetailsSection() {
   const details = [
     {
-      label: "Ceremony",
-      time: "4:00 PM",
-      title: "The Church",
-      sub: "the addy",
-      note: "Indoor Ceremony. Please arrive 67 minutes early.",
+      label: "Tea Ceremony",
+      time: "10:00 AM",
+      title: "The Bride's House",
+      sub: "11869 SW 2nd St, Yukon, OK 73099",
+      note: "Formally uniting the two families, honoring the parents and elders, and expression of deep gratitude for upbringing and family heritage before receiving the Sacrament of Matrimony.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
@@ -478,11 +503,11 @@ function DetailsSection() {
       ),
     },
     {
-      label: "Reception",
-      time: "7:00 PM",
-      title: "Olive Garden",
-      sub: "the addy",
-      note: "Dinner, dancing, and unlimited breadsticks, Black tie formal mandatory",
+      label: "Wedding Ceremony",
+      time: "1:00 PM",
+      title: "St. Andrew Dung Lac Catholic Church",
+      sub: "3115 SW 59th St, Oklahoma City, OK 73159",
+      note: "",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
           <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/>
@@ -490,11 +515,11 @@ function DetailsSection() {
       ),
     },
     {
-      label: "Accommodation",
-      time: "Check-in: Sep 11",
-      title: "Hotel Motel Holiday Inn",
-      sub: "addy",
-      note: "Room block reserved under 'mr World Wide.' Book by July 15.",
+      label: "Reception",
+      time: "6:00 - 11:00 PM",
+      title: "Civic Center Music Hall",
+      sub: "201 N Walker Ave, Oklahoma City, OK 73102",
+      note: "Coctail Hour from 5:00 - 6:00 PM.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
           <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
@@ -532,10 +557,7 @@ function DetailsSection() {
         {/* Date highlight bar */}
         <div className="mt-px p-8 flex flex-col md:flex-row items-center justify-between gap-4" style={{ background: "rgba(201,168,155,0.06)", border: "1px solid rgba(201,168,155,0.15)" }}>
           <p style={{ fontFamily: "'Cinzel', serif", fontSize: "0.85rem", color: "#c9a89b", letterSpacing: "0.2em" }}>
-            SEPTEMBER 12 · 2026 · TUSCANY, ITALY
-          </p>
-          <p style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "0.9rem", color: "#8a7a72", fontWeight: 300 }}>
-            142 days remaining
+            Saturday · May 1 · 2027 · Oklahomka City, Oklahoma
           </p>
         </div>
       </div>
@@ -695,7 +717,7 @@ function Footer() {
     <footer className="py-16 text-center border-t" style={{ background: "#1a1614", borderColor: "rgba(201,168,155,0.15)" }}>
       <Logomark size={100} />
       <p className="mt-8 section-label" style={{ color: "#5a4f4a" }}>
-        Eleanor & James · September 12, 2026 · Tuscany, Italy
+        Chi Tai & Christine · +++++++++++++++++++++++++++++++
       </p>
       <p className="mt-3" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", fontSize: "0.85rem", color: "#4a3f3a", fontWeight: 300 }}>
         Made with love ♡
