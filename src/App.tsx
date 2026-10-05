@@ -488,83 +488,9 @@ function OurStorySection() {
 // ─── Details Section ──────────────────────────────────────────────────────────
 
 function DetailsSection() {
-  const details = [
-    {
-      label: "Tea Ceremony",
-      time: "10:00 AM",
-      title: "The Bride's House",
-      sub: "11869 SW 2nd St, Yukon, OK 73099",
-      note: "Formally uniting the two families, honoring the parents and elders, and expression of deep gratitude for upbringing and family heritage before receiving the Sacrament of Matrimony.",
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-          <circle cx="12" cy="9" r="2.5"/>
-        </svg>
-      ),
-    },
-    {
-      label: "Wedding Ceremony",
-      time: "1:00 PM",
-      title: "St. Andrew Dung Lac Catholic Church",
-      sub: "3115 SW 59th St, Oklahoma City, OK 73159",
-      note: "",
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
-          <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/>
-        </svg>
-      ),
-    },
-    {
-      label: "Reception",
-      time: "6:00 - 11:00 PM",
-      title: "Civic Center Music Hall",
-      sub: "201 N Walker Ave, Oklahoma City, OK 73102",
-      note: "Coctail Hour from 5:00 - 6:00 PM.",
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[#c9a89b]">
-          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-      ),
-    },
-  ];
-
-  return (
-    <section id="details" className="py-32" style={{ background: "#1a1614" }}>
-      <div className="max-w-6xl mx-auto px-8">
-        <div className="mb-16 text-center">
-          <p className="section-label mb-4" style={{ color: "#c9a89b" }}>Wedding Details</p>
-          <h2 style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 400, color: "#f8f4ef", letterSpacing: "0.05em" }}>
-            The Celebration
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-px" style={{ background: "rgba(201,168,155,0.15)" }}>
-          {details.map(d => (
-            <div key={d.label} className="p-10 flex flex-col gap-6" style={{ background: "#1a1614" }}>
-              {d.icon}
-              <div>
-                <p className="section-label mb-2" style={{ color: "#8a7a72" }}>{d.label}</p>
-                <p className="text-xs mb-4" style={{ fontFamily: "'DM Sans', sans-serif", color: "#b8965a", letterSpacing: "0.1em" }}>{d.time}</p>
-                <h3 className="mb-2" style={{ fontFamily: "'Cinzel', serif", fontSize: "1.25rem", fontWeight: 400, color: "#f8f4ef", letterSpacing: "0.04em" }}>{d.title}</h3>
-                <p className="text-xs mb-4" style={{ fontFamily: "'DM Sans', sans-serif", color: "#8a7a72", lineHeight: 1.6 }}>{d.sub}</p>
-                <p className="text-xs leading-relaxed" style={{ fontFamily: "'Fraunces', serif", fontStyle: "italic", color: "#b0a09a", fontWeight: 300 }}>{d.note}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Date highlight bar */}
-        <div className="mt-px p-8 flex flex-col md:flex-row items-center justify-between gap-4" style={{ background: "rgba(201,168,155,0.06)", border: "1px solid rgba(201,168,155,0.15)" }}>
-          <p style={{ fontFamily: "'Cinzel', serif", fontSize: "0.85rem", color: "#c9a89b", letterSpacing: "0.2em" }}>
-            Saturday · May 1 · 2027 · Oklahomka City, Oklahoma
-          </p>
-        </div>
-      </div>
-    </section>
-  );
+return <div>Test</div>;
 }
-
+      
 // ─── Gallery Section ──────────────────────────────────────────────────────────
 
 const galleryImages = [
