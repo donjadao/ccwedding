@@ -701,7 +701,7 @@ const connectionGroups = [
   {
     key: "Famous Couples",
     title: "Artist and Athlete Couples (Chi Tai wishes he was here)",
-    words: ["Madison Beer and Justin Herbert", "Megan Thee Stallion and Klay Tompson", "Taylor Swift and Travis Kelce", "Hailee Steinfeld"],
+    words: ["Madison Beer and Justin Herbert", "Megan Thee Stallion and Klay Tompson", "Taylor Swift and Travis Kelce", "Hailey Steinfeld and Josh Allen"],
     color: "#c7d1c5",
   },
   {
