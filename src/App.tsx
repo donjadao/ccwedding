@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import couplePhoto from "./src/imports/CS_16565_websize.jpg"; 
+import couplePhoto from "./imports/CS_16565_websize.jpg";
 
 // ─── Floral SVG Elements ──────────────────────────────────────────────────────
 
