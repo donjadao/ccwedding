@@ -12,6 +12,13 @@ import venueIconSvg from "./imports/venue-icon.svg?raw";
 import weddingMonogramSvg from "./imports/wedding-monogram.svg?raw";
 
 import couplePhoto from "./imports/CS_16565_websize.jpg";
+import benchPic from "./imports/benchpic.jpg";
+import bridgePic from "./imports/bridgepic.jpg";
+import grassPic from "./imports/grasspic.jpg";
+import housePic from "./imports/housepic.jpg";
+import ringPic from "./imports/ringpic.jpg";
+import farTreePic from "./imports/far_tree_pic.jpg";
+import blurPic from "./imports/blurpic.jpg";
 
 const WEDDING_DATE = new Date("2027-05-01T13:00:00-05:00").getTime();
 
@@ -747,28 +754,48 @@ function ConnectionsGameSection() {
               .map((group) => (
                 <div
                   key={group.key}
-                  className="min-h-24 flex flex-col items-center justify-center px-4 py-5 text-center"
-                  style={{ background: group.color }}
+                  className="relative h-32 md:h-28 overflow-hidden flex flex-col items-center justify-center px-4 text-center animate-photo-reveal"
+                  style={{ background: gameLost ? group.color : "var(--background-dark)" }}
                 >
+                  {!gameLost && (
+                    <>
+                      <img
+                        src={couplePhoto}
+                        alt=""
+                        aria-hidden="true"
+                        className="absolute left-0 w-full h-[400%] max-w-none object-cover pointer-events-none"
+                        style={{
+                          top: `${-connectionGroups.indexOf(group) * 100}%`,
+                        }}
+                      />
+                      <div
+                        className="absolute inset-0"
+                        style={{
+                          background:
+                            "linear-gradient(90deg, color-mix(in srgb, var(--background-dark) 78%, transparent), color-mix(in srgb, var(--background-dark) 38%, transparent), color-mix(in srgb, var(--background-dark) 70%, transparent))",
+                        }}
+                      />
+                    </>
+                  )}
                   <p
-                    className="uppercase"
+                    className="relative uppercase"
                     style={{
                       fontFamily: "'DM Sans', sans-serif",
                       fontSize: "0.72rem",
                       fontWeight: 500,
                       letterSpacing: "0.16em",
-                      color: "var(--heading-dark)",
+                      color: gameLost ? "var(--heading-dark)" : "var(--heading-light)",
                     }}
                   >
                     {group.title}
                   </p>
                   <p
-                    className="mt-2"
+                    className="relative mt-2"
                     style={{
                       fontFamily: "'DM Sans', sans-serif",
                       fontSize: "0.78rem",
                       letterSpacing: "0.08em",
-                      color: "var(--heading-dark)",
+                      color: gameLost ? "var(--heading-dark)" : "var(--text-light)",
                     }}
                   >
                     {group.words.join(", ")}
@@ -776,51 +803,6 @@ function ConnectionsGameSection() {
                 </div>
               ))}
           </div>
-
-          {gameWon && (
-            <div className="relative mt-6 min-h-[360px] overflow-hidden animate-photo-reveal">
-              <img
-                src={couplePhoto}
-                alt="Chi Tai and Christine"
-                className="absolute inset-0 size-full object-cover"
-                style={{ opacity: 0.72 }}
-              />
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(to top, color-mix(in srgb, var(--background-dark) 92%, transparent) 0%, color-mix(in srgb, var(--background-dark) 35%, transparent) 58%, color-mix(in srgb, var(--background-dark) 12%, transparent) 100%)",
-                }}
-              />
-              <div className="absolute inset-x-0 bottom-0 p-8 md:p-12 text-left animate-section">
-                <p className="section-label mb-3" style={{ color: "var(--text-light)" }}>
-                  Every Connection Found
-                </p>
-                <h3
-                  style={{
-                    fontFamily: "'Cinzel', serif",
-                    fontSize: "clamp(1.8rem, 5vw, 3.2rem)",
-                    fontWeight: 400,
-                    color: "var(--heading-light)",
-                    letterSpacing: "0.06em",
-                  }}
-                >
-                  A Perfect Match
-                </h3>
-                <p
-                  className="mt-3 max-w-md"
-                  style={{
-                    fontFamily: "'Fraunces', serif",
-                    fontStyle: "italic",
-                    color: "var(--text-light)",
-                    fontWeight: 300,
-                  }}
-                >
-                  You found every connection—just like these two found each other.
-                </p>
-              </div>
-            </div>
-          )}
 
           {!gameWon && !gameLost && (
             <div className="grid grid-cols-4 gap-2">
