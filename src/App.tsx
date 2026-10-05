@@ -259,7 +259,7 @@ function IntroOverlay({ onComplete }: { onComplete: () => void }) {
           <div className="text-center animate-section">
             <p className="section-label mb-4" style={{ color: "#c9a89b" }}>Est. 2025</p>
             <h1 className="text-white mb-2" style={{ fontFamily: "'Cinzel', serif", fontSize: "clamp(2.2rem, 6vw, 4rem)", fontWeight: 400, letterSpacing: "0.1em" }}>
-              Don and Donja
+              Chi Tai and Christine
             </h1>
             <p className="text-[#e8c4b8] text-sm tracking-[0.25em] uppercase mt-2" style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}>
               September 12, 2026 · Albuquerque, NM or Oklahoma
@@ -306,7 +306,7 @@ function Nav() {
             <circle cx="30" cy="30" r="28" stroke="#c9a89b" strokeWidth="0.8" opacity="0.5"/>
             <text x="8" y="40" fontFamily="'Cinzel', serif" fontSize="18" fontWeight="400" fill="#1a1614">E&J</text>
           </svg>
-          <span className="hidden md:block section-label" style={{ color: "#1a1614" }}>Don and Donja</span>
+          <span className="hidden md:block section-label" style={{ color: "#1a1614" }}>Chi Tai and Christine</span>
         </div>
         <div className="flex items-center gap-8">
           {links.map(link => (
