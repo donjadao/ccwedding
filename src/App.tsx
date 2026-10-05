@@ -1,4 +1,16 @@
 import { useState, useEffect, useRef } from "react";
+import calendarIconSvg from "./imports/calendar-icon.svg?raw";
+import cherriesFruitSvg from "./imports/cherries-fruit.svg?raw";
+import citrusFruitSvg from "./imports/citrus-fruit.svg?raw";
+import floralBranchSvg from "./imports/floral-branch.svg?raw";
+import floralGarlandSvg from "./imports/floral-garland.svg?raw";
+import locationIconSvg from "./imports/location-icon.svg?raw";
+import navigationMonogramSvg from "./imports/navigation-monogram.svg?raw";
+import pearFruitSvg from "./imports/pear-fruit.svg?raw";
+import successCheckSvg from "./imports/success-check.svg?raw";
+import venueIconSvg from "./imports/venue-icon.svg?raw";
+import weddingMonogramSvg from "./imports/wedding-monogram.svg?raw";
+
 import couplePhoto from "./imports/CS_16565_websize.jpg";
 
 const WEDDING_DATE = new Date("2027-05-01T13:00:00-05:00").getTime();
@@ -27,113 +39,77 @@ function useWeddingCountdown() {
   return countdown;
 }
 
+type FruitVariant = "citrus" | "pear" | "cherries";
+
+const fruitArtwork: Record<FruitVariant, string> = {
+  citrus: citrusFruitSvg,
+  pear: pearFruitSvg,
+  cherries: cherriesFruitSvg,
+};
+
+function SvgArtwork({ source, className = "" }: { source: string; className?: string }) {
+  return (
+    <span
+      className={`svg-artwork ${className}`}
+      aria-hidden="true"
+      dangerouslySetInnerHTML={{ __html: source }}
+    />
+  );
+}
+
+function ScrollFruit({
+  side,
+  variant,
+  top = "24%",
+}: {
+  side: "left" | "right";
+  variant: FruitVariant;
+  top?: string;
+}) {
+  const anchorRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const anchor = anchorRef.current;
+    if (!anchor) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { rootMargin: "-24% 0px -18% 0px", threshold: 0 },
+    );
+
+    observer.observe(anchor);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={anchorRef}
+      className={`scroll-fruit-anchor scroll-fruit-anchor-${side}`}
+      aria-hidden="true"
+      style={{ top }}
+    >
+      <div
+        className={`scroll-fruit scroll-fruit-${side} ${visible ? "is-visible" : ""}`}
+      >
+        <SvgArtwork source={fruitArtwork[variant]} className="size-full" />
+      </div>
+    </div>
+  );
+}
+
 // ─── Floral SVG Elements ──────────────────────────────────────────────────────
 
 function FloralBranchLeft() {
-  return (
-    <svg viewBox="0 0 320 480" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-      {/* Main stem */}
-      <path d="M 40 480 C 60 380 80 320 100 240 C 120 160 130 100 160 40" stroke="var(--accent-muted)" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.8"/>
-      {/* Branch 1 */}
-      <path d="M 85 300 C 60 280 30 270 10 240" stroke="var(--accent-muted)" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
-      {/* Branch 2 */}
-      <path d="M 110 220 C 90 200 70 180 40 160" stroke="var(--accent-muted)" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
-      {/* Branch 3 */}
-      <path d="M 130 160 C 110 140 90 120 70 100" stroke="var(--accent-muted)" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
-
-      {/* Rose 1 - main */}
-      <g transform="translate(145, 30)">
-        <circle cx="0" cy="0" r="18" fill="var(--accent-muted)" opacity="0.15"/>
-        <path d="M 0 -14 C 6 -10 10 -4 10 2 C 10 9 6 14 0 14 C -6 14 -10 9 -10 2 C -10 -4 -6 -10 0 -14 Z" fill="var(--floral-petal-light)" opacity="0.7"/>
-        <path d="M -8 -10 C -2 -8 4 -4 6 2 C 8 8 4 12 -2 12 C -8 12 -12 8 -12 2 C -12 -4 -10 -8 -8 -10 Z" fill="var(--floral-petal-deep)" opacity="0.6"/>
-        <path d="M 8 -10 C 4 -6 6 0 4 6 C 2 10 -2 12 -6 10 C -2 6 2 0 2 -6 C 2 -10 6 -12 8 -10 Z" fill="var(--floral-petal-deep)" opacity="0.6"/>
-        <circle cx="0" cy="2" r="5" fill="var(--accent-muted)" opacity="0.8"/>
-        <circle cx="0" cy="2" r="2" fill="var(--accent-gold)" opacity="0.9"/>
-      </g>
-
-      {/* Bud 1 */}
-      <g transform="translate(5, 234)">
-        <ellipse cx="0" cy="0" rx="7" ry="10" fill="var(--floral-petal-light)" opacity="0.6" transform="rotate(-20)"/>
-        <path d="M 0 10 C 2 6 2 0 0 -10" stroke="var(--accent-muted)" strokeWidth="0.8" fill="none" opacity="0.5"/>
-      </g>
-
-      {/* Bud 2 */}
-      <g transform="translate(38, 152)">
-        <ellipse cx="0" cy="0" rx="6" ry="9" fill="var(--floral-petal-light)" opacity="0.5" transform="rotate(15)"/>
-      </g>
-
-      {/* Rose 2 - smaller */}
-      <g transform="translate(62, 92)">
-        <path d="M 0 -10 C 4 -7 7 -2 7 3 C 7 7 4 10 0 10 C -4 10 -7 7 -7 3 C -7 -2 -4 -7 0 -10 Z" fill="var(--floral-petal-light)" opacity="0.65"/>
-        <path d="M -6 -7 C -2 -5 2 0 3 5 C 4 8 2 10 -2 9" fill="var(--floral-petal-deep)" opacity="0.5"/>
-        <circle cx="0" cy="2" r="3.5" fill="var(--accent-muted)" opacity="0.7"/>
-      </g>
-
-      {/* Leaves */}
-      <path d="M 95 265 C 70 255 55 270 50 285 C 65 280 80 268 95 265 Z" fill="var(--accent-leaf)" opacity="0.4"/>
-      <path d="M 115 190 C 92 182 78 195 74 208 C 88 203 102 192 115 190 Z" fill="var(--accent-leaf)" opacity="0.35"/>
-      <path d="M 135 130 C 112 124 100 138 97 150 C 110 144 124 132 135 130 Z" fill="var(--accent-leaf)" opacity="0.3"/>
-
-      {/* Small floating petals */}
-      <ellipse cx="20" cy="350" rx="4" ry="7" fill="var(--floral-petal-light)" opacity="0.3" transform="rotate(30 20 350)"/>
-      <ellipse cx="55" cy="420" rx="3" ry="5" fill="var(--floral-petal-light)" opacity="0.25" transform="rotate(-15 55 420)"/>
-      <ellipse cx="140" cy="200" rx="3" ry="6" fill="var(--floral-petal-light)" opacity="0.3" transform="rotate(45 140 200)"/>
-    </svg>
-  );
+  return <SvgArtwork source={floralBranchSvg} className="size-full" />;
 }
 
 function FloralBranchRight() {
-  return (
-    <svg viewBox="0 0 320 480" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" style={{ transform: "scaleX(-1)" }}>
-      <path d="M 40 480 C 60 380 80 320 100 240 C 120 160 130 100 160 40" stroke="var(--accent-muted)" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.8"/>
-      <path d="M 85 300 C 60 280 30 270 10 240" stroke="var(--accent-muted)" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
-      <path d="M 110 220 C 90 200 70 180 40 160" stroke="var(--accent-muted)" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
-      <path d="M 130 160 C 110 140 90 120 70 100" stroke="var(--accent-muted)" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.6"/>
-      <g transform="translate(145, 30)">
-        <circle cx="0" cy="0" r="18" fill="var(--accent-muted)" opacity="0.15"/>
-        <path d="M 0 -14 C 6 -10 10 -4 10 2 C 10 9 6 14 0 14 C -6 14 -10 9 -10 2 C -10 -4 -6 -10 0 -14 Z" fill="var(--floral-petal-light)" opacity="0.7"/>
-        <path d="M -8 -10 C -2 -8 4 -4 6 2 C 8 8 4 12 -2 12 C -8 12 -12 8 -12 2 C -12 -4 -10 -8 -8 -10 Z" fill="var(--floral-petal-deep)" opacity="0.6"/>
-        <path d="M 8 -10 C 4 -6 6 0 4 6 C 2 10 -2 12 -6 10 C -2 6 2 0 2 -6 C 2 -10 6 -12 8 -10 Z" fill="var(--floral-petal-deep)" opacity="0.6"/>
-        <circle cx="0" cy="2" r="5" fill="var(--accent-muted)" opacity="0.8"/>
-        <circle cx="0" cy="2" r="2" fill="var(--accent-gold)" opacity="0.9"/>
-      </g>
-      <g transform="translate(5, 234)">
-        <ellipse cx="0" cy="0" rx="7" ry="10" fill="var(--floral-petal-light)" opacity="0.6" transform="rotate(-20)"/>
-      </g>
-      <g transform="translate(38, 152)">
-        <ellipse cx="0" cy="0" rx="6" ry="9" fill="var(--floral-petal-light)" opacity="0.5" transform="rotate(15)"/>
-      </g>
-      <g transform="translate(62, 92)">
-        <path d="M 0 -10 C 4 -7 7 -2 7 3 C 7 7 4 10 0 10 C -4 10 -7 7 -7 3 C -7 -2 -4 -7 0 -10 Z" fill="var(--floral-petal-light)" opacity="0.65"/>
-        <path d="M -6 -7 C -2 -5 2 0 3 5 C 4 8 2 10 -2 9" fill="var(--floral-petal-deep)" opacity="0.5"/>
-        <circle cx="0" cy="2" r="3.5" fill="var(--accent-muted)" opacity="0.7"/>
-      </g>
-      <path d="M 95 265 C 70 255 55 270 50 285 C 65 280 80 268 95 265 Z" fill="var(--accent-leaf)" opacity="0.4"/>
-      <path d="M 115 190 C 92 182 78 195 74 208 C 88 203 102 192 115 190 Z" fill="var(--accent-leaf)" opacity="0.35"/>
-      <path d="M 135 130 C 112 124 100 138 97 150 C 110 144 124 132 135 130 Z" fill="var(--accent-leaf)" opacity="0.3"/>
-      <ellipse cx="20" cy="350" rx="4" ry="7" fill="var(--floral-petal-light)" opacity="0.3" transform="rotate(30 20 350)"/>
-      <ellipse cx="140" cy="200" rx="3" ry="6" fill="var(--floral-petal-light)" opacity="0.3" transform="rotate(45 140 200)"/>
-    </svg>
-  );
+  return <SvgArtwork source={floralBranchSvg} className="size-full scale-x-[-1]" />;
 }
 
 function FloralGarlandTop() {
-  return (
-    <svg viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-      <path d="M 0 80 C 100 60 200 40 400 30 C 600 20 700 50 800 70" stroke="var(--accent-muted)" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.6"/>
-      {/* Roses along top */}
-      {[80, 200, 320, 400, 480, 600, 720].map((x, i) => (
-        <g key={i} transform={`translate(${x}, ${25 + Math.sin(i) * 15})`}>
-          <path d="M 0 -9 C 4 -6 7 -2 7 3 C 7 7 4 9 0 9 C -4 9 -7 7 -7 3 C -7 -2 -4 -6 0 -9 Z" fill="var(--floral-petal-light)" opacity="0.6"/>
-          <circle cx="0" cy="1" r="3" fill="var(--accent-muted)" opacity="0.7"/>
-        </g>
-      ))}
-      {/* Leaves */}
-      {[140, 260, 360, 440, 540, 660].map((x, i) => (
-        <path key={i} d={`M ${x} ${35 + Math.sin(i * 0.7) * 10} C ${x - 12} ${30 + Math.sin(i * 0.7) * 10} ${x - 18} ${42 + Math.sin(i * 0.7) * 10} ${x - 10} ${48 + Math.sin(i * 0.7) * 10} C ${x} ${42 + Math.sin(i * 0.7) * 10} ${x + 4} ${35 + Math.sin(i * 0.7) * 10} ${x} ${35 + Math.sin(i * 0.7) * 10} Z`} fill="var(--accent-leaf)" opacity="0.35"/>
-      ))}
-    </svg>
-  );
+  return <SvgArtwork source={floralGarlandSvg} className="size-full" />;
 }
 
 // ─── Logomark ─────────────────────────────────────────────────────────────────
@@ -141,78 +117,10 @@ function FloralGarlandTop() {
 function Logomark({ size = 200 }: { size?: number }) {
   return (
     <div className="flex flex-col items-center gap-4" style={{ width: size }}>
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" width={size} height={size}>
-        {/* Outer decorative ring */}
-        <circle cx="100" cy="100" r="94" stroke="var(--accent-muted)" strokeWidth="0.5" opacity="0.4"/>
-        <circle cx="100" cy="100" r="88" stroke="var(--accent-muted)" strokeWidth="0.3" opacity="0.3"/>
-
-        {/* Corner flourishes */}
-        <path d="M 100 12 C 104 20 104 28 100 32 C 96 28 96 20 100 12 Z" fill="var(--accent-muted)" opacity="0.5"/>
-        <path d="M 100 168 C 104 176 104 184 100 188 C 96 184 96 176 100 168 Z" fill="var(--accent-muted)" opacity="0.5"/>
-        <path d="M 12 100 C 20 96 28 96 32 100 C 28 104 20 104 12 100 Z" fill="var(--accent-muted)" opacity="0.5"/>
-        <path d="M 168 100 C 176 96 184 96 188 100 C 184 104 176 104 168 100 Z" fill="var(--accent-muted)" opacity="0.5"/>
-
-        {/* Small roses at cardinal points */}
-        {[[100, 22], [100, 178], [22, 100], [178, 100]].map(([cx, cy], i) => (
-          <g key={i} transform={`translate(${cx}, ${cy})`}>
-            <circle r="5" fill="var(--accent-muted)" opacity="0.2"/>
-            <circle r="2.5" fill="var(--accent-muted)" opacity="0.5"/>
-            <circle r="1" fill="var(--accent-gold)" opacity="0.8"/>
-          </g>
-        ))}
-
-        {/* Monogram letters */}
-        <text
-          x="67"
-          y="116"
-          fontFamily="'Cinzel', serif"
-          fontSize="44"
-          fontWeight="400"
-          fill="var(--floral-petal-light)"
-          opacity="0.95"
-          letterSpacing="2"
-        >
-          C
-        </text>
-        <text
-          x="95"
-          y="116"
-          fontFamily="'Cinzel', serif"
-          fontSize="44"
-          fontWeight="400"
-          fill="var(--accent-muted)"
-          opacity="0.9"
-          letterSpacing="2"
-        >
-          &
-        </text>
-        <text
-          x="126"
-          y="116"
-          fontFamily="'Cinzel', serif"
-          fontSize="44"
-          fontWeight="400"
-          fill="var(--floral-petal-light)"
-          opacity="0.95"
-          letterSpacing="2"
-        >
-          C
-        </text>
-
-        {/* Decorative horizontal lines */}
-        <line x1="36" y1="72" x2="164" y2="72" stroke="var(--accent-muted)" strokeWidth="0.5" opacity="0.4"/>
-        <line x1="36" y1="128" x2="164" y2="128" stroke="var(--accent-muted)" strokeWidth="0.5" opacity="0.4"/>
-
-        {/* Small diamond accents */}
-        <polygon points="100,65 103,68 100,71 97,68" fill="var(--accent-gold)" opacity="0.6"/>
-        <polygon points="100,129 103,132 100,135 97,132" fill="var(--accent-gold)" opacity="0.6"/>
-      </svg>
-
-      <div className="text-center">
-        <p className="text-[var(--accent-muted)] text-[0.55rem] tracking-[0.4em] uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-          Together Forever
-        </p>
-      </div>
+      <SvgArtwork source={weddingMonogramSvg} className="aspect-square w-full" />
+      <p className="text-[var(--accent-muted)] text-[0.55rem] tracking-[0.4em] uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+        Together Forever
+      </p>
     </div>
   );
 }
@@ -347,10 +255,7 @@ function Nav() {
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <svg viewBox="0 0 60 60" width={32} height={32} fill="none">
-            <circle cx="30" cy="30" r="28" stroke="var(--accent-muted)" strokeWidth="0.8" opacity="0.5"/>
-            <text x="8" y="40" fontFamily="'Cinzel', serif" fontSize="18" fontWeight="400" fill="var(--heading-dark)">C&C</text>
-          </svg>
+          <SvgArtwork source={navigationMonogramSvg} className="size-8" />
           <span className="section-label" style={{ color: "var(--heading-dark)" }}>Chi Tai and Christine</span>
         </div>
 
@@ -514,6 +419,7 @@ const storyMilestones = [
 function OurStorySection() {
   return (
     <section id="our-story" className="relative py-32" style={{ background: "var(--background-light)" }}>
+      <ScrollFruit side="right" variant="citrus" top="18%" />
       <div className="max-w-6xl mx-auto px-8">
         <div className="mb-16 flex items-start justify-between flex-wrap gap-8">
           <div>
@@ -574,12 +480,7 @@ function DetailsSection() {
       title: "The Bride's House",
       sub: "11869 SW 2nd St, Yukon, OK 73099",
       note: "Filler TExt",
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[var(--accent-muted)]">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-          <circle cx="12" cy="9" r="2.5"/>
-        </svg>
-      ),
+      icon: <SvgArtwork source={locationIconSvg} className="size-8" />,
     },
     {
       label: "Wedding Ceremony",
@@ -587,11 +488,7 @@ function DetailsSection() {
       title: "St. Andrew Dung Lac Catholic Church",
       sub: "3115 SW 59th St, Oklahoma City, OK 73159",
       note: "Filler Text",
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[var(--accent-muted)]">
-          <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/>
-        </svg>
-      ),
+      icon: <SvgArtwork source={calendarIconSvg} className="size-8" />,
     },
     {
       label: "Reception",
@@ -599,17 +496,13 @@ function DetailsSection() {
       title: "Civic Center Music Hall",
       sub: "201 N Walker Ave, Oklahoma City, OK 73102",
       note: "5:00-6:00 PM - Cocktail Hour @Civic Center Music Hall.",
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8 text-[var(--accent-muted)]">
-          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-      ),
+      icon: <SvgArtwork source={venueIconSvg} className="size-8" />,
     },
   ];
 
   return (
     <section id="details" className="relative py-32" style={{ background: "var(--background-dark)" }}>
+      <ScrollFruit side="left" variant="pear" top="24%" />
       <div className="max-w-6xl mx-auto px-8">
         <div className="mb-16 text-center">
           <p className="section-label mb-4" style={{ color: "var(--accent-muted)" }}>Wedding Details</p>
@@ -661,6 +554,7 @@ const galleryImages = [
 function GallerySection() {
   return (
     <section id="gallery" className="relative py-32" style={{ background: "var(--background-light)" }}>
+      <ScrollFruit side="right" variant="cherries" top="42%" />
       <div className="max-w-6xl mx-auto px-8">
         <div className="mb-16 flex items-end justify-between">
           <div>
@@ -803,6 +697,7 @@ function ConnectionsGameSection() {
 
   return (
     <section id="play-a-game" className="relative py-32" style={{ background: "var(--game-background)" }}>
+      <ScrollFruit side="left" variant="citrus" top="58%" />
       <div className="relative max-w-4xl mx-auto px-5 md:px-8" style={{ zIndex: 6 }}>
         <div className="text-center mb-12">
           <p className="section-label mb-4">A Little Interlude</p>
@@ -992,6 +887,7 @@ function RSVPSection() {
 
   return (
     <section id="rsvp" className="relative py-32" style={{ background: "var(--background-soft)" }}>
+      <ScrollFruit side="right" variant="pear" top="20%" />
       <div className="max-w-6xl mx-auto px-8">
         <div className="grid md:grid-cols-2 gap-20 items-start">
           {/* Left */}
@@ -1015,10 +911,7 @@ function RSVPSection() {
             {submitted ? (
               <div className="text-center py-16">
                 <div className="mb-6">
-                  <svg viewBox="0 0 60 60" width={60} height={60} fill="none" className="mx-auto">
-                    <circle cx="30" cy="30" r="28" stroke="var(--accent-muted)" strokeWidth="1"/>
-                    <path d="M 18 30 L 26 38 L 42 22" stroke="var(--accent-muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                  <SvgArtwork source={successCheckSvg} className="mx-auto size-[60px]" />
                 </div>
                 <h3 className="mb-3" style={{ fontFamily: "'Cinzel', serif", fontSize: "1.5rem", color: "var(--heading-dark)", letterSpacing: "0.05em" }}>
                   Thank You, {form.name.split(" ")[0]}
