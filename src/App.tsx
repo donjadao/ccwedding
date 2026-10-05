@@ -695,7 +695,7 @@ const connectionGroups = [
   {
     key: "C & C",
     title: "Things with C and C initialism",
-    words: ["Chi Tai and Christine", "Campus Corner", "Closed Captions", "Carbon Copy"],
+    words: ["Chi Tai Pham and Christine Hoang", "Campus Corner", "Closed Captions", "Carbon Copy"],
     color: "#dfcfbe",
   },
   {
