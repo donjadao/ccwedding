@@ -464,14 +464,14 @@ const storyMilestones = [
   {
     year: "2021",
     title: "First Trip Together",
-    body: "This can be any kind of event",
+    body: "filler text",
     img: couplePhoto,
     alt: "Travel portrait",
   },
   {
     year: "2024",
     title: "The Proposal",
-    body: "The only time chi tai ever got on his knees",
+    body: "filler text",
     img: couplePhoto,
     alt: "Engagement portrait",
   },
