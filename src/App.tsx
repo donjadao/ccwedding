@@ -12,8 +12,16 @@ import venueIconSvg from "./imports/venue-icon.svg?raw"
 import weddingLogo from "./imports/wedding-monogram.svg"
 
 import grasspic from "./imports/ChixTine/grasspic.jpg"
-import coveredkiss from "./imports/ChixTine/CS_16558_websize.jpg"
+import coveredkiss from ".imports/ChixTine/CS_16565_websize.jpg"
 import benchpic from "./imports/ChixTine/benchpic.jpg"
+import bridgepic from "./imports/ChixTine/bridgepic.jpg"
+import housepic from "./imports/ChixTine/CS_17575_websize.jpg"
+import blurpic from "./imports/ChixTine/blurpic.jpg"
+
+import floral_and_fruits from "./imports/ChixTine/photos/floral_and_fruits.jpg"
+import floral_and_fruits2 from "./imports/ChixTine/photos/floral_and_fruits2.jpg"
+import floral_and_fruits3 from "./imports/ChixTine/photos/floral_and_fruits3.jpg"
+import floral_and_fruits4 from "./imports/ChixTine/photos/floral_and_fruits4.jpg"
 
 const WEDDING_DATE = new Date("2027-05-01T13:00:00-05:00").getTime()
 
@@ -248,19 +256,19 @@ function Hero() {
 
 const milestones = [
   [
-    "2019",
+    "1987",
     "First Meeting",
-    "A chance hello became the beginning of our favorite story.",
+    "In the time of dinosaurs.",
   ],
   [
     "2021",
-    "First Trip Together",
-    "New places, long drives, and the happy discovery that we travel well together.",
+    "First Date",
+    "applebees",
   ],
   [
-    "2024",
+    "2025",
     "The Proposal",
-    "One very important question, one joyful yes, and a lifetime ahead.",
+    "Some more information",
   ],
 ]
 
@@ -283,12 +291,9 @@ function OurStory() {
       </div>
       <div className="story__copy">
         <p className="eyebrow">Our story</p>
-        <h2>From a chance meeting to a lifetime of adventures</h2>
+        <h2>Something corny</h2>
         <p className="story__intro">
-          We met over a shared love of good food, bright flowers, and late-night
-          conversations. What began as a simple friendship grew into a love
-          story, and now we are so excited to celebrate this next chapter with
-          you.
+          Idk a paragraph.
         </p>
         <div
           className="timeline-tabs"
@@ -374,6 +379,16 @@ function Details() {
   )
 }
 
+const galleryItems = [
+  { caption: "", image: floral_and_fruits4 },
+  { caption: "", image: bridgepic },
+  { caption: "", image: floral_and_fruits3 },  
+  { caption: "", image: housepic },
+  { caption: "", image: floral_and_fruits },
+  { caption: "", image: blurpic },
+  { caption: "", image: floral_and_fruits2 },
+];
+
 function Gallery() {
   return (
     <section className="gallery section" id="gallery">
@@ -386,26 +401,21 @@ function Gallery() {
         <p className="eyebrow">A few favorites</p>
         <h2>Our moments</h2>
       </div>
+
       <div className="gallery__grid">
-        {[
-          "The two of us",
-          "Favorite days",
-          "Here and now",
-          "All our love",
-          "The best is yet to come",
-        ].map((caption, index) => (
+        {galleryItems.map((item, index) => (
           <figure
             className={`polaroid gallery__photo gallery__photo--${index + 1}`}
-            key={caption}
+            key={item.caption}
           >
             <span className="tape" />
-            <img src={benchpic} alt={caption} />
-            <figcaption>{caption}</figcaption>
+            <img src={item.image} alt={item.caption} />
+            <figcaption>{item.caption}</figcaption>
           </figure>
         ))}
       </div>
     </section>
-  )
+  );
 }
 
 const connectionGroups = [
