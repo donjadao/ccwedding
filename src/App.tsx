@@ -129,13 +129,23 @@ function Intro({ onComplete }: { onComplete: () => void }) {
 
   return (
     <div className={`intro ${leaving ? "intro--leaving" : ""}`}>
-      <Artwork
-        source={floralBranchSvg}
-        className="intro__branch intro__branch--left"
+      <img
+        src={pink_flowers}
+        className="intro__flowers intro__flowers--left"
+        alt=""
+        aria-hidden="true"
       />
-      <Artwork
-        source={floralBranchSvg}
-        className="intro__branch intro__branch--right"
+      <img
+        src={oranges}
+        className="intro__flowers intro__flowers--right"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        src={yellow_flowers}
+        className="intro__flowers intro__flowers--top"
+        alt=""
+        aria-hidden="true"
       />
       <div className="intro__seal">
         <Monogram className="intro__logo" />
