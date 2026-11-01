@@ -181,7 +181,7 @@ function Hero() {
       </div>
       <div className="polaroid hero__photo">
         <span className="tape" />
-        <img src={couplePhoto} alt="Chi Tai and Christine together" />
+        <img src={grasspic} alt="Chi Tai and Christine together" />
         <p>our favorite adventure yet ♡</p>
       </div>
       <div
@@ -275,7 +275,7 @@ function OurStory() {
         <div className="blob" />
         <div className="polaroid story__photo">
           <span className="tape" />
-          <img src={couplePhoto} alt="Chi Tai and Christine sharing a moment" />
+          <img src={CS_16558_websize} alt="Chi Tai and Christine sharing a moment" />
         </div>
         <Artwork source={citrusFruitSvg} className="story__fruit" />
       </div>
@@ -389,7 +389,7 @@ function Gallery() {
             key={caption}
           >
             <span className="tape" />
-            <img src={couplePhoto} alt={caption} />
+            <img src={benchpic} alt={caption} />
             <figcaption>{caption}</figcaption>
           </figure>
         ))}
