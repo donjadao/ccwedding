@@ -11,6 +11,13 @@ import successCheckSvg from "./imports/success-check.svg?raw"
 import venueIconSvg from "./imports/venue-icon.svg?raw"
 import weddingLogo from "./imports/wedding-monogram.svg"
 
+import orange_flowers from "./imports/orange_flowers.svg"
+import lemons from "./imports/lemons.svg"
+import oranges from "./imports/oranges.svg"
+import yellow_flowers from "./imports/yellow_flowers.svg"
+import strawberries from "./imports/strawberries.svg"
+import orange_flowers from "./imports/orange_flowers.svg"
+
 import grasspic from "./imports/ChixTine/grasspic.jpg"
 import coveredkiss from "./imports/ChixTine/CS_16565_websize.jpg"
 import benchpic from "./imports/ChixTine/benchpic.jpg"
