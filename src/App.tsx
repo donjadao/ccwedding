@@ -246,48 +246,6 @@ function Hero() {
   )
 }
 
-const quickDetails = [
-  {
-    icon: citrusFruitSvg,
-    label: "The date",
-    value: "May 1, 2027",
-    sub: "Saturday",
-  },
-  {
-    icon: locationIconSvg,
-    label: "The location",
-    value: "Oklahoma City",
-    sub: "Oklahoma",
-  },
-  {
-    icon: floralGarlandSvg,
-    label: "Our story",
-    value: "From a chance meeting",
-    sub: "to forever",
-  },
-  {
-    icon: calendarIconSvg,
-    label: "RSVP",
-    value: "Let us know",
-    sub: "if you can join!",
-  },
-]
-
-function QuickDetails() {
-  return (
-    <section className="quick-details torn-top">
-      {quickDetails.map((item) => (
-        <div className="quick-detail" key={item.label}>
-          <Artwork source={item.icon} />
-          <p className="eyebrow">{item.label}</p>
-          <h3>{item.value}</h3>
-          <span>{item.sub}</span>
-        </div>
-      ))}
-    </section>
-  )
-}
-
 const milestones = [
   [
     "2019",
@@ -795,7 +753,6 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <QuickDetails />
         <OurStory />
         <Details />
         <Gallery />
