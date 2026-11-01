@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" fill="none">
+  <path d="M0 80C100 60 200 40 400 30C600 20 700 50 800 70" stroke="var(--accent-muted)" stroke-width="1.5" stroke-linecap="round" opacity=".6"/>
+  <g fill="var(--floral-petal-light)" opacity=".65">
+    <path d="M80 16c4 3 7 7 7 12s-3 8-7 8-7-3-7-8 3-9 7-12Z"/>
+    <path d="M200 29c4 3 7 7 7 12s-3 8-7 8-7-3-7-8 3-9 7-12Z"/>
+    <path d="M320 30c4 3 7 7 7 12s-3 8-7 8-7-3-7-8 3-9 7-12Z"/>
+    <path d="M400 18c4 3 7 7 7 12s-3 8-7 8-7-3-7-8 3-9 7-12Z"/>
+    <path d="M480 14c4 3 7 7 7 12s-3 8-7 8-7-3-7-8 3-9 7-12Z"/>
+    <path d="M600 25c4 3 7 7 7 12s-3 8-7 8-7-3-7-8 3-9 7-12Z"/>
+    <path d="M720 31c4 3 7 7 7 12s-3 8-7 8-7-3-7-8 3-9 7-12Z"/>
+  </g>
+  <g fill="var(--accent-muted)" opacity=".75">
+    <circle cx="80" cy="27" r="3"/><circle cx="200" cy="40" r="3"/><circle cx="320" cy="41" r="3"/>
+    <circle cx="400" cy="29" r="3"/><circle cx="480" cy="25" r="3"/><circle cx="600" cy="36" r="3"/><circle cx="720" cy="42" r="3"/>
+  </g>
+  <g fill="var(--accent-leaf)" opacity=".4">
+    <path d="M140 35c-12-5-18 7-10 13 10-6 14-13 10-13Z"/><path d="M260 41c-12-5-18 7-10 13 10-6 14-13 10-13Z"/>
+    <path d="M360 45c-12-5-18 7-10 13 10-6 14-13 10-13Z"/><path d="M440 39c-12-5-18 7-10 13 10-6 14-13 10-13Z"/>
+    <path d="M540 33c-12-5-18 7-10 13 10-6 14-13 10-13Z"/><path d="M660 38c-12-5-18 7-10 13 10-6 14-13 10-13Z"/>
+  </g>
+</svg>
