@@ -11,12 +11,12 @@ import successCheckSvg from "./imports/success-check.svg?raw"
 import venueIconSvg from "./imports/venue-icon.svg?raw"
 import weddingLogo from "./imports/wedding-monogram.svg"
 
-import orange_flowers from "./imports/orange_flowers.svg?raw"
-import lemons from "./imports/lemons.svg?raw"
-import pink_flowers from "./imports/pink_flowers.svg?raw"
-import oranges from "./imports/oranges.svg?raw"
-import yellow_flowers from "./imports/yellow_flowers.svg?raw"
-import strawberries from "./imports/strawberries.svg?raw"
+import orange_flowers from "./imports/ChixTine/photos/orange_flowers.svg"
+import lemons from "./imports/ChixTine/photos/lemons.png"
+import pink_flowers from "./imports/ChixTine/photos/pink_flowers.svg"
+import oranges from "./imports/ChixTine/photos/oranges.svg"
+import yellow_flowers from "./imports/ChixTine/photos/yellow_flowers.svg"
+import strawberries from "./imports/ChixTine/photos/strawberries.svg"
 
 import grasspic from "./imports/ChixTine/grasspic.jpg"
 import coveredkiss from "./imports/ChixTine/CS_16565_websize.jpg"
@@ -99,7 +99,7 @@ function RollingFruit({
       }`}
       aria-hidden="true"
     >
-      <Artwork source={source} className="rolling-fruit" />
+      <img src={source} className="rolling-fruit" alt="" />
     </span>
   )
 }
