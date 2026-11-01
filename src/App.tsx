@@ -264,9 +264,9 @@ function Nav() {
     ? "color-mix(in srgb, var(--background-light) 97%, transparent)"
     : "color-mix(in srgb, var(--background-light) 38%, transparent)";
   const navBlur = scrolled || menuOpen ? "blur(12px)" : "blur(8px)";
-  const navBorder = scrolled || menuOpen
-    ? "1px solid color-mix(in srgb, var(--accent-muted) 20%, transparent)"
-    : "1px solid color-mix(in srgb, var(--background-light) 24%, transparent)";
+ const navForeground = scrolled || menuOpen
+    ? "var(--heading-dark)"
+    : "var(--nav-on-hero)";
 
   return (
     <nav
