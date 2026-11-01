@@ -380,7 +380,6 @@ function Details() {
 }
 
 const galleryItems = [
-  { caption: "", image: floral_and_fruits4 },
   { caption: "", image: bridgepic },
   { caption: "", image: floral_and_fruits3 },  
   { caption: "", image: housepic },
