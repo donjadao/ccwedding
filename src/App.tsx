@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react"
 import calendarIconSvg from "./imports/calendar-icon.svg?raw"
 import cherriesFruitSvg from "./imports/cherries-fruit.svg?raw"
 import citrusFruitSvg from "./imports/citrus-fruit.svg?raw"
-import couplePhoto from "./imports/couple-photo.jpg"
+import couplePhoto from "./src/imports/ChixTine/grasspic.jpg"
 import floralBranchSvg from "./imports/floral-branch.svg?raw"
 import floralGarlandSvg from "./imports/floral-garland.svg?raw"
 import locationIconSvg from "./imports/location-icon.svg?raw"
@@ -10,6 +10,10 @@ import pearFruitSvg from "./imports/pear-fruit.svg?raw"
 import successCheckSvg from "./imports/success-check.svg?raw"
 import venueIconSvg from "./imports/venue-icon.svg?raw"
 import weddingLogo from "./imports/wedding-monogram.svg"
+
+import grasspic from "./src/imports/ChixTine/grasspic.jpg"
+import coveredkiss from "./src/imports/ChixTine/CS_16558_websize.jpg"
+import benchpic from "./src/imports/ChixTine/benchpic.jpg"
 
 const WEDDING_DATE = new Date("2027-05-01T13:00:00-05:00").getTime()
 
