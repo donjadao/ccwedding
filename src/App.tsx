@@ -275,7 +275,7 @@ function OurStory() {
         <div className="blob" />
         <div className="polaroid story__photo">
           <span className="tape" />
-          <img src={CS_16558_websize} alt="Chi Tai and Christine sharing a moment" />
+          <img src={coveredkiss} alt="Chi Tai and Christine sharing a moment" />
         </div>
         <Artwork source={citrusFruitSvg} className="story__fruit" />
       </div>
