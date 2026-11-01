@@ -128,13 +128,27 @@ function FloralGarlandTop() {
 
 // ─── Logomark ─────────────────────────────────────────────────────────────────
 
+function LogoArtwork({ className = "" }: { className?: string }) {
+  return (
+    <span
+      className={`block ${className}`}
+      aria-hidden="true"
+      style={{
+        backgroundColor: "currentColor",
+        WebkitMask: `url("${weddingLogo}") center / contain no-repeat`,
+        mask: `url("${weddingLogo}") center / contain no-repeat`,
+      }}
+    />
+  );
+}
+
 function Logomark({ size = 200, onDark = false }: { size?: number; onDark?: boolean }) {
   return (
     <div
       className="flex flex-col items-center gap-4"
       style={{ width: size, color: onDark ? "var(--heading-light)" : "var(--background-dark)" }}
     >
-      <SvgArtwork source={weddingMonogramSvg} className="aspect-square w-full" />
+      <LogoArtwork className="aspect-square w-full" />
       <p className="text-[0.55rem] tracking-[0.4em] uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>
         Together Forever
       </p>
