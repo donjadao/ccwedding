@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import calendarIconSvg from "./imports/calendar-icon.svg?raw"
 import cherriesFruitSvg from "./imports/cherries-fruit.svg?raw"
 import citrusFruitSvg from "./imports/citrus-fruit.svg?raw"
@@ -48,6 +48,44 @@ function Artwork({
       aria-hidden="true"
       dangerouslySetInnerHTML={{ __html: source }}
     />
+  )
+}
+
+function RollingFruit({
+  source,
+  side,
+  className,
+}: {
+  source: string
+  side: "left" | "right"
+  className: string
+}) {
+  const fruitRef = useRef<HTMLSpanElement>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const fruit = fruitRef.current
+    if (!fruit) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { rootMargin: "-5% 0px -8% 0px", threshold: 0 },
+    )
+
+    observer.observe(fruit)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <span
+      ref={fruitRef}
+      className={`${className} rolling-fruit-shell rolling-fruit-shell--${side} ${
+        visible ? "is-visible" : ""
+      }`}
+      aria-hidden="true"
+    >
+      <Artwork source={source} className="rolling-fruit" />
+    </span>
   )
 }
 
@@ -158,12 +196,14 @@ function Hero() {
   return (
     <header className="hero paper-grain" id="home">
       <Artwork source={floralGarlandSvg} className="hero__garland" />
-      <Artwork
+      <RollingFruit
         source={citrusFruitSvg}
+        side="left"
         className="hero__citrus hero__citrus--left"
       />
-      <Artwork
+      <RollingFruit
         source={cherriesFruitSvg}
+        side="right"
         className="hero__citrus hero__citrus--right"
       />
       <div className="hero__copy">
@@ -181,7 +221,7 @@ function Hero() {
       </div>
       <div className="polaroid hero__photo">
         <span className="tape" />
-        <img src={grasspic} alt="Chi Tai and Christine together" />
+        <img src={couplePhoto} alt="Chi Tai and Christine together" />
         <p>our favorite adventure yet ♡</p>
       </div>
       <div
@@ -275,9 +315,13 @@ function OurStory() {
         <div className="blob" />
         <div className="polaroid story__photo">
           <span className="tape" />
-          <img src={coveredkiss} alt="Chi Tai and Christine sharing a moment" />
+          <img src={couplePhoto} alt="Chi Tai and Christine sharing a moment" />
         </div>
-        <Artwork source={citrusFruitSvg} className="story__fruit" />
+        <RollingFruit
+          source={citrusFruitSvg}
+          side="right"
+          className="story__fruit"
+        />
       </div>
       <div className="story__copy">
         <p className="eyebrow">Our story</p>
@@ -343,7 +387,11 @@ const eventDetails = [
 function Details() {
   return (
     <section className="details section scallop" id="details">
-      <Artwork source={pearFruitSvg} className="details__pear" />
+      <RollingFruit
+        source={pearFruitSvg}
+        side="left"
+        className="details__pear"
+      />
       <div className="section-heading">
         <p className="eyebrow">Where & when</p>
         <h2>The wedding day</h2>
@@ -371,7 +419,11 @@ function Details() {
 function Gallery() {
   return (
     <section className="gallery section" id="gallery">
-      <Artwork source={cherriesFruitSvg} className="gallery__cherries" />
+      <RollingFruit
+        source={cherriesFruitSvg}
+        side="right"
+        className="gallery__cherries"
+      />
       <div className="section-heading">
         <p className="eyebrow">A few favorites</p>
         <h2>Our moments</h2>
@@ -389,7 +441,7 @@ function Gallery() {
             key={caption}
           >
             <span className="tape" />
-            <img src={benchpic} alt={caption} />
+            <img src={couplePhoto} alt={caption} />
             <figcaption>{caption}</figcaption>
           </figure>
         ))}
@@ -519,7 +571,11 @@ function ConnectionsGame() {
 
   return (
     <section className="game section scallop" id="play-a-game">
-      <Artwork source={citrusFruitSvg} className="game__fruit" />
+      <RollingFruit
+        source={citrusFruitSvg}
+        side="left"
+        className="game__fruit"
+      />
       <div className="section-heading">
         <p className="eyebrow">A little interlude</p>
         <h2>Make the connection</h2>
