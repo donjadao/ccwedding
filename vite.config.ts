@@ -8,7 +8,7 @@ const siteConfiguration = {
   description: "Join us as we celebrate our wedding on May 1, 2027.",
   icons: { icon: "/src/imports/favicon.svg" },
   openGraph: {
-    image: "/social-preview.png",
+    image: "/grasspic.jpg",
     imageAlt: "Chi Tai and Christine wedding monogram and couple portrait",
   },
   robots: { index: true },
