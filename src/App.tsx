@@ -133,7 +133,7 @@ function Intro({ onComplete }: { onComplete: () => void }) {
       <div className="intro__seal">
         <Monogram className="intro__logo" />
         <p>Chi Tai & Christine</p>
-        <span>01 · 05 · 2027</span>
+        <span>05 · 01 · 2027</span>
       </div>
       <button className="intro__skip" onClick={skip} type="button">
         Skip intro
