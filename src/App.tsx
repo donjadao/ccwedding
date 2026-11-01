@@ -12,7 +12,7 @@ import venueIconSvg from "./imports/venue-icon.svg?raw"
 import weddingLogo from "./imports/wedding-monogram.svg"
 
 import grasspic from "./imports/ChixTine/grasspic.jpg"
-import coveredkiss from ".imports/ChixTine/CS_16565_websize.jpg"
+import coveredkiss from "./imports/ChixTine/CS_16565_websize.jpg"
 import benchpic from "./imports/ChixTine/benchpic.jpg"
 import bridgepic from "./imports/ChixTine/bridgepic.jpg"
 import housepic from "./imports/ChixTine/CS_17575_websize.jpg"
