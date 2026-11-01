@@ -130,11 +130,11 @@ function Intro({ onComplete }: { onComplete: () => void }) {
   return (
     <div className={`intro ${leaving ? "intro--leaving" : ""}`}>
       <Artwork
-        source={pink_flowers}
+        source={floralBranchSvg}
         className="intro__branch intro__branch--left"
       />
       <Artwork
-        source={oranges}
+        source={floralBranchSvg}
         className="intro__branch intro__branch--right"
       />
       <div className="intro__seal">
