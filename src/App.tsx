@@ -196,13 +196,6 @@ function Hero() {
         <img src={couplePhoto} alt="Chi Tai and Christine together" />
         <p>our favorite adventure yet ♡</p>
       </div>
-      <aside className="hero__note">
-        Save the date
-        <br />
-        and bring your
-        <br />
-        dancing shoes!
-      </aside>
       <div
         className="countdown"
         aria-label={`${days} days, ${hours} hours, ${minutes} minutes until the wedding`}
@@ -769,3 +762,4 @@ export default function App() {
     </>
   )
 }
+
