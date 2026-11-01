@@ -4,8 +4,13 @@ import tailwindcss from "@tailwindcss/vite"
 import path from "node:path"
 
 const siteConfiguration = {
-  description: "Eleanor & James — A Wedding Celebration, September 12, 2026",
+  title: "Chi Tai & Christine — May 1, 2027",
+  description: "Join us as we celebrate our wedding on May 1, 2027.",
   icons: { icon: "/src/imports/favicon.svg" },
+  openGraph: {
+    image: "/ChixTineThumbnail.png",
+    imageAlt: "Chi Tai and Christine wedding monogram and couple portrait",
+  },
   robots: { index: true },
   accessibility: { addBypassLinks: false, ignoreReducedMotion: false },
 }
@@ -61,6 +66,7 @@ type FigmaSiteConfiguration = {
   }
   openGraph?: {
     image?: string
+    imageAlt?: string
   }
   analytics?: {
     googleAnalyticsId?: string
@@ -99,6 +105,7 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
   const description = config.description ?? ""
   const favicon = config.icons?.icon ?? ""
   const socialImage = config.openGraph?.image ?? ""
+  const socialImageAlt = config.openGraph?.imageAlt ?? ""
   const language = sanitizeHtmlValue(config.language) || "en"
   const googleAnalyticsId = sanitizeHtmlValue(
     config.analytics?.googleAnalyticsId,
@@ -168,24 +175,58 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
           })
         }
         if (title) {
-          tags.push({
-            tag: "meta",
-            attrs: { property: "og:title", content: title },
-            injectTo: "head",
-          })
+          tags.push(
+            {
+              tag: "meta",
+              attrs: { property: "og:title", content: title },
+              injectTo: "head",
+            },
+            {
+              tag: "meta",
+              attrs: { name: "twitter:title", content: title },
+              injectTo: "head",
+            },
+          )
         }
         if (description) {
-          tags.push({
-            tag: "meta",
-            attrs: { property: "og:description", content: description },
-            injectTo: "head",
-          })
+          tags.push(
+            {
+              tag: "meta",
+              attrs: { property: "og:description", content: description },
+              injectTo: "head",
+            },
+            {
+              tag: "meta",
+              attrs: { name: "twitter:description", content: description },
+              injectTo: "head",
+            },
+          )
         }
         if (socialImage) {
           tags.push(
             {
               tag: "meta",
+              attrs: { property: "og:type", content: "website" },
+              injectTo: "head",
+            },
+            {
+              tag: "meta",
               attrs: { property: "og:image", content: socialImage },
+              injectTo: "head",
+            },
+            {
+              tag: "meta",
+              attrs: { property: "og:image:width", content: "1200" },
+              injectTo: "head",
+            },
+            {
+              tag: "meta",
+              attrs: { property: "og:image:height", content: "630" },
+              injectTo: "head",
+            },
+            {
+              tag: "meta",
+              attrs: { property: "og:image:alt", content: socialImageAlt },
               injectTo: "head",
             },
             {
