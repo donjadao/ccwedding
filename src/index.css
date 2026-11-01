@@ -3,11 +3,12 @@
 
 :root {
   /* Three-pigment floral theme — edit only these base colors */
-  --theme-bloom: #282d2a;
+  --theme-bloom: #ef6066;
   --theme-gardenia: #fff8eb;
   --theme-moss: #71805a;
+  --theme-ink: #1a1a18;
 
-  --background-dark: var(--theme-bloom);
+  --background-dark: var(--theme-ink);
   --background-light: var(--theme-gardenia);
   --background-soft: color-mix(in srgb, var(--theme-gardenia) 92%, var(--theme-moss));
   --background-card: var(--theme-gardenia);
