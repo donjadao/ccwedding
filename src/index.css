@@ -42,8 +42,10 @@ img { display: block; max-width: 100%; }
 .artwork > svg { width: 100%; height: 100%; display: block; }
 .rolling-fruit-shell { display: block; pointer-events: none; }
 .rolling-fruit {
+  display: block;
   width: 100%;
   height: 100%;
+  object-fit: contain;
   opacity: 0;
   will-change: transform, opacity;
   transition:
