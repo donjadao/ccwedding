@@ -13,10 +13,10 @@ import weddingLogo from "./imports/wedding-monogram.svg"
 
 import orange_flowers from "./imports/orange_flowers.svg"
 import lemons from "./imports/lemons.svg"
+import pink_flowers from "./imports/pink_flowers.svg"
 import oranges from "./imports/oranges.svg"
 import yellow_flowers from "./imports/yellow_flowers.svg"
 import strawberries from "./imports/strawberries.svg"
-import orange_flowers from "./imports/orange_flowers.svg"
 
 import grasspic from "./imports/ChixTine/grasspic.jpg"
 import coveredkiss from "./imports/ChixTine/CS_16565_websize.jpg"
@@ -130,11 +130,11 @@ function Intro({ onComplete }: { onComplete: () => void }) {
   return (
     <div className={`intro ${leaving ? "intro--leaving" : ""}`}>
       <Artwork
-        source={floralBranchSvg}
+        source={pink_flowers}
         className="intro__branch intro__branch--left"
       />
       <Artwork
-        source={floralBranchSvg}
+        source={oranges}
         className="intro__branch intro__branch--right"
       />
       <div className="intro__seal">
@@ -212,12 +212,12 @@ function Hero() {
     <header className="hero paper-grain" id="home">
       <Artwork source={floralGarlandSvg} className="hero__garland" />
       <RollingFruit
-        source={citrusFruitSvg}
+        source={orange_flowers}
         side="left"
         className="hero__citrus hero__citrus--left"
       />
       <RollingFruit
-        source={cherriesFruitSvg}
+        source={lemons}
         side="right"
         className="hero__citrus hero__citrus--right"
       />
@@ -291,7 +291,7 @@ function OurStory() {
           <img src={coveredkiss} alt="Chi Tai and Christine sharing a moment" />
         </div>
         <RollingFruit
-          source={citrusFruitSvg}
+          source={pink_flowers}
           side="right"
           className="story__fruit"
         />
@@ -358,7 +358,7 @@ function Details() {
   return (
     <section className="details section scallop" id="details">
       <RollingFruit
-        source={pearFruitSvg}
+        source={oranges}
         side="left"
         className="details__pear"
       />
@@ -399,7 +399,7 @@ function Gallery() {
   return (
     <section className="gallery section" id="gallery">
       <RollingFruit
-        source={cherriesFruitSvg}
+        source={yellow_flowers}
         side="right"
         className="gallery__cherries"
       />
@@ -546,7 +546,7 @@ function ConnectionsGame() {
   return (
     <section className="game section scallop" id="play-a-game">
       <RollingFruit
-        source={citrusFruitSvg}
+        source={strawberries}
         side="left"
         className="game__fruit"
       />
