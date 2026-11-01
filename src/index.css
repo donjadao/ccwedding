@@ -30,6 +30,7 @@
 
   --border-light: color-mix(in srgb, var(--theme-moss) 28%, var(--theme-gardenia));
   --placeholder-text: color-mix(in srgb, var(--theme-moss) 78%, var(--theme-gardenia));
+  --nav-on-hero: #fff;
 
   /* Illustration and game tints derived from the same three pigments */
   --floral-petal-light: var(--theme-gardenia);
