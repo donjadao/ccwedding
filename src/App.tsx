@@ -18,10 +18,10 @@ import bridgepic from "./imports/ChixTine/bridgepic.jpg"
 import housepic from "./imports/ChixTine/CS_17575_websize.jpg"
 import blurpic from "./imports/ChixTine/blurpic.jpg"
 
-import floral_and_fruits from "./imports/ChixTine/photos/floral_and_fruits.jpg"
-import floral_and_fruits2 from "./imports/ChixTine/photos/floral_and_fruits2.jpg"
-import floral_and_fruits3 from "./imports/ChixTine/photos/floral_and_fruits3.jpg"
-import floral_and_fruits4 from "./imports/ChixTine/photos/floral_and_fruits4.jpg"
+import floral_and_fruits from "./imports/ChixTine/photos/floral_and_fruits.png"
+import floral_and_fruits2 from "./imports/ChixTine/photos/floral_and_fruits2.png"
+import floral_and_fruits3 from "./imports/ChixTine/photos/floral_and_fruits3.png"
+import floral_and_fruits4 from "./imports/ChixTine/photos/floral_and_fruits4.png"
 
 const WEDDING_DATE = new Date("2027-05-01T13:00:00-05:00").getTime()
 
