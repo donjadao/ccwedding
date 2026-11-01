@@ -220,7 +220,7 @@ function Hero() {
           Chi Tai <em>&</em>
           <strong>Christine</strong>
         </h1>
-        <p className="hero__tagline">Two hearts, one sweet journey</p>
+        <p className="hero__tagline">Something you want to say</p>
         <div className="hero__date">
           <span>Saturday</span>
           <b>May 1, 2027</b>
@@ -230,7 +230,7 @@ function Hero() {
       <div className="polaroid hero__photo">
         <span className="tape" />
         <img src={grasspic} alt="Chi Tai and Christine together" />
-        <p>our favorite adventure yet ♡</p>
+        <p>what a nice picture ♡</p>
       </div>
       <div
         className="countdown"
