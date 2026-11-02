@@ -222,12 +222,12 @@ function Hero() {
     <header className="hero paper-grain" id="home">
       <Artwork source={floralGarlandSvg} className="hero__garland" />
       <RollingFruit
-        source={citrusFruitImage}
+        source={lemons}
         side="left"
         className="hero__citrus hero__citrus--left"
       />
       <RollingFruit
-        source={strawberryFruitImage}
+        source={strawberries}
         side="right"
         className="hero__citrus hero__citrus--right"
       />
@@ -299,7 +299,7 @@ function Details() {
   return (
     <section className="details section scallop" id="details">
       <RollingFruit
-        source={pearFruitImage}
+        source={pink_flowers}
         side="left"
         className="details__pear"
       />
@@ -415,7 +415,7 @@ function WeddingParty() {
   return (
     <section className="wedding-party section" id="wedding-party">
       <RollingFruit
-        source={citrusFruitImage}
+        source={yellow_flowers}
         side="right"
         className="wedding-party__fruit"
       />
@@ -444,7 +444,7 @@ function Gallery() {
   return (
     <section className="gallery section" id="gallery">
       <RollingFruit
-        source={strawberryFruitImage}
+        source={oranges}
         side="right"
         className="gallery__cherries"
       />
@@ -596,7 +596,7 @@ function ConnectionsGame() {
   return (
     <section className="game section scallop" id="play-a-game">
       <RollingFruit
-        source={citrusFruitImage}
+        source={lemons}
         side="left"
         className="game__fruit"
       />
