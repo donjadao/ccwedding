@@ -249,19 +249,36 @@ img { display: block; max-width: 100%; }
 .hero__citrus { position: absolute; z-index: 3; width: clamp(6rem, 11vw, 10rem); filter: drop-shadow(0 1rem 1rem color-mix(in srgb, var(--theme-ink) 15%, transparent)); }
 .hero__citrus--left { bottom: 4%; left: -2%; transform: rotate(-18deg); }
 .hero__citrus--right { top: 15%; right: -2%; transform: rotate(15deg); }
-.countdown { position: absolute; z-index: 5; right: 8%; bottom: 2rem; display: flex; gap: .6rem; }
+.countdown {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: 1.75rem;
+  display: grid;
+  justify-items: center;
+  gap: .8rem;
+  transform: translateX(-50%);
+}
+.countdown__title {
+  margin: 0;
+  color: var(--theme-ink);
+  font: 500 1.15rem var(--font-display);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.countdown__items { display: flex; gap: .8rem; }
 .countdown__item {
   display: grid;
   place-items: center;
-  width: 5.3rem;
+  width: clamp(6rem, 7vw, 7.25rem);
   aspect-ratio: 1;
-  padding: .8rem;
+  padding: 1rem;
   border-radius: 45% 55% 52% 48% / 52% 42% 58% 48%;
   color: var(--theme-gardenia);
   text-align: center;
 }
-.countdown__item b { font: 500 1.45rem/1 var(--font-display); }
-.countdown__item span { font-size: .52rem; letter-spacing: .14em; text-transform: uppercase; }
+.countdown__item b { font: 500 clamp(1.65rem, 2.5vw, 2.15rem)/1 var(--font-display); }
+.countdown__item span { font-size: .58rem; letter-spacing: .14em; text-transform: uppercase; }
 .countdown__item--1 { background: var(--theme-moss); transform: rotate(-4deg); }
 .countdown__item--2 { background: var(--theme-bloom); transform: rotate(3deg); }
 .countdown__item--3 { background: var(--orange); transform: rotate(-2deg); }
@@ -704,7 +721,14 @@ footer > span { display: block; margin-top: 2rem; color: var(--theme-moss); font
   .nav__links--open { transform: translateY(0); }
   .hero { grid-template-columns: 1fr; align-content: center; gap: 3rem; min-height: auto; padding-top: 9rem; }
   .hero__photo { justify-self: center; width: min(90%, 34rem); }
-  .countdown { position: relative; right: auto; bottom: auto; grid-column: 1; justify-content: center; }
+  .countdown {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    grid-column: 1;
+    justify-content: center;
+    transform: none;
+  }
   .details__grid { grid-template-columns: 1fr; max-width: 32rem; }
   .event-card { min-height: auto; border-radius: 4rem 4rem 1rem 1rem; }
   .party-web {
@@ -780,8 +804,9 @@ footer > span { display: block; margin-top: 2rem; color: var(--theme-moss); font
   .details__pear { top: 4rem; left: -3.25rem; }
   .gallery__cherries { top: 4rem; right: -3.25rem; }
   .game__fruit { top: 4rem; left: -3.25rem; }
-  .countdown { gap: .3rem; }
-  .countdown__item { width: 4.4rem; }
+  .countdown { gap: .65rem; }
+  .countdown__items { gap: .45rem; }
+  .countdown__item { width: min(27vw, 6rem); }
   .party-side.is-expanded { height: 29rem; }
   .party-couple { width: 8rem; }
   .party-side .party-person { width: 4.8rem; }
