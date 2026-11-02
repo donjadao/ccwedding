@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Ballet&family=DM+Sans:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&display=swap");
 @import "tailwindcss";
 
 :root {
-  --theme-ink: #697943;
+  --theme-ink: #273e2b;
   --theme-gardenia: #fff9e9;
   --theme-moss: #697943;
   --theme-bloom: #e9565f;
@@ -14,6 +14,7 @@
   --shadow: 0 1.25rem 3rem color-mix(in srgb, var(--theme-ink) 14%, transparent);
   --font-display: "Fraunces", Georgia, serif;
   --font-script: "Allura", cursive;
+  --font-ballet: "Ballet", cursive;
   --font-sans: "DM Sans", sans-serif;
   --text-light: var(--theme-gardenia);
   --fruit-red: #d02022;
@@ -72,7 +73,7 @@ img { display: block; max-width: 100%; }
 }
 .section { position: relative; padding: 8rem max(6vw, 1.5rem); }
 .section-heading { position: relative; z-index: 2; margin: 0 auto 3.5rem; max-width: 46rem; text-align: center; }
-.section-heading h2, .story h2, .rsvp h2 {
+.section-heading h2, .rsvp h2 {
   margin: .65rem 0 1rem;
   color: var(--theme-bloom);
   font: 500 clamp(2.4rem, 6vw, 4.7rem)/.98 var(--font-display);
@@ -161,6 +162,7 @@ img { display: block; max-width: 100%; }
 }
 .nav__brand { display: flex; align-items: center; gap: .65rem; color: var(--theme-ink); font: 1.5rem var(--font-script); }
 .nav__brand img { width: 2.5rem; height: 2.5rem; }
+.nav__name { font-family: var(--font-ballet); }
 .nav__links { display: flex; align-items: center; gap: clamp(1rem, 2.4vw, 2.2rem); }
 .nav__links > a:not(.pill) {
   position: relative;
@@ -267,23 +269,6 @@ img { display: block; max-width: 100%; }
   height: 1.2rem;
   background: radial-gradient(circle at 1rem 1.2rem, transparent 1rem, var(--paper) 1.04rem) 0 0/2rem 1.2rem repeat-x;
 }
-.story { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(3rem, 8vw, 8rem); align-items: center; background: var(--theme-gardenia); }
-.story__collage { position: relative; min-height: 37rem; }
-.blob { position: absolute; inset: 4% -3% 7%; border-radius: 44% 56% 62% 38% / 47% 42% 58% 53%; background: var(--blush); transform: rotate(-5deg); }
-.story__photo { position: absolute; inset: 12% 10% 8% 3%; transform: rotate(-4deg); }
-.story__photo img { height: 100%; }
-.story__fruit { position: absolute; z-index: 3; right: -5%; bottom: -1%; width: 10rem; height: 10rem; }
-.story__flowers { position: absolute; right: -3rem; bottom: 0; width: 13rem; height: 75%; transform: scaleX(-1); }
-.story__copy { position: relative; z-index: 2; max-width: 43rem; }
-.story__intro { font: 1rem/1.85 var(--font-display); }
-.timeline-tabs { display: flex; gap: .65rem; margin-top: 2rem; }
-.timeline-tabs button { padding: .6rem 1rem; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--theme-moss); cursor: pointer; font-size: .72rem; }
-.timeline-tabs button.active { background: var(--theme-moss); color: var(--theme-gardenia); }
-.story-card { margin-top: 1rem; padding: 1.5rem; border-left: .35rem solid var(--theme-bloom); background: color-mix(in srgb, var(--blush) 45%, transparent); }
-.story-card > span { color: var(--theme-bloom); font: 1rem var(--font-script); }
-.story-card h3 { margin: .2rem 0 .4rem; font: 500 1.4rem var(--font-display); }
-.story-card p { margin: 0; font-size: .85rem; line-height: 1.65; }
-
 .details { background: var(--blush); }
 .details::before { background: radial-gradient(circle at 1rem 0, transparent 1rem, var(--blush) 1.04rem) 0 0/2rem 1.2rem repeat-x; }
 .details__pear { position: absolute; top: 12%; left: -2.5rem; width: 10rem; height: 10rem; transform: rotate(12deg); }
@@ -299,6 +284,202 @@ img { display: block; max-width: 100%; }
 .event-card h3 { margin: 0 0 1rem; font: 500 1.55rem/1.15 var(--font-display); }
 .event-card > p:not(.eyebrow), .event-card small { font-size: .78rem; line-height: 1.6; }
 .event-card small { display: block; margin-top: 1.2rem; font-style: italic; }
+
+.wedding-party {
+  overflow: hidden;
+  background: var(--theme-gardenia);
+}
+.wedding-party__fruit {
+  position: absolute;
+  z-index: 2;
+  top: 11%;
+  right: -3rem;
+  width: 10rem;
+  height: 10rem;
+}
+.party-web {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr 6rem 1fr;
+  align-items: center;
+  width: min(100%, 78rem);
+  height: 38rem;
+  margin: 0 auto;
+}
+.party-side {
+  position: relative;
+  height: 100%;
+  opacity: 1;
+  transition: opacity .45s ease, transform .45s ease;
+}
+.party-side__web {
+  position: absolute;
+  top: 50%;
+  width: 32rem;
+  aspect-ratio: 1;
+  border: 1px dashed color-mix(in srgb, var(--theme-moss) 34%, transparent);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateY(-50%) scale(.3);
+  transition: opacity .5s ease, transform .7s cubic-bezier(.16, 1, .3, 1);
+}
+.party-side--bride .party-side__web { right: -10.5rem; }
+.party-side--groom .party-side__web { left: -10.5rem; }
+.party-side.is-expanded .party-side__web {
+  opacity: .72;
+  transform: translateY(-50%) scale(1);
+}
+.party-couple,
+.party-person {
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.party-couple {
+  position: absolute;
+  z-index: 8;
+  top: 50%;
+  width: 11rem;
+  aspect-ratio: 1;
+  border: .65rem solid var(--paper);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  transform: translateY(-50%);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.party-side--bride .party-couple { right: 1rem; }
+.party-side--groom .party-couple { left: 1rem; }
+.party-couple:hover,
+.party-couple:focus-visible,
+.party-side.is-expanded .party-couple {
+  outline: none;
+  box-shadow: 0 1.5rem 3.5rem color-mix(in srgb, var(--theme-bloom) 30%, transparent);
+  transform: translateY(-50%) scale(1.04);
+}
+.party-couple img,
+.party-person img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.party-couple__label {
+  position: absolute;
+  left: 50%;
+  bottom: -.9rem;
+  display: grid;
+  gap: .1rem;
+  width: max-content;
+  min-width: 8.5rem;
+  padding: .55rem .9rem;
+  border-radius: 999px;
+  background: var(--theme-bloom);
+  color: white;
+  text-align: center;
+  transform: translateX(-50%);
+}
+.party-side--groom .party-couple__label { background: var(--theme-moss); }
+.party-couple__label b { font: 500 1rem var(--font-display); }
+.party-couple__label small { font-size: .48rem; letter-spacing: .08em; text-transform: uppercase; }
+.party-attendants {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.party-person {
+  --peek-x: -2.5rem;
+  --peek-y: 0rem;
+  --x: 0rem;
+  --y: 0rem;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  width: 7rem;
+  aspect-ratio: 1;
+  border: .4rem solid var(--paper);
+  background: var(--blush);
+  box-shadow: 0 .75rem 1.8rem color-mix(in srgb, var(--theme-ink) 15%, transparent);
+  opacity: .58;
+  pointer-events: none;
+  transform: translateY(-50%) translate(var(--peek-x), var(--peek-y)) scale(.7);
+  transition:
+    transform .75s cubic-bezier(.16, 1, .3, 1),
+    opacity .35s ease,
+    box-shadow .25s ease;
+}
+.party-side--bride .party-person { right: 3rem; }
+.party-side--groom .party-person {
+  left: 3rem;
+  --peek-x: 2.5rem;
+}
+.party-side.is-expanded .party-person {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) translate(var(--x), var(--y)) scale(1);
+}
+.party-person--1 { --peek-y: -3.6rem; --y: -12rem; }
+.party-person--2 { --peek-y: -2.2rem; --y: -12.8rem; }
+.party-person--3 { --peek-y: -.7rem; --y: 0rem; }
+.party-person--4 { --peek-y: .8rem; --y: 0rem; }
+.party-person--5 { --peek-y: 2.3rem; --y: 12rem; }
+.party-person--6 { --peek-y: 3.8rem; --y: 12.8rem; }
+.party-side--bride .party-person--1,
+.party-side--bride .party-person--3,
+.party-side--bride .party-person--5 { --x: -22rem; }
+.party-side--bride .party-person--2,
+.party-side--bride .party-person--4,
+.party-side--bride .party-person--6 { --x: -12.5rem; }
+.party-side--groom .party-person--1,
+.party-side--groom .party-person--3,
+.party-side--groom .party-person--5 { --x: 22rem; }
+.party-side--groom .party-person--2,
+.party-side--groom .party-person--4,
+.party-side--groom .party-person--6 { --x: 12.5rem; }
+.party-person:hover,
+.party-person:focus-visible {
+  z-index: 12;
+  outline: none;
+  box-shadow: 0 1rem 2.5rem color-mix(in srgb, var(--theme-bloom) 36%, transparent);
+}
+.party-person__label {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: center;
+  padding: .6rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--theme-ink) 82%, transparent);
+  color: white;
+  opacity: 0;
+  text-align: center;
+  transition: opacity .22s ease;
+}
+.party-person:hover .party-person__label,
+.party-person:focus-visible .party-person__label { opacity: 1; }
+.party-person__label b { font: 500 .8rem/1.1 var(--font-display); }
+.party-person__label small { margin-top: .2rem; font-size: .48rem; letter-spacing: .08em; text-transform: uppercase; }
+.party-web__heart {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  width: 5rem;
+  aspect-ratio: 1;
+  margin: auto;
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 0 .75rem 2rem color-mix(in srgb, var(--theme-ink) 12%, transparent);
+}
+.party-web__heart img { width: 3.5rem; height: 3.5rem; }
+.party-hint {
+  position: relative;
+  z-index: 3;
+  margin: -1rem auto 0;
+  color: var(--theme-moss);
+  text-align: center;
+  font: italic .85rem var(--font-display);
+}
 
 .gallery { overflow: hidden; background: var(--theme-ink); color: var(--theme-gardenia); }
 .gallery .section-heading h2 { color: var(--theme-gardenia); }
@@ -443,17 +624,61 @@ footer > span { display: block; margin-top: 2rem; color: var(--lemon); font-size
   .hero { grid-template-columns: 1fr; align-content: center; gap: 3rem; min-height: auto; padding-top: 9rem; }
   .hero__photo { justify-self: center; width: min(90%, 34rem); }
   .countdown { position: relative; right: auto; bottom: auto; grid-column: 1; justify-content: center; }
-  .story { grid-template-columns: 1fr; }
-  .story__collage { min-height: 32rem; }
   .details__grid { grid-template-columns: 1fr; max-width: 32rem; }
   .event-card { min-height: auto; border-radius: 4rem 4rem 1rem 1rem; }
+  .party-web {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+  }
+  .party-side {
+    width: 100%;
+    height: 14rem;
+    flex: none;
+    transition: height .65s cubic-bezier(.16, 1, .3, 1), opacity .45s ease;
+  }
+  .party-side.is-expanded { height: 32rem; }
+  .party-couple {
+    left: 50% !important;
+    right: auto !important;
+    width: 9rem;
+    transform: translate(-50%, -50%);
+  }
+  .party-couple:hover,
+  .party-couple:focus-visible,
+  .party-side.is-expanded .party-couple { transform: translate(-50%, -50%) scale(1.04); }
+  .party-side__web {
+    left: 50% !important;
+    right: auto !important;
+    width: 28rem;
+    transform: translate(-50%, -50%) scale(.3);
+  }
+  .party-side.is-expanded .party-side__web { transform: translate(-50%, -50%) scale(1); }
+  .party-side .party-person {
+    left: 50%;
+    right: auto;
+    width: 5.8rem;
+    --peek-x: 0rem;
+    transform: translate(-50%, -50%) translate(var(--peek-x), var(--peek-y)) scale(.7);
+  }
+  .party-side.is-expanded .party-person {
+    transform: translate(-50%, -50%) translate(var(--x), var(--y)) scale(1);
+  }
+  .party-person--1 { --x: -7rem !important; --y: -10rem; }
+  .party-person--2 { --x: 0rem !important; --y: -12rem; }
+  .party-person--3 { --x: 7rem !important; --y: -10rem; }
+  .party-person--4 { --x: -7rem !important; --y: 10rem; }
+  .party-person--5 { --x: 0rem !important; --y: 12rem; }
+  .party-person--6 { --x: 7rem !important; --y: 10rem; }
+  .party-web__heart { display: none; }
   .gallery__grid { gap: 1rem; }
   .gallery__photo--1, .gallery__photo--2, .gallery__photo--3, .gallery__photo--4, .gallery__photo--5 { grid-column: span 6; margin-top: 0; }
   .rsvp__card { grid-template-columns: 1fr; }
   .rolling-fruit-shell { max-width: 7rem; max-height: 7rem; }
   .hero__citrus--left { left: -3.5rem; }
   .hero__citrus--right { right: -3.5rem; }
-  .story__fruit, .gallery__cherries { right: -3.5rem; }
+  .gallery__cherries, .wedding-party__fruit { right: -3.5rem; }
   .details__pear, .game__fruit { left: -3.5rem; }
 }
 
@@ -463,21 +688,28 @@ footer > span { display: block; margin-top: 2rem; color: var(--lemon); font-size
   .intro__flowers--left { left: -14rem; bottom: -3rem; }
   .intro__flowers--right { right: -14rem; bottom: -3rem; }
   .intro__flowers--top { top: -13rem; width: 25rem; }
-  .nav__brand span { display: none; }
+  .nav__name { display: none; }
   .hero { padding-inline: 1.2rem; }
   .hero h1 { font-size: clamp(3.6rem, 19vw, 5.5rem); }
   .hero__date { align-items: flex-start; flex-direction: column; gap: .3rem; }
   .rolling-fruit-shell { max-width: 5rem; max-height: 5rem; }
   .hero__citrus--left { left: -3.25rem; bottom: 16%; }
   .hero__citrus--right { top: 8%; right: -3.25rem; }
-  .story__fruit { right: -3.25rem; bottom: 4%; }
+  .wedding-party__fruit { top: 4rem; right: -3.25rem; }
   .details__pear { top: 4rem; left: -3.25rem; }
   .gallery__cherries { top: 4rem; right: -3.25rem; }
   .game__fruit { top: 4rem; left: -3.25rem; }
   .countdown { gap: .3rem; }
   .countdown__item { width: 4.4rem; }
-  .story__collage { min-height: 26rem; }
-  .story__flowers { opacity: .45; }
+  .party-side.is-expanded { height: 29rem; }
+  .party-couple { width: 8rem; }
+  .party-side .party-person { width: 4.8rem; }
+  .party-person--1 { --x: -5.6rem !important; --y: -8.5rem; }
+  .party-person--2 { --x: 0rem !important; --y: -10rem; }
+  .party-person--3 { --x: 5.6rem !important; --y: -8.5rem; }
+  .party-person--4 { --x: -5.6rem !important; --y: 8.5rem; }
+  .party-person--5 { --x: 0rem !important; --y: 10rem; }
+  .party-person--6 { --x: 5.6rem !important; --y: 8.5rem; }
   .gallery__photo--1, .gallery__photo--2, .gallery__photo--3, .gallery__photo--4, .gallery__photo--5 { grid-column: 1/-1; }
   .word-grid { grid-template-columns: repeat(2, 1fr); }
   .word-grid button { min-height: 5.2rem; }
