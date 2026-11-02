@@ -130,19 +130,19 @@ function Intro({ onComplete }: { onComplete: () => void }) {
   return (
     <div className={`intro ${leaving ? "intro--leaving" : ""}`}>
       <img
-        src={pinkFlowersImage}
+        src={pink_flowers}
         className="intro__flowers intro__flowers--left"
         alt=""
         aria-hidden="true"
       />
       <img
-        src={orangeFlowersImage}
+        src={orange_flowers}
         className="intro__flowers intro__flowers--right"
         alt=""
         aria-hidden="true"
       />
       <img
-        src={yellowFlowersImage}
+        src={yellow_flowers}
         className="intro__flowers intro__flowers--top"
         alt=""
         aria-hidden="true"
