@@ -130,19 +130,19 @@ function Intro({ onComplete }: { onComplete: () => void }) {
   return (
     <div className={`intro ${leaving ? "intro--leaving" : ""}`}>
       <img
-        src={pink_flowers}
+        src={pinkFlowersImage}
         className="intro__flowers intro__flowers--left"
         alt=""
         aria-hidden="true"
       />
       <img
-        src={oranges}
+        src={orangeFlowersImage}
         className="intro__flowers intro__flowers--right"
         alt=""
         aria-hidden="true"
       />
       <img
-        src={yellow_flowers}
+        src={yellowFlowersImage}
         className="intro__flowers intro__flowers--top"
         alt=""
         aria-hidden="true"
@@ -185,7 +185,7 @@ function Nav() {
         aria-label="Chi Tai and Christine, home"
       >
         <Monogram />
-         <span className="nav__name">Chi Tai & Christine</span>
+        <span className="nav__name">Chi Tai & Christine</span>
       </a>
       <div className={`nav__links ${open ? "nav__links--open" : ""}`}>
         {navLinks.map(([label, id]) => (
@@ -222,12 +222,12 @@ function Hero() {
     <header className="hero paper-grain" id="home">
       <Artwork source={floralGarlandSvg} className="hero__garland" />
       <RollingFruit
-        source={orange_flowers}
+        source={citrusFruitImage}
         side="left"
         className="hero__citrus hero__citrus--left"
       />
       <RollingFruit
-        source={lemons}
+        source={strawberryFruitImage}
         side="right"
         className="hero__citrus hero__citrus--right"
       />
@@ -237,17 +237,17 @@ function Hero() {
           Chi Tai <em>&</em>
           <strong>Christine</strong>
         </h1>
-        <p className="hero__tagline">Something you want to say</p>
+        <p className="hero__tagline">Two hearts, one sweet journey</p>
         <div className="hero__date">
           <span>Saturday</span>
-          <b>May 1, 2027</b>
+          <b>1 May 2027</b>
           <span>Oklahoma City</span>
         </div>
       </div>
       <div className="polaroid hero__photo">
         <span className="tape" />
-        <img src={grasspic} alt="Chi Tai and Christine together" />
-        <p>what a nice picture ♡</p>
+        <img src={couplePhoto} alt="Chi Tai and Christine together" />
+        <p>our favorite adventure yet ♡</p>
       </div>
       <div
         className="countdown"
@@ -270,24 +270,6 @@ function Hero() {
     </header>
   )
 }
-
-const milestones = [
-  [
-    "1987",
-    "First Meeting",
-    "In the time of dinosaurs.",
-  ],
-  [
-    "2021",
-    "First Date",
-    "applebees",
-  ],
-  [
-    "2025",
-    "The Proposal",
-    "Some more information",
-  ],
-]
 
 const eventDetails = [
   {
@@ -317,7 +299,7 @@ function Details() {
   return (
     <section className="details section scallop" id="details">
       <RollingFruit
-        source={oranges}
+        source={pearFruitImage}
         side="left"
         className="details__pear"
       />
@@ -458,20 +440,11 @@ function WeddingParty() {
   )
 }
 
-const galleryItems = [
-  { caption: "", image: bridgepic },
-  { caption: "", image: floral_and_fruits3 },  
-  { caption: "", image: housepic },
-  { caption: "", image: floral_and_fruits },
-  { caption: "", image: blurpic },
-  { caption: "", image: floral_and_fruits2 },
-];
-
 function Gallery() {
   return (
     <section className="gallery section" id="gallery">
       <RollingFruit
-        source={yellow_flowers}
+        source={strawberryFruitImage}
         side="right"
         className="gallery__cherries"
       />
@@ -479,21 +452,26 @@ function Gallery() {
         <p className="eyebrow">A few favorites</p>
         <h2>Our moments</h2>
       </div>
-
       <div className="gallery__grid">
-        {galleryItems.map((item, index) => (
+        {[
+          "The two of us",
+          "Favorite days",
+          "Here and now",
+          "All our love",
+          "The best is yet to come",
+        ].map((caption, index) => (
           <figure
             className={`polaroid gallery__photo gallery__photo--${index + 1}`}
-            key={item.caption}
+            key={caption}
           >
             <span className="tape" />
-            <img src={item.image} alt={item.caption} />
-            <figcaption>{item.caption}</figcaption>
+            <img src={couplePhoto} alt={caption} />
+            <figcaption>{caption}</figcaption>
           </figure>
         ))}
       </div>
     </section>
-  );
+  )
 }
 
 const connectionGroups = [
@@ -618,7 +596,7 @@ function ConnectionsGame() {
   return (
     <section className="game section scallop" id="play-a-game">
       <RollingFruit
-        source={strawberries}
+        source={citrusFruitImage}
         side="left"
         className="game__fruit"
       />
@@ -851,4 +829,3 @@ export default function App() {
     </>
   )
 }
-
