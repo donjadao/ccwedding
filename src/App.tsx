@@ -160,8 +160,8 @@ function Intro({ onComplete }: { onComplete: () => void }) {
 }
 
 const navLinks = [
-  ["Our Story", "our-story"],
   ["Details", "details"],
+  ["Wedding Party", "wedding-party"],
   ["Gallery", "gallery"],
   ["Play", "play-a-game"],
 ]
@@ -185,7 +185,7 @@ function Nav() {
         aria-label="Chi Tai and Christine, home"
       >
         <Monogram />
-        <span>Chi Tai & Christine</span>
+         <span className="nav__name">Chi Tai & Christine</span>
       </a>
       <div className={`nav__links ${open ? "nav__links--open" : ""}`}>
         {navLinks.map(([label, id]) => (
@@ -289,57 +289,6 @@ const milestones = [
   ],
 ]
 
-function OurStory() {
-  const [active, setActive] = useState(0)
-  return (
-    <section className="story section" id="our-story">
-      <Artwork source={floralBranchSvg} className="story__flowers" />
-      <div className="story__collage">
-        <div className="blob" />
-        <div className="polaroid story__photo">
-          <span className="tape" />
-          <img src={coveredkiss} alt="Chi Tai and Christine sharing a moment" />
-        </div>
-        <RollingFruit
-          source={pink_flowers}
-          side="right"
-          className="story__fruit"
-        />
-      </div>
-      <div className="story__copy">
-        <p className="eyebrow">Our story</p>
-        <h2>Something corny</h2>
-        <p className="story__intro">
-          Idk a paragraph.
-        </p>
-        <div
-          className="timeline-tabs"
-          role="tablist"
-          aria-label="Our story timeline"
-        >
-          {milestones.map(([year], index) => (
-            <button
-              type="button"
-              role="tab"
-              aria-selected={active === index}
-              className={active === index ? "active" : ""}
-              onClick={() => setActive(index)}
-              key={year}
-            >
-              {year}
-            </button>
-          ))}
-        </div>
-        <div className="story-card" role="tabpanel">
-          <span>{milestones[active][0]}</span>
-          <h3>{milestones[active][1]}</h3>
-          <p>{milestones[active][2]}</p>
-        </div>
-      </div>
-    </section>
-  )
-}
-
 const eventDetails = [
   {
     icon: locationIconSvg,
@@ -392,6 +341,119 @@ function Details() {
           </article>
         ))}
       </div>
+    </section>
+  )
+}
+
+const bridesParty = [
+  { name: "Add name", role: "Maid of Honor" },
+  { name: "Add name", role: "Bridesmaid" },
+  { name: "Add name", role: "Bridesmaid" },
+  { name: "Add name", role: "Bridesmaid" },
+  { name: "Add name", role: "Bridesmaid" },
+  { name: "Add name", role: "Bridesmaid" },
+]
+
+const groomsParty = [
+  { name: "Add name", role: "Best Man" },
+  { name: "Add name", role: "Groomsman" },
+  { name: "Add name", role: "Groomsman" },
+  { name: "Add name", role: "Groomsman" },
+  { name: "Add name", role: "Groomsman" },
+  { name: "Add name", role: "Groomsman" },
+]
+
+type WeddingPartySide = "bride" | "groom"
+
+function WeddingParty() {
+  const [expandedSides, setExpandedSides] =
+    useState<Record<WeddingPartySide, boolean>>({
+      bride: false,
+      groom: false,
+    })
+
+  const renderSide = (
+    side: WeddingPartySide,
+    coupleName: string,
+    coupleRole: string,
+    members: typeof bridesParty,
+  ) => {
+    const isExpanded = expandedSides[side]
+
+    return (
+      <div
+        className={`party-side party-side--${side} ${
+          isExpanded ? "is-expanded" : ""
+        }`}
+      >
+        <div className="party-side__web" aria-hidden="true" />
+        <button
+          className="party-couple"
+          type="button"
+          aria-expanded={isExpanded}
+          aria-controls={`${side}-attendants`}
+          onClick={() =>
+            setExpandedSides((current) => ({
+              ...current,
+              [side]: !current[side],
+            }))
+          }
+        >
+          <img src={couplePhoto} alt={coupleName} />
+          <span className="party-couple__label">
+            <b>{coupleName}</b>
+            <small>{coupleRole} · tap to meet their side</small>
+          </span>
+        </button>
+        <div
+          className="party-attendants"
+          id={`${side}-attendants`}
+          aria-hidden={!isExpanded}
+        >
+          {members.map((member, index) => (
+            <button
+              className={`party-person party-person--${index + 1}`}
+              type="button"
+              tabIndex={isExpanded ? 0 : -1}
+              aria-label={`${member.name}, ${member.role}`}
+              key={`${member.role}-${index}`}
+            >
+              <img src={couplePhoto} alt="" loading="lazy" />
+              <span className="party-person__label">
+                <b>{member.name}</b>
+                <small>{member.role}</small>
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <section className="wedding-party section" id="wedding-party">
+      <RollingFruit
+        source={citrusFruitImage}
+        side="right"
+        className="wedding-party__fruit"
+      />
+      <div className="section-heading">
+        <p className="eyebrow">Our favorite people</p>
+        <h2>Meet the wedding party</h2>
+        <p>
+          Choose the bride or groom to reveal their side of the celebration.
+        </p>
+      </div>
+      <div className="party-web">
+        {renderSide("bride", "Christine", "Bride", bridesParty)}
+        <div className="party-web__heart" aria-hidden="true">
+          <Monogram />
+        </div>
+        {renderSide("groom", "Chi Tai", "Groom", groomsParty)}
+      </div>
+      <p className="party-hint">
+        Hover or focus on each portrait to see their name and role.
+      </p>
     </section>
   )
 }
@@ -779,8 +841,8 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <OurStory />
         <Details />
+        <WeddingParty />
         <Gallery />
         <ConnectionsGame />
         <RSVP />
@@ -789,3 +851,4 @@ export default function App() {
     </>
   )
 }
+
