@@ -218,7 +218,7 @@ function Hero() {
           Chi Tai <em>&</em>
           <strong>Christine</strong>
         </h1>
-        <p className="hero__tagline">Two hearts, one sweet journey</p>
+        <p className="hero__tagline">Something corny </p>
         <div className="hero__date">
           <span>Saturday</span>
           <b>May 1, 2027</b>
@@ -228,25 +228,28 @@ function Hero() {
       <div className="polaroid hero__photo">
         <span className="tape" />
         <img src={couplePhoto} alt="Chi Tai and Christine together" />
-        <p>our favorite adventure yet ♡</p>
+        <p>cool picture huh ♡</p>
       </div>
       <div
         className="countdown"
         aria-label={`${days} days, ${hours} hours, ${minutes} minutes until the wedding`}
       >
-        {[
-          [days, "days"],
-          [String(hours).padStart(2, "0"), "hours"],
-          [String(minutes).padStart(2, "0"), "minutes"],
-        ].map(([value, label], index) => (
-          <div
-            className={`countdown__item countdown__item--${index + 1}`}
-            key={label}
-          >
-            <b>{value}</b>
-            <span>{label}</span>
-          </div>
-        ))}
+        <p className="countdown__title">Countdown</p>
+        <div className="countdown__items">
+          {[
+            [days, "days"],
+            [String(hours).padStart(2, "0"), "hours"],
+            [String(minutes).padStart(2, "0"), "minutes"],
+          ].map(([value, label], index) => (
+            <div
+              className={`countdown__item countdown__item--${index + 1}`}
+              key={label}
+            >
+              <b>{value}</b>
+              <span>{label}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </header>
   )
@@ -254,18 +257,18 @@ function Hero() {
 
 const eventDetails = [
   {
-    icon: locationIconSvg,
-    label: "Tea Ceremony",
-    time: "10:00 AM",
-    title: "The Bride's House",
-    address: "11869 SW 2nd St, Yukon, OK 73099",
-  },
-  {
     icon: calendarIconSvg,
     label: "Wedding Ceremony",
     time: "1:00 PM",
     title: "St. Andrew Dung Lac Catholic Church",
     address: "3115 SW 59th St, Oklahoma City, OK 73159",
+  },
+  {
+    icon: locationIconSvg,
+    label: "Cocktail Hour",
+    time: "5:00 PM",
+    title: "Civic Center Music Hall",
+    address: "201 N Walker Ave, Oklahoma City, OK 7310",
   },
   {
     icon: venueIconSvg,
@@ -286,7 +289,7 @@ function Details() {
       />
       <div className="section-heading">
         <p className="eyebrow">Where & when</p>
-        <h2>The wedding day</h2>
+        <h2>the wedding day</h2>
         <p>Saturday, May 1, 2027 · Oklahoma City, Oklahoma</p>
       </div>
       <div className="details__grid">
@@ -300,7 +303,7 @@ function Details() {
             <b>{detail.time}</b>
             <h3>{detail.title}</h3>
             <p>{detail.address}</p>
-            {index === 2 && <small>Cocktail hour begins at 5:00 PM</small>}
+            {index === 2 && <small>Time to party!!!!</small>}
           </article>
         ))}
       </div>
