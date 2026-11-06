@@ -589,7 +589,7 @@ function ConnectionsGame() {
   return (
     <section className="game section scallop" id="play-a-game">
       <RollingFruit
-        source={citrusFruitImage}
+        source={soot2}
         side="left"
         className="game__fruit"
       />
