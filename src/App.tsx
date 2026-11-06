@@ -8,9 +8,18 @@ import locationIconSvg from "./imports/location-icon.svg?raw"
 import orangeFlowersImage from "./imports/watercolors/orange_flowers.png"
 import pinkFlowersImage from "./imports/watercolors/pink_flowers.png"
 import yellowFlowersImage from "./imports/watercolors/yellow_flowers.png"
+
 import successCheckSvg from "./imports/success-check.svg?raw"
 import venueIconSvg from "./imports/venue-icon.svg?raw"
 import weddingLogo from "./imports/wedding-monogram.svg"
+
+import soot1 from "./imports/ghibli/soot1.png"
+import soot2 from "./imports/ghibli/soot2.png"
+import duck from "./imports/ghibli/duck.png"
+import calcifer from "./imports/ghibli/calcifer.png"
+import toto from "./imports/ghibli/toto.png"
+import jiji from "./imports/ghibli/jiji.png"
+
 
 const WEDDING_DATE = new Date("2027-05-01T13:00:00-05:00").getTime()
 
@@ -112,7 +121,7 @@ function Intro({ onComplete }: { onComplete: () => void }) {
   return (
     <div className={`intro ${leaving ? "intro--leaving" : ""}`}>
       <img
-        src={pinkFlowersImage}
+        src={soot2}
         className="intro__flowers intro__flowers--left"
         alt=""
         aria-hidden="true"
@@ -203,12 +212,12 @@ function Hero() {
   return (
     <header className="hero paper-grain" id="home">
       <RollingFruit
-        source={citrusFruitImage}
+        source={soot1}
         side="left"
         className="hero__citrus hero__citrus--left"
       />
       <RollingFruit
-        source={strawberryFruitImage}
+        source={duck}
         side="right"
         className="hero__citrus hero__citrus--right"
       />
@@ -283,7 +292,7 @@ function Details() {
   return (
     <section className="details section scallop" id="details">
       <RollingFruit
-        source={pearFruitImage}
+        source={calcifer}
         side="left"
         className="details__pear"
       />
@@ -399,7 +408,7 @@ function WeddingParty() {
   return (
     <section className="wedding-party section" id="wedding-party">
       <RollingFruit
-        source={citrusFruitImage}
+        source={jiji}
         side="right"
         className="wedding-party__fruit"
       />
@@ -428,7 +437,7 @@ function Gallery() {
   return (
     <section className="gallery section" id="gallery">
       <RollingFruit
-        source={strawberryFruitImage}
+        source={toto}
         side="right"
         className="gallery__cherries"
       />
