@@ -20,7 +20,6 @@ import calcifer from "./imports/ghibli/calcifer.png"
 import toto from "./imports/ghibli/toto.png"
 import jiji from "./imports/ghibli/jiji.png"
 
-
 const WEDDING_DATE = new Date("2027-05-01T13:00:00-05:00").getTime()
 
 function getCountdown() {
@@ -121,7 +120,7 @@ function Intro({ onComplete }: { onComplete: () => void }) {
   return (
     <div className={`intro ${leaving ? "intro--leaving" : ""}`}>
       <img
-        src={soot2}
+        src={pinkFlowersImage}
         className="intro__flowers intro__flowers--left"
         alt=""
         aria-hidden="true"
@@ -217,7 +216,7 @@ function Hero() {
         className="hero__citrus hero__citrus--left"
       />
       <RollingFruit
-        source={duck}
+        source={jiji}
         side="right"
         className="hero__citrus hero__citrus--right"
       />
@@ -227,7 +226,7 @@ function Hero() {
           Chi Tai <em>&</em>
           <strong>Christine</strong>
         </h1>
-        <p className="hero__tagline">Something corny </p>
+        <p className="hero__tagline">Two hearts, one sweet journey</p>
         <div className="hero__date">
           <span>Saturday</span>
           <b>May 1, 2027</b>
@@ -237,7 +236,7 @@ function Hero() {
       <div className="polaroid hero__photo">
         <span className="tape" />
         <img src={couplePhoto} alt="Chi Tai and Christine together" />
-        <p>cool picture huh ♡</p>
+        <p>our favorite adventure yet ♡</p>
       </div>
       <div
         className="countdown"
@@ -266,18 +265,18 @@ function Hero() {
 
 const eventDetails = [
   {
+    icon: locationIconSvg,
+    label: "Tea Ceremony",
+    time: "10:00 AM",
+    title: "The Bride's House",
+    address: "11869 SW 2nd St, Yukon, OK 73099",
+  },
+  {
     icon: calendarIconSvg,
     label: "Wedding Ceremony",
     time: "1:00 PM",
     title: "St. Andrew Dung Lac Catholic Church",
     address: "3115 SW 59th St, Oklahoma City, OK 73159",
-  },
-  {
-    icon: locationIconSvg,
-    label: "Cocktail Hour",
-    time: "5:00 PM",
-    title: "Civic Center Music Hall",
-    address: "201 N Walker Ave, Oklahoma City, OK 7310",
   },
   {
     icon: venueIconSvg,
@@ -292,13 +291,13 @@ function Details() {
   return (
     <section className="details section scallop" id="details">
       <RollingFruit
-        source={calcifer}
+        source={duck}
         side="left"
         className="details__pear"
       />
       <div className="section-heading">
         <p className="eyebrow">Where & when</p>
-        <h2>the wedding day</h2>
+        <h2>The wedding day</h2>
         <p>Saturday, May 1, 2027 · Oklahoma City, Oklahoma</p>
       </div>
       <div className="details__grid">
@@ -312,7 +311,7 @@ function Details() {
             <b>{detail.time}</b>
             <h3>{detail.title}</h3>
             <p>{detail.address}</p>
-            {index === 2 && <small>Time to party!!!!</small>}
+            {index === 2 && <small>Cocktail hour begins at 5:00 PM</small>}
           </article>
         ))}
       </div>
@@ -408,7 +407,7 @@ function WeddingParty() {
   return (
     <section className="wedding-party section" id="wedding-party">
       <RollingFruit
-        source={jiji}
+        source={toto}
         side="right"
         className="wedding-party__fruit"
       />
@@ -437,7 +436,7 @@ function Gallery() {
   return (
     <section className="gallery section" id="gallery">
       <RollingFruit
-        source={toto}
+        source={soot2}
         side="right"
         className="gallery__cherries"
       />
@@ -589,7 +588,7 @@ function ConnectionsGame() {
   return (
     <section className="game section scallop" id="play-a-game">
       <RollingFruit
-        source={soot2}
+        source={calcifer}
         side="left"
         className="game__fruit"
       />
