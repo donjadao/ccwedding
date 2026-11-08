@@ -790,10 +790,10 @@ footer > span { display: block; margin-top: 2rem; color: var(--theme-moss); font
   .gallery__photo--1, .gallery__photo--2, .gallery__photo--3, .gallery__photo--4, .gallery__photo--5 { grid-column: span 6; margin-top: 0; }
   .rsvp__card { grid-template-columns: 1fr; }
   .rolling-fruit-shell { max-width: 7rem; max-height: 7rem; }
-  .hero__citrus--left { left: -3.5rem; }
-  .hero__citrus--right { right: -3.5rem; }
-  .gallery__cherries, .wedding-party__fruit { right: -3.5rem; }
-  .details__pear, .game__fruit { left: -3.5rem; }
+  .hero__citrus--left { left: -1rem; }
+  .hero__citrus--right { right: -1rem; }
+  .gallery__cherries, .wedding-party__fruit { right: -1rem; }
+  .details__pear, .game__fruit { left: -1rem; }
 }
 
 @media (max-width: 560px) {
@@ -807,12 +807,12 @@ footer > span { display: block; margin-top: 2rem; color: var(--theme-moss); font
   .hero h1 { font-size: clamp(3.6rem, 19vw, 5.5rem); }
   .hero__date { align-items: flex-start; flex-direction: column; gap: .3rem; }
   .rolling-fruit-shell { max-width: 5rem; max-height: 5rem; }
-  .hero__citrus--left { left: -3.25rem; bottom: 16%; }
-  .hero__citrus--right { top: 8%; right: -3.25rem; }
-  .wedding-party__fruit { top: 4rem; right: -3.25rem; }
-  .details__pear { top: 4rem; left: -3.25rem; }
-  .gallery__cherries { top: 4rem; right: -3.25rem; }
-  .game__fruit { top: 4rem; left: -3.25rem; }
+  .hero__citrus--left { top: 56%; bottom: auto; left: -.5rem; }
+  .hero__citrus--right { top: 43%; right: -.5rem; }
+  .wedding-party__fruit { top: .75rem; right: -.5rem; }
+  .details__pear { top: .75rem; left: -.5rem; }
+  .gallery__cherries { top: .75rem; right: -.5rem; }
+  .game__fruit { top: .75rem; left: -.5rem; }
   .countdown { gap: .65rem; }
   .countdown__items { gap: .45rem; }
   .countdown__item { width: min(27vw, 6rem); }
