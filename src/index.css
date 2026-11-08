@@ -442,12 +442,13 @@ img { display: block; max-width: 100%; }
   border-radius: 999px;
   background: var(--theme-bloom);
   color: white;
+  justify-items: center;
   text-align: center;
   transform: translateX(-50%);
 }
 .party-side--groom .party-couple__label { background: var(--theme-moss); }
-.party-couple__label b { font: 500 1rem var(--font-display); }
-.party-couple__label small { font-size: .48rem; letter-spacing: .08em; text-transform: uppercase; }
+.party-couple__label b { width: 100%; font: 500 1rem var(--font-display); text-align: center; }
+.party-couple__label small { width: 100%; font-size: .48rem; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
 .party-attendants {
   position: absolute;
   inset: 0;
@@ -512,7 +513,8 @@ img { display: block; max-width: 100%; }
   position: absolute;
   inset: 0;
   display: grid;
-  align-content: center;
+  place-content: center;
+  justify-items: center;
   padding: .6rem;
   border-radius: 50%;
   background: color-mix(in srgb, var(--theme-ink) 82%, transparent);
@@ -523,8 +525,8 @@ img { display: block; max-width: 100%; }
 }
 .party-person:hover .party-person__label,
 .party-person:focus-visible .party-person__label { opacity: 1; }
-.party-person__label b { font: 500 .8rem/1.1 var(--font-display); }
-.party-person__label small { margin-top: .2rem; font-size: .48rem; letter-spacing: .08em; text-transform: uppercase; }
+.party-person__label b { width: 100%; font: 500 .8rem/1.1 var(--font-display); text-align: center; }
+.party-person__label small { width: 100%; margin-top: .2rem; font-size: .48rem; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
 .party-web__heart {
   position: relative;
   z-index: 10;
@@ -562,7 +564,14 @@ img { display: block; max-width: 100%; }
 .gallery__grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; max-width: 78rem; margin: auto; padding: 2rem 0; }
 .gallery__photo { position: relative; transition: transform .35s; }
 .gallery__photo:hover { z-index: 5; transform: rotate(0) scale(1.04); }
-.gallery__photo img { aspect-ratio: 4/3; }
+.gallery__photo img { height: auto; aspect-ratio: 4/3; object-fit: cover; }
+.gallery__photo figcaption {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  min-height: 2.4rem;
+}
 .gallery__photo--1 { grid-column: 1/6; transform: rotate(-3deg); }
 .gallery__photo--2 { grid-column: 6/10; margin-top: 3rem; transform: rotate(2deg); }
 .gallery__photo--3 { grid-column: 9/13; margin-top: -1rem; transform: rotate(-2deg); }
@@ -816,9 +825,38 @@ footer > span { display: block; margin-top: 2rem; color: var(--theme-moss); font
   .party-person--4 { --x: -5.6rem !important; --y: 8.5rem; }
   .party-person--5 { --x: 0rem !important; --y: 10rem; }
   .party-person--6 { --x: 5.6rem !important; --y: 8.5rem; }
+  .party-couple__label {
+    left: 50%;
+    right: auto;
+    width: max-content;
+    max-width: calc(100vw - 2rem);
+    transform: translateX(-50%);
+  }
+  .party-person__label { padding: .35rem; }
+  .party-person__label b { font-size: .66rem; }
+  .party-person__label small { font-size: .4rem; letter-spacing: .04em; }
   .gallery__photo--1, .gallery__photo--2, .gallery__photo--3, .gallery__photo--4, .gallery__photo--5 { grid-column: 1/-1; }
-  .word-grid { grid-template-columns: repeat(2, 1fr); }
-  .word-grid button { min-height: 5.2rem; }
+  .gallery__grid { gap: 2rem; }
+  .gallery__photo--1,
+  .gallery__photo--2,
+  .gallery__photo--3,
+  .gallery__photo--4,
+  .gallery__photo--5 {
+    margin-top: 0;
+    transform: none;
+  }
+  .gallery__photo:hover { transform: none; }
+  .gallery__photo figcaption { min-height: 2.75rem; margin-top: .5rem; }
+  .word-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .3rem; }
+  .word-grid button {
+    min-width: 0;
+    min-height: 5rem;
+    padding: .25rem;
+    border-radius: .65rem;
+    font-size: .48rem;
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
   .form-row { grid-template-columns: 1fr; }
 }
 
