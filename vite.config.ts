@@ -6,7 +6,7 @@ import path from "node:path"
 const siteConfiguration = {
   title: "Chi Tai & Christine — May 1, 2027",
   description: "Join us as we celebrate our wedding on May 1, 2027.",
-  icons: { icon: "/src/imports/favicon.svg" },
+  icons: { icon: "/src/imports/favicon.png" },
   openGraph: {
     image: "/grasspic.jpg",
     imageAlt: "Chi Tai and Christine wedding monogram and couple portrait",
