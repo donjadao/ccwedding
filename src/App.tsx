@@ -226,7 +226,7 @@ function Hero() {
           Chi Tai <em>&</em>
           <strong>Christine</strong>
         </h1>
-        <p className="hero__tagline">Two hearts, one sweet journey</p>
+        <p className="hero__tagline">something corny</p>
         <div className="hero__date">
           <span>Saturday</span>
           <b>May 1, 2027</b>
@@ -236,7 +236,7 @@ function Hero() {
       <div className="polaroid hero__photo">
         <span className="tape" />
         <img src={couplePhoto} alt="Chi Tai and Christine together" />
-        <p>our favorite adventure yet ♡</p>
+        <p>wow what a cool pic ♡</p>
       </div>
       <div
         className="countdown"
@@ -265,18 +265,18 @@ function Hero() {
 
 const eventDetails = [
   {
-    icon: locationIconSvg,
-    label: "Tea Ceremony",
-    time: "10:00 AM",
-    title: "The Bride's House",
-    address: "11869 SW 2nd St, Yukon, OK 73099",
-  },
-  {
     icon: calendarIconSvg,
     label: "Wedding Ceremony",
     time: "1:00 PM",
     title: "St. Andrew Dung Lac Catholic Church",
     address: "3115 SW 59th St, Oklahoma City, OK 73159",
+  },
+  {
+    icon: calendarIconSvg,
+    label: "Coctail Hour",
+    time: "5:00-6:00 PM",
+    title: "Civic Center Music Hall",
+    address: "201 N Walker Ave, Oklahoma City, OK 73102",
   },
   {
     icon: venueIconSvg,
@@ -311,7 +311,7 @@ function Details() {
             <b>{detail.time}</b>
             <h3>{detail.title}</h3>
             <p>{detail.address}</p>
-            {index === 2 && <small>Cocktail hour begins at 5:00 PM</small>}
+            {index === 2 && <small></small>}
           </article>
         ))}
       </div>
