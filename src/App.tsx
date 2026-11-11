@@ -229,7 +229,7 @@ function Hero() {
         <p className="hero__tagline">something corny</p>
         <div className="hero__date">
           <span>Saturday</span>
-          <b>May 1, 2027</b>
+          <b>1 May 2027</b>
           <span>Oklahoma City</span>
         </div>
       </div>
@@ -298,7 +298,7 @@ function Details() {
       <div className="section-heading">
         <p className="eyebrow">Where & when</p>
         <h2>the wedding day</h2>
-        <p>Saturday, May 1, 2027 · Oklahoma City, Oklahoma</p>
+        <p>Saturday, 1 May 2027 · Oklahoma City, Oklahoma</p>
       </div>
       <div className="details__grid">
         {eventDetails.map((detail, index) => (
@@ -788,7 +788,7 @@ function Footer() {
     <footer>
       <Monogram />
       <h2>Chi Tai & Christine</h2>
-      <p>May 1, 2027 · Oklahoma City, Oklahoma</p>
+      <p>1 May 2027 · Oklahoma City, Oklahoma</p>
       <span>Made with love for our favorite people</span>
     </footer>
   )
