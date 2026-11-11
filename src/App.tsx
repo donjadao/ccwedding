@@ -297,7 +297,7 @@ function Details() {
       />
       <div className="section-heading">
         <p className="eyebrow">Where & when</p>
-        <h2>The wedding day</h2>
+        <h2>the wedding day</h2>
         <p>Saturday, May 1, 2027 · Oklahoma City, Oklahoma</p>
       </div>
       <div className="details__grid">
@@ -413,7 +413,7 @@ function WeddingParty() {
       />
       <div className="section-heading">
         <p className="eyebrow">Our favorite people</p>
-        <h2>Meet the wedding party</h2>
+        <h2>meet the wedding party</h2>
         <p>
           Choose the bride or groom to reveal their side of the celebration.
         </p>
@@ -442,7 +442,7 @@ function Gallery() {
       />
       <div className="section-heading">
         <p className="eyebrow">A few favorites</p>
-        <h2>Our moments</h2>
+        <h2>our moments</h2>
       </div>
       <div className="gallery__grid">
         {[
@@ -594,8 +594,8 @@ function ConnectionsGame() {
       />
       <div className="section-heading">
         <p className="eyebrow">A little interlude</p>
-        <h2>Make the connection</h2>
-        <p>Find four groups of four words. Each group shares a secret theme.</p>
+        <h2>make the connection</h2>
+        <p>Find four groups of four words. Each group shares a secret theme.Example: Animals: Dog, Cat, Cow, Pig.</p>
       </div>
       <div className="game-board">
         <div className="solved-groups">
